@@ -43,6 +43,11 @@ body {
   .menu-close {
     display: block;
   }
+
+  .tab,
+  .tab--selected {
+    display: block;
+  }
 }
 
 .menu-open,
@@ -55,6 +60,17 @@ body {
 
 .menu-close {
   display: none;
+}
+
+.tab {
+  display: none;
+  width: 168px;
+  height: 164px;
+}
+
+.tab--selected {
+  display: none;
+  background-color: $dark-purple;
 }
 
 .main {

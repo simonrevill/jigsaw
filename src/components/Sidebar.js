@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 import { ReactComponent as MenuOpenButton } from '../icons/menu-open.svg';
 import { ReactComponent as MenuCloseButton } from '../icons/menu-close.svg';
+import Tab from './Tab';
 
 const Sidebar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -17,6 +18,11 @@ const Sidebar = () => {
           <MenuCloseButton className="menu-close" onClick={handleMenuBtnClick} alt="Close Menu" /> :
           <MenuOpenButton className="menu-open" onClick={handleMenuBtnClick} alt="Open Menu" />
       }
+      <Tab title="MY PROFILE" />
+      <Tab title="LIBRARY" />
+      <Tab title="UPLOAD" />
+      <Tab title="SETTINGS" />
+      <Tab title="BOARD" />
     </div>
   );
 };
