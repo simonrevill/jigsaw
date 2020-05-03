@@ -1,2 +1,14 @@
 @import './variables.scss';
 
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 1440px;
+  height: 100vh;
+}
