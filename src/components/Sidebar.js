@@ -17,7 +17,6 @@ const Sidebar = () => {
           <MenuCloseButton className="menu-close" onClick={handleMenuBtnClick} alt="Close Menu" /> :
           <MenuOpenButton className="menu-open" onClick={handleMenuBtnClick} alt="Open Menu" />
       }
-      <MenuOpenButton className="menu-open" onClick={handleMenuBtnClick} alt="Open Menu" />
     </div>
   );
 };
