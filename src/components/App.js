@@ -6,13 +6,13 @@ import Main from './Main';
 
 const App = () => {
   return (
-    <div className="outer-container">
+    <React.Fragment>
       <Topbar />
-      <div className="inner-container">
+      <div className="container">
         <Sidebar />
         <Main />
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
