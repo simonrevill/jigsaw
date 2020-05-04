@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { ReactComponent as MenuOpenButton } from '../icons/menu-open.svg';
 import { ReactComponent as MenuCloseButton } from '../icons/menu-close.svg';
+
 import Tab from './Tab';
 
 const Sidebar = () => {
@@ -18,11 +19,11 @@ const Sidebar = () => {
           <MenuCloseButton className="menu-close" onClick={handleMenuBtnClick} alt="Close Menu" /> :
           <MenuOpenButton className="menu-open" onClick={handleMenuBtnClick} alt="Open Menu" />
       }
-      <Tab title="MY PROFILE" />
-      <Tab title="LIBRARY" />
-      <Tab title="UPLOAD" />
-      <Tab title="SETTINGS" />
-      <Tab title="BOARD" />
+      <Tab title="My Profile" />
+      <Tab title="Library" iconPath="../icons/" />
+      <Tab title="Upload" iconPath="../icons/" />
+      <Tab title="Settings" iconPath="../icons/" />
+      <Tab title="Board" iconPath="../icons/" />
     </div>
   );
 };

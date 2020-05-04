@@ -15,3 +15,21 @@ $red: #EB5757;
 $pink: #FB28C0;
 
 // Fonts:
+
+@font-face {
+  font-family: 'Comfortaa-Bold';
+  src: url('../fonts/Comfortaa-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comfortaa-Regular';
+  src: url('../fonts/Comfortaa-Regular.ttf') format('truetype');
+}
+
+$primary-font-bold: 'Comfortaa-Bold';
+$primary-font-regular: 'Comfortaa-Regular';
+
+$primary-font-size: 12px;
+$secondary-font-size: 10px;
+
+$primary-font-color: $white;

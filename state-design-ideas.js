@@ -121,5 +121,13 @@ let state = {
 			filePath: '/image-library/bookshelf.jpg',
 			id: 3
 		}
-	]
+	],
+	uiState: {
+		menuIsOpen: false,
+		myProfileTabIsSelected: false,
+		libraryTabIsSelected: false,
+		uploadTabIsSelected: false,
+		settingsTabIsSelected: false,
+		boardTabIsSelected: false
+	}
 };
