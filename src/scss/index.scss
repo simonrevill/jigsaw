@@ -117,7 +117,8 @@ body {
 .tabs-container {
   position: relative;
   left: -80px;
-  transition: left $short;
+  opacity: 0;
+  transition: $short;
 }
 
 .tab {
@@ -141,8 +142,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  opacity: 0;
-  transition: opacity $short;
+  
 }
 
 .tab__icon {
@@ -180,6 +180,7 @@ body {
 
   .tabs-container {
     left: 0;
+    opacity: 1;
   }
 
   .tab,
