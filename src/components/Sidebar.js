@@ -19,11 +19,13 @@ const Sidebar = () => {
           <MenuCloseButton className="menu-close" onClick={handleMenuBtnClick} alt="Close Menu" /> :
           <MenuOpenButton className="menu-open" onClick={handleMenuBtnClick} alt="Open Menu" />
       }
-      <Tab title="My Profile" />
-      <Tab title="Library" iconPath="../icons/" />
-      <Tab title="Upload" iconPath="../icons/" />
-      <Tab title="Settings" iconPath="../icons/" />
-      <Tab title="Board" iconPath="../icons/" />
+      <div className="tabs-container">
+        <Tab title="My Profile" />
+        <Tab title="Library" iconPath="../icons/" />
+        <Tab title="Upload" iconPath="../icons/" />
+        <Tab title="Settings" iconPath="../icons/" />
+        <Tab title="Board" iconPath="../icons/" />
+      </div>
     </div>
   );
 };

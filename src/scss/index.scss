@@ -100,47 +100,49 @@ body {
   transition: width $short;
 }
 
-.sidebar--open {
-  width: 168px;
-
-  .menu-open {
-    display: none;
-  }
-
-  .menu-close {
-    display: block;
-  }
-
-  .tab,
-  .tab--selected {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-}
-
 .menu-open,
 .menu-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  padding: 10px 10px 10px 100%;
   cursor: pointer;
+  z-index: 1;
 }
 
 .menu-close {
   display: none;
 }
 
+.tabs-container {
+  position: relative;
+  left: -80px;
+  transition: left $short;
+}
+
 .tab {
-  display: none;
   width: 168px;
   height: 164px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: $dark-purple;
+  transition: background-color $short;
 }
 
 .tab--selected {
-  display: none;
   background-color: $dark-purple;
+}
+
+.tab,
+.tab--selected {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  transition: opacity $short;
 }
 
 .tab__icon {
@@ -163,6 +165,28 @@ body {
   border-radius: 100%;
   border: 2px solid $white;
   margin-top: 20px;
+}
+
+.sidebar--open {
+  width: 168px;
+
+  .menu-open {
+    display: none;
+  }
+
+  .menu-close {
+    display: block;
+  }
+
+  .tabs-container {
+    left: 0;
+  }
+
+  .tab,
+  .tab--selected {
+    right: 0;
+    opacity: 1;
+  }
 }
 
 .main {
