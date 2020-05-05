@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Slider = () => {
+const Slider = ({ sliderLabel, showSliderState }) => {
   const [isOn, setOn] = useState(false);
 
   const handleClick = () => {
@@ -8,17 +8,22 @@ const Slider = () => {
   };
 
   return (
-    <React.Fragment>
-      <div className="slider__label">Dark Mode:</div>
+    <div className="slider__container">
+      <div className="slider__label">{sliderLabel}</div>
       <div className={isOn ? "slider slider--active" : "slider"} onClick={handleClick}>
         <div className="slider__inner">
           <div className="slider__switch"></div>
         </div>
       </div>
-      <div className={isOn ? "slider__state slider__state--active" : "slider__state"}>
-        {isOn ? "On" : "Off"}
-      </div>
-    </React.Fragment>
+      {
+        showSliderState ?
+          <div className={isOn ? "slider__state slider__state--active" : "slider__state"}>
+            {isOn ? "On" : "Off"}
+          </div> :
+          null
+      }
+
+    </div>
   );
 };
 

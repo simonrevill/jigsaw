@@ -23,6 +23,12 @@ body {
   align-items: center;
 }
 
+.slider__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .slider {
   width: 42px;
   height: 19px;
@@ -194,4 +200,25 @@ body {
   width: 100%;
   height: 984px;
   background-color: $dark-purple;
+}
+
+// Main Sections - Settings:
+
+.main__settings {
+
+  padding: 40px;
+
+  .slider__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .slider__label {
+    font-size: $secondary-font-size;
+    letter-spacing: $primary-spacing;
+    // margin-right: 7px;
+  }
 }

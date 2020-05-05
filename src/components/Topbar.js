@@ -5,7 +5,7 @@ import Slider from './Slider';
 const Topbar = () => {
   return (
     <div className="topbar">
-      <Slider />
+      <Slider sliderLabel="Dark Mode:" showSliderState={true} />
     </div>
   );
 };
