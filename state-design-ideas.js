@@ -1,14 +1,10 @@
 let state = {
 	defaultSettings: {
 		darkMode: true,
-		difficulty: {
-			showBackgroundImage: true,
-			showGridOverlay: true,
-			showCorrectPlacement: false
-		},
-		board: {
-			defaultGridSize: 8
-		}
+		showBackgroundImage: true,
+		showGridOverlay: true,
+		showCorrectPlacement: false,
+		defaultGridSize: 8
 	},
 	users: [
 		{

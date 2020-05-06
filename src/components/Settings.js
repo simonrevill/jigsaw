@@ -1,18 +1,59 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../redux/selectors/selectors';
+import {
+  SHOW_BACKGROUND_IMAGE_OFF, SHOW_BACKGROUND_IMAGE_ON, SHOW_GRID_OVERLAY_OFF, SHOW_GRID_OVERLAY_ON,
+  SHOW_CORRECT_PLACEMENT_OFF, SHOW_CORRECT_PLACEMENT_ON
+} from '../redux/constants/constants';
+import toggleShowBackgroundImage from '../redux/actions/toggleShowBackgroundImage';
+import toggleShowGridOverlay from '../redux/actions/toggleShowGridOverlay';
+import toggleShowCorrectPlacement from '../redux/actions/toggleShowCorrectPlacement';
 
 import Slider from './Slider';
 
-function Settings() {
+const Settings = (
+  { showBackgroundImage, showGridOverlay, showCorrectPlacement, toggleShowBackgroundImage,
+    toggleShowGridOverlay, toggleShowCorrectPlacement }
+) => {
+
+  const handleShowBackgroundImage = () => {
+    showBackgroundImage ?
+      toggleShowBackgroundImage(SHOW_BACKGROUND_IMAGE_OFF) :
+      toggleShowBackgroundImage(SHOW_BACKGROUND_IMAGE_ON);
+  };
+
+  const handleShowGridOverlay = () => {
+    showGridOverlay ?
+      toggleShowGridOverlay(SHOW_GRID_OVERLAY_OFF) :
+      toggleShowGridOverlay(SHOW_GRID_OVERLAY_ON);
+  };
+
+  const handleShowCorrectPlacement = () => {
+    showCorrectPlacement ?
+      toggleShowCorrectPlacement(SHOW_CORRECT_PLACEMENT_OFF) :
+      toggleShowCorrectPlacement(SHOW_CORRECT_PLACEMENT_ON);
+  };
+
   return (
     <div className="main__settings">
       <div className="main__inner">
         <h2 className="main__title">Difficulty:</h2>
-        <Slider sliderLabel="Show background image" showSliderState={false} />
-        <Slider sliderLabel="Show grid overlay" showSliderState={false} />
-        <Slider sliderLabel="Show correct placement" showSliderState={false} />
+        <Slider sliderLabel="Show background image" showSliderState={false} sliderState={showBackgroundImage} onClick={handleShowBackgroundImage} />
+        <Slider sliderLabel="Show grid overlay" showSliderState={false} sliderState={showGridOverlay} onClick={handleShowGridOverlay} />
+        <Slider sliderLabel="Show correct placement" showSliderState={false} sliderState={showCorrectPlacement} onClick={handleShowCorrectPlacement} />
       </div>
     </div>
   );
 };
 
-export default Settings;
+const mapStateToProps = state => {
+  const showBackgroundImage = getShowBackgroundImage(state);
+  const showGridOverlay = getShowGridOverlay(state);
+  const showCorrectPlacement = getShowCorrectPlacement(state);
+  return { showBackgroundImage, showGridOverlay, showCorrectPlacement };
+};
+
+export default connect(
+  mapStateToProps,
+  { toggleShowBackgroundImage, toggleShowGridOverlay, toggleShowCorrectPlacement }
+)(Settings);

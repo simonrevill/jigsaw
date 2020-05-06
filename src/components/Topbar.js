@@ -8,9 +8,7 @@ import Slider from './Slider';
 
 const Topbar = ({ darkMode, toggleDarkMode }) => {
 
-  const handleClick = () => {
-    darkMode ? toggleDarkMode(DARK_MODE_OFF) : toggleDarkMode(DARK_MODE_ON);
-  };
+  const handleClick = () => darkMode ? toggleDarkMode(DARK_MODE_OFF) : toggleDarkMode(DARK_MODE_ON);
 
   return (
     <div className="topbar">
