@@ -1,0 +1,1 @@
+export const getDarkMode = store => store.defaultSettings.darkMode;
