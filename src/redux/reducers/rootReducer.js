@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import darkModeReducer from './darkModeReducer';
+import defaultSettingsReducer from './defaultSettingsReducer';
 
-export default combineReducers({ darkModeReducer });
+export default combineReducers({ defaultSettingsReducer });

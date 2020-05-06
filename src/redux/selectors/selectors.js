@@ -1,1 +1,1 @@
-export const getDarkMode = store => store.defaultSettings.darkMode;
+export const getDarkMode = store => store.defaultSettingsReducer.defaultSettings.darkMode;

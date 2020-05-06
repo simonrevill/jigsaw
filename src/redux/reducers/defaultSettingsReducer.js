@@ -1,21 +1,18 @@
+import initialState from './initialState.js';
 import { DARK_MODE_OFF, DARK_MODE_ON } from '../constants/constants';
 
-const initialState = {
-  defaultSettings: {
-    darkMode: true
-  }
-};
-
-const darkModeReducer = (state = initialState, action) => {
+const defaultSettingsReducer = (state = initialState, action) => {
   switch (action.type) {
     case DARK_MODE_OFF:
       return {
+        ...state,
         defaultSettings: {
           darkMode: false
         }
       };
     case DARK_MODE_ON:
       return {
+        ...state,
         defaultSettings: {
           darkMode: true
         }
@@ -25,4 +22,4 @@ const darkModeReducer = (state = initialState, action) => {
   }
 }
 
-export default darkModeReducer;
+export default defaultSettingsReducer;
