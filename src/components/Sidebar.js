@@ -22,11 +22,25 @@ const Sidebar = () => {
           <MenuOpenButton className="menu-open" onClick={handleMenuBtnClick} alt="Open Menu" />
       }
       <div className="tabs-container">
-        <Tab title="My Profile" />
-        <Tab title="Library" iconPath="../icons/" />
-        <Tab title="Upload" iconPath="../icons/" />
-        <Tab title="Settings" iconPath="../icons/" />
-        <Tab title="Board" iconPath="../icons/" />
+        <Tab
+          title="My Profile"
+        />
+        <Tab
+          title="Library"
+          iconPath="../icons/"
+        />
+        <Tab
+          title="Upload"
+          iconPath="../icons/"
+        />
+        <Tab
+          title="Settings"
+          iconPath="../icons/"
+        />
+        <Tab
+          title="Board"
+          iconPath="../icons/"
+        />
       </div>
     </div>
   );

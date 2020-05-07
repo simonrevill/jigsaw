@@ -40,9 +40,24 @@ const Settings = (
     <div className="settings">
       <div className="settings__inner">
         <h2 className="settings__title">Difficulty:</h2>
-        <Slider sliderLabel="Show background image" showSliderState={false} sliderState={showBackgroundImage} onClick={handleShowBackgroundImage} />
-        <Slider sliderLabel="Show grid overlay" showSliderState={false} sliderState={showGridOverlay} onClick={handleShowGridOverlay} />
-        <Slider sliderLabel="Show correct placement" showSliderState={false} sliderState={showCorrectPlacement} onClick={handleShowCorrectPlacement} />
+        <Slider
+          sliderLabel="Show background image"
+          showSliderState={false}
+          sliderState={showBackgroundImage}
+          onClick={handleShowBackgroundImage}
+        />
+        <Slider
+          sliderLabel="Show grid overlay"
+          showSliderState={false}
+          sliderState={showGridOverlay}
+          onClick={handleShowGridOverlay}
+        />
+        <Slider
+          sliderLabel="Show correct placement"
+          showSliderState={false}
+          sliderState={showCorrectPlacement}
+          onClick={handleShowCorrectPlacement}
+        />
       </div>
     </div>
   );

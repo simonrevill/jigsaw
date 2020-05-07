@@ -10,11 +10,20 @@ import '../scss/bem/Topbar.scss';
 
 const Topbar = ({ darkMode, toggleDarkMode }) => {
 
-  const handleClick = () => darkMode ? toggleDarkMode(DARK_MODE_OFF) : toggleDarkMode(DARK_MODE_ON);
+  const handleClick = () => {
+    darkMode ?
+      toggleDarkMode(DARK_MODE_OFF) :
+      toggleDarkMode(DARK_MODE_ON);
+  };
 
   return (
     <div className="topbar">
-      <Slider sliderLabel="Dark Mode:" showSliderState={true} sliderState={darkMode} onClick={handleClick} />
+      <Slider
+        sliderLabel="Dark Mode:"
+        showSliderState={true}
+        sliderState={darkMode}
+        onClick={handleClick}
+      />
     </div>
   );
 };
