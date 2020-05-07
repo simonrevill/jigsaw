@@ -1,0 +1,39 @@
+@import '../variables.scss';
+
+.upload {
+  padding: 20px;
+  height: 944px;
+  background-color: $dark-purple;  
+}
+
+.upload__inner {
+  padding: 20px;
+  border: 1px dashed $grey;
+  height: 904px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload__center {
+  width: 520px;
+  height: 468px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload__title {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  text-transform: uppercase;
+  letter-spacing: 0.265rem;
+  text-align: center;
+  line-height: 2.5;
+}
+
+.upload__icon {
+  margin: 40px 0;
+}
