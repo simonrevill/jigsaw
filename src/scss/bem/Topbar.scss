@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.topbar {
+  width: 1440px;
+  height: 40px;
+  background-color: $light-purple;
+  border-bottom: 1px solid $dark-purple;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

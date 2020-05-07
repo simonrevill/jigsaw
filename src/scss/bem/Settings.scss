@@ -1,0 +1,43 @@
+@import '../variables.scss';
+
+.settings {
+  padding: 20px;
+  height: 944px;
+  background-color: $light-purple;  
+}
+
+.settings__inner {
+  padding: 20px;
+  border: 1px solid $lighter-purple;
+  height: 904px;
+}
+
+.settings__title {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  letter-spacing: $primary-spacing;
+  color: $primary-font-color;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+.settings {
+  .slider__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .slider {
+    margin-right: 10px;
+  }
+  
+  .slider__label {
+    font-size: $secondary-font-size;
+    letter-spacing: $primary-spacing;
+    margin-right: 0;
+  }
+}

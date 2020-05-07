@@ -1,0 +1,47 @@
+@import '../variables.scss';
+
+.tab {
+  width: 168px;
+  height: 164px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: $dark-purple;
+  transition: background-color $short;
+}
+
+.tab--selected {
+  background-color: $dark-purple;
+}
+
+.tab,
+.tab--selected {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+
+.tab__icon {
+  margin-top: 31px;
+}
+
+.tab__title {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  text-transform: uppercase;
+  letter-spacing: 0.265rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 2px solid $white;
+  margin-top: 20px;
+}

@@ -5,6 +5,8 @@ import { ReactComponent as MenuCloseButton } from '../icons/menu-close.svg';
 
 import Tab from './Tab';
 
+import '../scss/bem/Sidebar.scss';
+
 const Sidebar = () => {
   const [isOpen, setOpen] = useState(false);
 

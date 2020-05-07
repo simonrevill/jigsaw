@@ -1,0 +1,54 @@
+@import '../variables.scss';
+
+.sidebar {
+  width: 80px;
+  height: 984px;
+  background-color: $light-purple;
+  border-right: 1px solid $dark-purple;
+  position: relative;
+  transition: width $short;
+}
+
+.menu-open,
+.menu-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 10px 10px 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu-close {
+  display: none;
+}
+
+.tabs-container {
+  position: relative;
+  left: -80px;
+  opacity: 0;
+  transition: $short;
+}
+
+.sidebar--open {
+  width: 168px;
+
+  .menu-open {
+    display: none;
+  }
+
+  .menu-close {
+    display: block;
+  }
+
+  .tabs-container {
+    left: 0;
+    opacity: 1;
+  }
+
+  .tab,
+  .tab--selected {
+    right: 0;
+    opacity: 1;
+  }
+}

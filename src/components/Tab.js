@@ -7,6 +7,8 @@ import { ReactComponent as UploadIcon } from '../icons/upload.svg';
 import { ReactComponent as SettingsIcon } from '../icons/settings.svg';
 import { ReactComponent as BoardIcon } from '../icons/board.svg';
 
+import '../scss/bem/Tab.scss';
+
 const Tab = ({ title }) => {
   const [isSelected, setSelected] = useState(false);
 

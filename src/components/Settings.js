@@ -11,6 +11,8 @@ import toggleShowCorrectPlacement from '../redux/actions/toggleShowCorrectPlacem
 
 import Slider from './Slider';
 
+import '../scss/bem/Settings.scss';
+
 const Settings = (
   { showBackgroundImage, showGridOverlay, showCorrectPlacement, toggleShowBackgroundImage,
     toggleShowGridOverlay, toggleShowCorrectPlacement }
@@ -35,9 +37,9 @@ const Settings = (
   };
 
   return (
-    <div className="main__settings">
-      <div className="main__inner">
-        <h2 className="main__title">Difficulty:</h2>
+    <div className="settings">
+      <div className="settings__inner">
+        <h2 className="settings__title">Difficulty:</h2>
         <Slider sliderLabel="Show background image" showSliderState={false} sliderState={showBackgroundImage} onClick={handleShowBackgroundImage} />
         <Slider sliderLabel="Show grid overlay" showSliderState={false} sliderState={showGridOverlay} onClick={handleShowGridOverlay} />
         <Slider sliderLabel="Show correct placement" showSliderState={false} sliderState={showCorrectPlacement} onClick={handleShowCorrectPlacement} />
