@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
-import defaultSettingsReducer from './defaultSettingsReducer';
 
-export default combineReducers({ defaultSettingsReducer });
+import defaultSettings from './defaultSettings';
+import uiState from './uiState';
+
+export default combineReducers({ defaultSettings, uiState });

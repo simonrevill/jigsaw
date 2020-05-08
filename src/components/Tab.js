@@ -26,6 +26,8 @@ const Tab = ({ title }) => {
         return <SettingsIcon className="tab__icon" alt="Settings" />;
       case 'Board':
         return <BoardIcon className="tab__icon" alt="Board" />;
+      default:
+        return;
     }
   };
 

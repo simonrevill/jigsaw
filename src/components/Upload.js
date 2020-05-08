@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-
 import { ReactComponent as UploadDragAndDropIcon } from '../icons/upload-drag-and-drop.svg';
 
 import Button from './Button';
