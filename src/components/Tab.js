@@ -46,16 +46,12 @@ const Tab = ({ title, isActive, activateTab }) => {
     switch (title) {
       case 'Library':
         return <LibraryIcon className="tab__icon" alt="Library" />;
-        break;
       case 'Upload':
         return <UploadIcon className="tab__icon" alt="Upload" />;
-        break;
       case 'Settings':
         return <SettingsIcon className="tab__icon" alt="Settings" />;
-        break;
       case 'Board':
         return <BoardIcon className="tab__icon" alt="Board" />;
-        break;
       default:
         return;
     }
