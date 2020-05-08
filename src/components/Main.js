@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import MyProfile from './MyProfile';
 import Library from './Library';
 import Upload from './Upload';
@@ -20,4 +22,9 @@ const Main = () => {
   );
 };
 
-export default Main;
+const mapStateToProps = state => state.uiState;
+
+export default connect(
+  mapStateToProps,
+  null
+)(Main);

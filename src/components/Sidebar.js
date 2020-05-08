@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { TOGGLE_MENU_CLOSED, TOGGLE_MENU_OPEN } from '../redux/constants/actionTypes';
+import toggleMenu from '../redux/actions/uiState/toggleMenu';
 
 import { ReactComponent as MenuOpenButton } from '../icons/menu-open.svg';
 import { ReactComponent as MenuCloseButton } from '../icons/menu-close.svg';
@@ -7,43 +10,37 @@ import Tab from './Tab';
 
 import '../scss/bem/Sidebar.scss';
 
-const Sidebar = () => {
-  const [isOpen, setOpen] = useState(false);
+const Sidebar = ({ menuIsOpen, tabs, toggleMenu }) => {
 
   const handleMenuBtnClick = () => {
-    setOpen(!isOpen);
+    menuIsOpen ?
+      toggleMenu(TOGGLE_MENU_CLOSED) :
+      toggleMenu(TOGGLE_MENU_OPEN);
   };
 
   return (
-    <div className={isOpen ? 'sidebar sidebar--open' : 'sidebar'}>
+    <div className={menuIsOpen ? 'sidebar sidebar--open' : 'sidebar'}>
       {
-        isOpen ?
+        menuIsOpen ?
           <MenuCloseButton className="menu-close" onClick={handleMenuBtnClick} alt="Close Menu" /> :
           <MenuOpenButton className="menu-open" onClick={handleMenuBtnClick} alt="Open Menu" />
       }
       <div className="tabs-container">
-        <Tab
-          title="My Profile"
-        />
-        <Tab
-          title="Library"
-          iconPath="../icons/"
-        />
-        <Tab
-          title="Upload"
-          iconPath="../icons/"
-        />
-        <Tab
-          title="Settings"
-          iconPath="../icons/"
-        />
-        <Tab
-          title="Board"
-          iconPath="../icons/"
-        />
+        {
+          tabs.map((tab, index) => (
+            <Tab
+              title={tab.name}
+              isActive={tab.isActive}
+              key={index}
+            />
+          ))
+        }
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default connect(
+  null,
+  { toggleMenu }
+)(Sidebar);

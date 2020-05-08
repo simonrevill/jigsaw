@@ -1,19 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../redux/selectors/selectors';
+import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../redux/selectors/defaultSettings';
 import {
-  SHOW_BACKGROUND_IMAGE_OFF, SHOW_BACKGROUND_IMAGE_ON, SHOW_GRID_OVERLAY_OFF, SHOW_GRID_OVERLAY_ON,
+  SHOW_BACKGROUND_IMAGE_OFF, SHOW_BACKGROUND_IMAGE_ON,
+  SHOW_GRID_OVERLAY_OFF, SHOW_GRID_OVERLAY_ON,
   SHOW_CORRECT_PLACEMENT_OFF, SHOW_CORRECT_PLACEMENT_ON
 } from '../redux/constants/actionTypes';
-import toggleShowBackgroundImage from '../redux/actions/toggleShowBackgroundImage';
-import toggleShowGridOverlay from '../redux/actions/toggleShowGridOverlay';
-import toggleShowCorrectPlacement from '../redux/actions/toggleShowCorrectPlacement';
+import toggleShowBackgroundImage from '../redux/actions/defaultSettings/toggleShowBackgroundImage';
+import toggleShowGridOverlay from '../redux/actions/defaultSettings/toggleShowGridOverlay';
+import toggleShowCorrectPlacement from '../redux/actions/defaultSettings/toggleShowCorrectPlacement';
 
 import Slider from './Slider';
 
 import '../scss/bem/Settings.scss';
 
-const Settings = ({ showBackgroundImage, showGridOverlay, showCorrectPlacement, toggleShowBackgroundImage,
+const Settings = ({ showBackgroundImage, showGridOverlay,
+  showCorrectPlacement, toggleShowBackgroundImage,
   toggleShowGridOverlay, toggleShowCorrectPlacement }) => {
 
   const handleShowBackgroundImage = () => {
