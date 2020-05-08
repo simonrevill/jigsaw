@@ -4,7 +4,7 @@ import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } f
 import {
   SHOW_BACKGROUND_IMAGE_OFF, SHOW_BACKGROUND_IMAGE_ON, SHOW_GRID_OVERLAY_OFF, SHOW_GRID_OVERLAY_ON,
   SHOW_CORRECT_PLACEMENT_OFF, SHOW_CORRECT_PLACEMENT_ON
-} from '../redux/constants/constants';
+} from '../redux/constants/actionTypes';
 import toggleShowBackgroundImage from '../redux/actions/toggleShowBackgroundImage';
 import toggleShowGridOverlay from '../redux/actions/toggleShowGridOverlay';
 import toggleShowCorrectPlacement from '../redux/actions/toggleShowCorrectPlacement';
