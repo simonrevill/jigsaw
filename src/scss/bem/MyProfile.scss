@@ -1,0 +1,21 @@
+@import '../variables.scss';
+
+.my-profile {
+  box-sizing: border-box;
+  padding: 20px;
+  max-width: 1359px;
+  min-width: 1271px;
+}
+
+.my-profile__card {
+  width: 363px;
+  height: 942px;
+  border: 1px solid $lighter-purple;
+  margin-right: 20px;
+}
+
+.my-profile__favourites {
+  flex-grow: 1;
+  height: 942px;
+  border: 1px solid $lighter-purple;
+}
