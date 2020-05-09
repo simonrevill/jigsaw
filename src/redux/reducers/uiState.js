@@ -45,7 +45,63 @@ const uiState = (state = initialState, action) => {
       };
     case ACTIVATE_MY_PROFILE_TAB:
       return {
-        ...state
+        ...state,
+        tabs: state.tabs.map(tab => {
+          if (tab.name === action.tabName) {
+            tab.isActive = true;
+            return tab;
+          }
+          tab.isActive = false;
+          return tab;
+        })
+      };
+    case ACTIVATE_LIBRARY_TAB:
+      return {
+        ...state,
+        tabs: state.tabs.map(tab => {
+          if (tab.name === action.tabName) {
+            tab.isActive = true;
+            return tab;
+          }
+          tab.isActive = false;
+          return tab;
+        })
+      };
+    case ACTIVATE_UPLOAD_TAB:
+      return {
+        ...state,
+        tabs: state.tabs.map(tab => {
+          if (tab.name === action.tabName) {
+            tab.isActive = true;
+            return tab;
+          }
+          tab.isActive = false;
+          return tab;
+        })
+      };
+    case ACTIVATE_SETTINGS_TAB:
+      return {
+        ...state,
+        tabs: state.tabs.map(tab => {
+          if (tab.name === action.tabName) {
+            tab.isActive = true;
+            return tab;
+          }
+          tab.isActive = false;
+          return tab;
+        })
+      };
+    case ACTIVATE_BOARD_TAB:
+      return {
+        ...state,
+        tabs: state.tabs.map(tab => {
+          if (tab.name === action.tabName) {
+            tab.isActive = true;
+            return tab;
+          }
+          tab.isActive = false;
+          return tab;
+        })
       };
     default:
       return state;
