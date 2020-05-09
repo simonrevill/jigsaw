@@ -1,13 +1,13 @@
 @import '../variables.scss';
 
 .my-profile {
-  box-sizing: border-box;
   padding: 20px;
   max-width: 1359px;
-  min-width: 1271px;
+  min-width: 1232px;
 }
 
 .my-profile__card {
+  box-sizing: border-box;
   width: 363px;
   height: 942px;
   border: 1px solid $lighter-purple;
@@ -15,6 +15,7 @@
 }
 
 .my-profile__favourites {
+  box-sizing: border-box;
   flex-grow: 1;
   height: 942px;
   border: 1px solid $lighter-purple;
