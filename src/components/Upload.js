@@ -13,7 +13,7 @@ const Upload = ({ isActive }) => {
   };
 
   return (
-    <div className="upload">
+    <div className={isActive ? "upload d-block" : "upload d-none"}>
       <div className="upload__inner">
         <div className="upload__center">
           <span className="upload__title">

@@ -37,7 +37,7 @@ const Settings = ({ isActive, showBackgroundImage, showGridOverlay,
   };
 
   return (
-    <div className="settings">
+    <div className={isActive ? "settings d-block" : "settings d-none"}>
       <div className="settings__inner">
         <h2 className="settings__title">Difficulty:</h2>
         <Slider
