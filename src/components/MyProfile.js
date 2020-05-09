@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyProfile = () => {
+const MyProfile = ({ isActive }) => {
   return (
     <div className="my-profile">
 

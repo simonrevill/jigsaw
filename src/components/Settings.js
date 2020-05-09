@@ -14,7 +14,7 @@ import Slider from './Slider';
 
 import '../scss/bem/Settings.scss';
 
-const Settings = ({ showBackgroundImage, showGridOverlay,
+const Settings = ({ isActive, showBackgroundImage, showGridOverlay,
   showCorrectPlacement, toggleShowBackgroundImage,
   toggleShowGridOverlay, toggleShowCorrectPlacement }) => {
 

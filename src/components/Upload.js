@@ -6,7 +6,7 @@ import Button from './Button';
 
 import '../scss/bem/Upload.scss';
 
-const Upload = () => {
+const Upload = ({ isActive }) => {
 
   const handleButtonClick = () => {
     console.log('Button clicked!');

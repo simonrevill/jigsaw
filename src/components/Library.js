@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Library = () => {
+const Library = ({ isActive }) => {
   return (
     <div className="library">
 

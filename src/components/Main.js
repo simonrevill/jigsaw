@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-
 import MyProfile from './MyProfile';
 import Library from './Library';
 import Upload from './Upload';
@@ -10,21 +8,25 @@ import Board from './Board';
 
 import '../scss/bem/Main.scss';
 
-const Main = () => {
+const Main = ({ tabs }) => {
+
+  const tabStates = {
+    MyProfile: tabs[0].isActive,
+    Library: tabs[1].isActive,
+    Upload: tabs[2].isActive,
+    Settings: tabs[3].isActive,
+    Board: tabs[4].isActive,
+  };
+
   return (
     <div className="main">
-      <MyProfile />
-      <Library />
-      <Upload />
-      <Settings />
-      <Board />
+      <MyProfile isActive={tabStates.MyProfile} />
+      <Library isActive={tabStates.Library} />
+      <Upload isActive={tabStates.Upload} />
+      <Settings isActive={tabStates.Settings} />
+      <Board isActive={tabStates.Board} />
     </div>
   );
 };
 
-const mapStateToProps = state => state.uiState;
-
-export default connect(
-  mapStateToProps,
-  null
-)(Main);
+export default Main;

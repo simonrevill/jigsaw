@@ -15,7 +15,7 @@ const App = ({ menuIsOpen, tabs }) => {
       <Topbar />
       <div className="container">
         <Sidebar menuIsOpen={menuIsOpen} tabs={tabs} />
-        <Main />
+        <Main tabs={tabs} />
       </div>
     </React.Fragment>
   );

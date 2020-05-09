@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Board = () => {
+const Board = ({ isActive }) => {
   return (
     <div className="board">
 
