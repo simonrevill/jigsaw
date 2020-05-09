@@ -2,7 +2,7 @@ import React from 'react';
 
 const Library = ({ isActive }) => {
   return (
-    <div className="library">
+    <div className={isActive ? 'library d-block' : 'library d-none'}>
 
     </div>
   );

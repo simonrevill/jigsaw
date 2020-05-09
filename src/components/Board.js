@@ -2,7 +2,7 @@ import React from 'react';
 
 const Board = ({ isActive }) => {
   return (
-    <div className="board">
+    <div className={isActive ? 'board d-block' : 'board d-none'}>
 
     </div>
   );
