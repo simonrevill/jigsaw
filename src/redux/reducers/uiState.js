@@ -10,7 +10,7 @@ const initialState = {
   tabs: [
     {
       name: 'My Profile',
-      isActive: false
+      isActive: true
     },
     {
       name: 'Library',
