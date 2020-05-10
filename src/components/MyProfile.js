@@ -5,6 +5,7 @@ import { ReactComponent as ConnectLine } from '../icons/connect-line.svg';
 import { ReactComponent as Dot } from '../icons/dot.svg';
 import { ReactComponent as ConnectStep } from '../icons/connect-step.svg';
 import { ReactComponent as ConnectSeparator } from '../icons/connect-separator.svg';
+import { ReactComponent as HeartSolid } from '../icons/heart-solid.svg';
 
 import Button from './Button';
 
@@ -81,7 +82,16 @@ const MyProfile = ({ isActive }) => {
           </div>
         </div>
       </div>
-      <div className="my-profile__favourites"></div>
+      <div className="my-profile__favourites">
+        <div className="my-profile__favourites-heading">
+          <HeartSolid
+            className="my-profile__heart-solid"
+          />
+          <h2 className="my-profile__favourites-heading-text">
+            Favourite Images:
+          </h2>
+        </div>
+      </div>
 
     </div>
   );

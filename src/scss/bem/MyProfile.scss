@@ -33,13 +33,6 @@
   // border: 2px solid $lighter-purple;
 }
 
-.my-profile__favourites {
-  box-sizing: border-box;
-  flex-grow: 1;
-  height: 942px;
-  border: 1px solid $lighter-purple;
-}
-
 .my-profile__bio {
   display: flex;
   margin-top: 32px;
@@ -149,4 +142,28 @@
     width: 150px;
     margin: 0 auto auto;
   }
+}
+
+.my-profile__favourites {
+  box-sizing: border-box;
+  flex-grow: 1;
+  height: 942px;
+  border: 1px solid $lighter-purple;
+}
+
+.my-profile__favourites-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.my-profile__favourites-heading-text {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  text-transform: uppercase;
+  letter-spacing: 0.265rem;
+  margin-top: 14px;
+  margin-bottom: 0;
 }
