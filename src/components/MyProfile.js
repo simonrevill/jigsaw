@@ -1,6 +1,5 @@
 import React from 'react';
 
-import marySmithAvatar from '../image-library/users/marySmith/marySmith.jpg';
 import { ReactComponent as ConnectLine } from '../icons/connect-line.svg';
 import { ReactComponent as Dot } from '../icons/dot.svg';
 import { ReactComponent as ConnectStep } from '../icons/connect-step.svg';
@@ -11,7 +10,9 @@ import Button from './Button';
 
 import '../scss/bem/MyProfile.scss';
 
-const MyProfile = ({ isActive }) => {
+const MyProfile = ({ currentUserInfo, isActive }) => {
+
+  const { userName, firstName, lastName, age, aboutMe } = currentUserInfo;
 
   const handleButtonClick = () => console.log('Log out button clicked!');
 
@@ -20,7 +21,7 @@ const MyProfile = ({ isActive }) => {
       <div className="my-profile__card">
         <div className="my-profile__card-inner">
           <div className="my-profile__avatar">
-            <img src={marySmithAvatar} className="my-profile__avatar-img" alt="Mary Smith" />
+            <img src={require(`../image-library/users/${userName}/${userName}.jpg`)} className="my-profile__avatar-img" alt="Mary Smith" />
           </div>
           <div className="my-profile__bio">
             <div className="my-profile__bullets">
@@ -57,20 +58,19 @@ const MyProfile = ({ isActive }) => {
                 Name:
               </h2>
               <p className="my-profile__bio-text">
-                Mary Smith
+                {`${firstName} ${lastName}`}
               </p>
               <h2 className="my-profile__bio-heading my-profile__bio-heading--margin-top">
                 Age:
               </h2>
               <p className="my-profile__bio-text">
-                27
+                {`${age}`}
               </p>
               <h2 className="my-profile__bio-heading my-profile__bio-heading--margin-top">
                 About Me:
               </h2>
               <p className="my-profile__bio-text my-profile__bio-text--line-height">
-                My name is Mary, and I just love jigsaw puzzles! My favourite jigsaw
-                category is Architecture, but I also like ones with plants in them.
+                {`${aboutMe}`}
               </p>
             </div>
           </div>

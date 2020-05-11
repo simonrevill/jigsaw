@@ -6,8 +6,9 @@ let state = {
 		showCorrectPlacement: false,
 		defaultGridSize: 8
 	},
-	users: [
-		{
+	currentUser: 'marySmith',
+	registeredUsers: {
+		johnSmith: {
 			userName: 'johnSmith',
 			firstName: 'John',
 			lastName: 'Smith',
@@ -48,7 +49,7 @@ let state = {
 				}
 			]
 		},
-		{
+		marySmith: {
 			userName: 'marySmith',
 			firstName: 'Mary',
 			lastName: 'Smith',
@@ -94,8 +95,7 @@ let state = {
 				}
 			]
 		}
-	],
-	currentUser: 'marySmith',
+	},
 	imageLibrary: [
 		{
 			imageName: 'bird.jpg',

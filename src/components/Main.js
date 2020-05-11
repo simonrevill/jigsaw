@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { getCurrentUserInfo } from '../redux/selectors/users';
+
 import MyProfile from './MyProfile';
 import Library from './Library';
 import Upload from './Upload';
@@ -8,8 +11,9 @@ import Board from './Board';
 
 import '../scss/bem/Main.scss';
 
-const Main = ({ tabs }) => {
+const Main = ({ currentUserInfo, tabs }) => {
 
+  console.log(currentUserInfo);
   const tabStates = {
     MyProfile: tabs[0].isActive,
     Library: tabs[1].isActive,
@@ -20,7 +24,7 @@ const Main = ({ tabs }) => {
 
   return (
     <div className="main">
-      <MyProfile isActive={tabStates.MyProfile} />
+      <MyProfile currentUserInfo={currentUserInfo} isActive={tabStates.MyProfile} />
       <Library isActive={tabStates.Library} />
       <Upload isActive={tabStates.Upload} />
       <Settings isActive={tabStates.Settings} />
@@ -29,4 +33,12 @@ const Main = ({ tabs }) => {
   );
 };
 
-export default Main;
+const mapStateToProps = state => {
+  const currentUserInfo = getCurrentUserInfo(state);
+  return { currentUserInfo };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(Main);
