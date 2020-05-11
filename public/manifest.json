@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Jigsaw",
+  "name": "Jigsaw - A puzzle game made with React & Redux",
   "icons": [
     {
       "src": "favicon.ico",
