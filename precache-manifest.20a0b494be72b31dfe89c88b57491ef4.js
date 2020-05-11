@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3682583b2a522ce45f0b3d494ccd70bc",
+    "revision": "de0b30ea051b00d2055b4a75d2cd95cc",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "4ba170eb548996a0a740",
+    "revision": "48d15d401aab8f3e6868",
     "url": "/jigsaw/static/css/main.48aff9fc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/js/2.b2c96707.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4ba170eb548996a0a740",
-    "url": "/jigsaw/static/js/main.1ce9aabe.chunk.js"
+    "revision": "48d15d401aab8f3e6868",
+    "url": "/jigsaw/static/js/main.c738d98f.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
