@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/jigsaw/static/css/main.48aff9fc.chunk.css",
+    "main.js": "/jigsaw/static/js/main.c4a4183f.chunk.js",
+    "main.js.map": "/jigsaw/static/js/main.c4a4183f.chunk.js.map",
+    "runtime-main.js": "/jigsaw/static/js/runtime-main.49702581.js",
+    "runtime-main.js.map": "/jigsaw/static/js/runtime-main.49702581.js.map",
+    "static/js/2.b2c96707.chunk.js": "/jigsaw/static/js/2.b2c96707.chunk.js",
+    "static/js/2.b2c96707.chunk.js.map": "/jigsaw/static/js/2.b2c96707.chunk.js.map",
+    "index.html": "/jigsaw/index.html",
+    "precache-manifest.4d932bf81084e3dea93948a4da155b9c.js": "/jigsaw/precache-manifest.4d932bf81084e3dea93948a4da155b9c.js",
+    "service-worker.js": "/jigsaw/service-worker.js",
+    "static/css/main.48aff9fc.chunk.css.map": "/jigsaw/static/css/main.48aff9fc.chunk.css.map",
+    "static/js/2.b2c96707.chunk.js.LICENSE.txt": "/jigsaw/static/js/2.b2c96707.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/jigsaw/static/media/Comfortaa-Regular.c2488bfd.ttf",
+    "static/media/board.59f36286.svg": "/jigsaw/static/media/board.59f36286.svg",
+    "static/media/connect-line.5bfdd8b6.svg": "/jigsaw/static/media/connect-line.5bfdd8b6.svg",
+    "static/media/connect-separator.dcdbaf16.svg": "/jigsaw/static/media/connect-separator.dcdbaf16.svg",
+    "static/media/connect-step.961547a6.svg": "/jigsaw/static/media/connect-step.961547a6.svg",
+    "static/media/dot.c2790743.svg": "/jigsaw/static/media/dot.c2790743.svg",
+    "static/media/heart-solid.ade360e5.svg": "/jigsaw/static/media/heart-solid.ade360e5.svg",
+    "static/media/johnSmith.jpg": "/jigsaw/static/media/johnSmith.f04d44a8.jpg",
+    "static/media/library.4f902cd9.svg": "/jigsaw/static/media/library.4f902cd9.svg",
+    "static/media/marySmith.jpg": "/jigsaw/static/media/marySmith.edbf9c5f.jpg",
+    "static/media/menu-close.f0a47e1d.svg": "/jigsaw/static/media/menu-close.f0a47e1d.svg",
+    "static/media/menu-open.53e3a30e.svg": "/jigsaw/static/media/menu-open.53e3a30e.svg",
+    "static/media/settings.2191dfa2.svg": "/jigsaw/static/media/settings.2191dfa2.svg",
+    "static/media/upload-drag-and-drop.9b899c94.svg": "/jigsaw/static/media/upload-drag-and-drop.9b899c94.svg",
+    "static/media/upload.2e4df2eb.svg": "/jigsaw/static/media/upload.2e4df2eb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.49702581.js",
+    "static/js/2.b2c96707.chunk.js",
+    "static/css/main.48aff9fc.chunk.css",
+    "static/js/main.c4a4183f.chunk.js"
+  ]
+}
