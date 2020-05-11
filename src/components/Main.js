@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-import { getCurrentUserInfo } from '../redux/selectors/users';
-
 import MyProfile from './MyProfile';
 import Library from './Library';
 import Upload from './Upload';
@@ -33,12 +30,4 @@ const Main = ({ currentUserInfo, tabs }) => {
   );
 };
 
-const mapStateToProps = state => {
-  const currentUserInfo = getCurrentUserInfo(state);
-  return { currentUserInfo };
-}
-
-export default connect(
-  mapStateToProps,
-  null
-)(Main);
+export default Main;

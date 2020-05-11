@@ -10,7 +10,7 @@ import Tab from './Tab';
 
 import '../scss/bem/Sidebar.scss';
 
-const Sidebar = ({ menuIsOpen, tabs, toggleMenu }) => {
+const Sidebar = ({ currentUserInfo, menuIsOpen, tabs, toggleMenu }) => {
 
   const handleMenuBtnClick = () => {
     menuIsOpen ?
@@ -29,6 +29,7 @@ const Sidebar = ({ menuIsOpen, tabs, toggleMenu }) => {
         {
           tabs.map((tab, index) => (
             <Tab
+              currentUserInfo={currentUserInfo}
               title={tab.name}
               isActive={tab.isActive}
               key={index}
