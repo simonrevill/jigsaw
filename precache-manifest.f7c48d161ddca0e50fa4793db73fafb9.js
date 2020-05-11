@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eb56bf902fe9053fe2a2230be175bbd1",
+    "revision": "3682583b2a522ce45f0b3d494ccd70bc",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "11ffce1cc9aadc927fc7",
+    "revision": "4ba170eb548996a0a740",
     "url": "/jigsaw/static/css/main.48aff9fc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/js/2.b2c96707.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "11ffce1cc9aadc927fc7",
-    "url": "/jigsaw/static/js/main.c4a4183f.chunk.js"
+    "revision": "4ba170eb548996a0a740",
+    "url": "/jigsaw/static/js/main.1ce9aabe.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
@@ -32,28 +32,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/media/Comfortaa-Regular.c2488bfd.ttf"
   },
   {
-    "revision": "59f36286973a52baec718ba6e3f0cbb6",
-    "url": "/jigsaw/static/media/board.59f36286.svg"
+    "revision": "b8e5c13c40ddf908ad51f8310a5fb2a9",
+    "url": "/jigsaw/static/media/board.b8e5c13c.svg"
   },
   {
-    "revision": "5bfdd8b6d1952962fd354e164295ff25",
-    "url": "/jigsaw/static/media/connect-line.5bfdd8b6.svg"
+    "revision": "e010dd79bf4a265e45765bec4b513b61",
+    "url": "/jigsaw/static/media/connect-line.e010dd79.svg"
   },
   {
-    "revision": "dcdbaf161743e98a9ed16b2c639ebff5",
-    "url": "/jigsaw/static/media/connect-separator.dcdbaf16.svg"
+    "revision": "e976f5bab65757f165eb38fa32901a13",
+    "url": "/jigsaw/static/media/connect-separator.e976f5ba.svg"
   },
   {
-    "revision": "961547a6c00e8aaaf2e1c9e699fb36d3",
-    "url": "/jigsaw/static/media/connect-step.961547a6.svg"
+    "revision": "f21216a9f8603e7d62bbc4317c9b53be",
+    "url": "/jigsaw/static/media/connect-step.f21216a9.svg"
   },
   {
-    "revision": "c2790743147d77f63a4d084039cf83d2",
-    "url": "/jigsaw/static/media/dot.c2790743.svg"
+    "revision": "3921d5908108502375366dfd437a48d5",
+    "url": "/jigsaw/static/media/dot.3921d590.svg"
   },
   {
-    "revision": "ade360e5cdca403e8db7bcdbd4471305",
-    "url": "/jigsaw/static/media/heart-solid.ade360e5.svg"
+    "revision": "f9971033a9a3a359f6a512aaf051ba03",
+    "url": "/jigsaw/static/media/heart-solid.f9971033.svg"
   },
   {
     "revision": "f04d44a8c5698cb9cf59411d5930af82",
