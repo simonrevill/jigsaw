@@ -15,11 +15,12 @@ import { ReactComponent as BoardIcon } from '../icons/board.svg';
 
 import '../scss/bem/Tab.scss';
 
-const Tab = ({ currentUserInfo, title, isActive, activateTab }) => {
+const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, activateTab }) => {
 
   const { userName } = currentUserInfo;
 
   const handleClick = e => {
+    if (!menuIsOpen) return;
     const targetTab = e.currentTarget.title;
     switch (targetTab) {
       case 'My Profile':

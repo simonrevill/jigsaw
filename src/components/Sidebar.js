@@ -32,6 +32,7 @@ const Sidebar = ({ currentUserInfo, menuIsOpen, tabs, toggleMenu }) => {
               currentUserInfo={currentUserInfo}
               title={tab.name}
               isActive={tab.isActive}
+              menuIsOpen={menuIsOpen}
               key={index}
             />
           ))

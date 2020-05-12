@@ -46,6 +46,10 @@
     opacity: 1;
   }
 
+  .tab {
+    cursor: pointer;
+  }
+
   .tab,
   .tab--selected {
     right: 0;
