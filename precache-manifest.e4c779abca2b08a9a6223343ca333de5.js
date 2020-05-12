@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6faa5443d6cac472da8efa7dee53daa2",
+    "revision": "e1259692a52d965417afe810e228cfd5",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "142e8973ea04c85686ac",
-    "url": "/jigsaw/static/css/main.b2e262d8.chunk.css"
+    "revision": "bbd7b96eb9917ac9e832",
+    "url": "/jigsaw/static/css/main.e6ddcd85.chunk.css"
   },
   {
     "revision": "8c0bc40d7db556a325a5",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/js/2.b2c96707.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "142e8973ea04c85686ac",
-    "url": "/jigsaw/static/js/main.f937770b.chunk.js"
+    "revision": "bbd7b96eb9917ac9e832",
+    "url": "/jigsaw/static/js/main.4096e0f9.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
