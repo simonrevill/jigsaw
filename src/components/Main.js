@@ -10,7 +10,6 @@ import '../scss/bem/Main.scss';
 
 const Main = ({ currentUserInfo, tabs }) => {
 
-  console.log(currentUserInfo);
   const tabStates = {
     MyProfile: tabs[0].isActive,
     Library: tabs[1].isActive,
