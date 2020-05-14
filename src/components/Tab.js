@@ -1,12 +1,14 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import {
-  ACTIVATE_MY_PROFILE_TAB, ACTIVATE_LIBRARY_TAB,
-  ACTIVATE_UPLOAD_TAB, ACTIVATE_SETTINGS_TAB,
-  ACTIVATE_BOARD_TAB
-} from '../redux/constants/actionTypes';
-import activateTab from '../redux/actions/uiState/activateTab';
+// import {
+//   ACTIVATE_MY_PROFILE_TAB, ACTIVATE_LIBRARY_TAB,
+//   ACTIVATE_UPLOAD_TAB, ACTIVATE_SETTINGS_TAB,
+//   ACTIVATE_BOARD_TAB
+// } from '../redux/constants/actionTypes';
+// import activateTab from '../redux/actions/uiState/activateTab';
+
+import setActiveTab from '../redux/actions/uiState/setActiveTab';
 
 import { ReactComponent as LibraryIcon } from '../icons/library.svg';
 import { ReactComponent as UploadIcon } from '../icons/upload.svg';
@@ -15,32 +17,13 @@ import { ReactComponent as BoardIcon } from '../icons/board.svg';
 
 import '../scss/bem/Tab.scss';
 
-const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, activateTab }) => {
+const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, setActiveTab }) => {
 
   const { userName } = currentUserInfo;
 
   const handleClick = e => {
     if (!menuIsOpen) return;
-    const targetTab = e.currentTarget.title;
-    switch (targetTab) {
-      case 'My Profile':
-        activateTab(ACTIVATE_MY_PROFILE_TAB, targetTab);
-        break;
-      case 'Library':
-        activateTab(ACTIVATE_LIBRARY_TAB, targetTab);
-        break;
-      case 'Upload':
-        activateTab(ACTIVATE_UPLOAD_TAB, targetTab);
-        break;
-      case 'Settings':
-        activateTab(ACTIVATE_SETTINGS_TAB, targetTab);
-        break;
-      case 'Board':
-        activateTab(ACTIVATE_BOARD_TAB, targetTab);
-        break;
-      default:
-        return;
-    }
+    setActiveTab(e.currentTarget.title);
   };
 
   const renderTabIcon = title => {
@@ -73,5 +56,5 @@ const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, activateTab }) => {
 
 export default connect(
   null,
-  { activateTab }
+  { setActiveTab }
 )(Tab);
