@@ -19,7 +19,6 @@ const Slider = ({ sliderLabel, showSliderState, sliderState, onClick }) => {
           </div> :
           null
       }
-
     </div>
   );
 };
