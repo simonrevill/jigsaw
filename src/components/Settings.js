@@ -1,40 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../redux/selectors/defaultSettings';
-import {
-  SHOW_BACKGROUND_IMAGE_OFF, SHOW_BACKGROUND_IMAGE_ON,
-  SHOW_GRID_OVERLAY_OFF, SHOW_GRID_OVERLAY_ON,
-  SHOW_CORRECT_PLACEMENT_OFF, SHOW_CORRECT_PLACEMENT_ON
-} from '../redux/constants/actionTypes';
-import toggleShowBackgroundImage from '../redux/actions/defaultSettings/toggleShowBackgroundImage';
-import toggleShowGridOverlay from '../redux/actions/defaultSettings/toggleShowGridOverlay';
-import toggleShowCorrectPlacement from '../redux/actions/defaultSettings/toggleShowCorrectPlacement';
+import toggleBackgroundImage from '../redux/actions/defaultSettings/toggleBackgroundImage';
+import toggleGridOverlay from '../redux/actions/defaultSettings/toggleGridOverlay';
+import toggleCorrectPlacement from '../redux/actions/defaultSettings/toggleCorrectPlacement';
 
 import Slider from './Slider';
 
 import '../scss/bem/Settings.scss';
 
 const Settings = ({ isActive, showBackgroundImage, showGridOverlay,
-  showCorrectPlacement, toggleShowBackgroundImage,
-  toggleShowGridOverlay, toggleShowCorrectPlacement }) => {
+  showCorrectPlacement, toggleBackgroundImage,
+  toggleGridOverlay, toggleCorrectPlacement }) => {
 
-  const handleShowBackgroundImage = () => {
-    showBackgroundImage ?
-      toggleShowBackgroundImage(SHOW_BACKGROUND_IMAGE_OFF) :
-      toggleShowBackgroundImage(SHOW_BACKGROUND_IMAGE_ON);
-  };
+  const handleToggleBackgroundImage = () => toggleBackgroundImage();
 
-  const handleShowGridOverlay = () => {
-    showGridOverlay ?
-      toggleShowGridOverlay(SHOW_GRID_OVERLAY_OFF) :
-      toggleShowGridOverlay(SHOW_GRID_OVERLAY_ON);
-  };
+  const handleToggleGridOverlay = () => toggleGridOverlay();
 
-  const handleShowCorrectPlacement = () => {
-    showCorrectPlacement ?
-      toggleShowCorrectPlacement(SHOW_CORRECT_PLACEMENT_OFF) :
-      toggleShowCorrectPlacement(SHOW_CORRECT_PLACEMENT_ON);
-  };
+  const handleToggleCorrectPlacement = () => toggleCorrectPlacement();
 
   return (
     <div className={isActive ? "settings d-block" : "settings d-none"}>
@@ -44,19 +27,19 @@ const Settings = ({ isActive, showBackgroundImage, showGridOverlay,
           sliderLabel="Show background image"
           showSliderState={false}
           sliderState={showBackgroundImage}
-          onClick={handleShowBackgroundImage}
+          onClick={handleToggleBackgroundImage}
         />
         <Slider
           sliderLabel="Show grid overlay"
           showSliderState={false}
           sliderState={showGridOverlay}
-          onClick={handleShowGridOverlay}
+          onClick={handleToggleGridOverlay}
         />
         <Slider
           sliderLabel="Show correct placement"
           showSliderState={false}
           sliderState={showCorrectPlacement}
-          onClick={handleShowCorrectPlacement}
+          onClick={handleToggleCorrectPlacement}
         />
       </div>
     </div>
@@ -72,5 +55,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { toggleShowBackgroundImage, toggleShowGridOverlay, toggleShowCorrectPlacement }
+  { toggleBackgroundImage, toggleGridOverlay, toggleCorrectPlacement }
 )(Settings);

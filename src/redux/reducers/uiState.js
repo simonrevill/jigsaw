@@ -1,5 +1,5 @@
 import {
-  TOGGLE_MENU_CLOSED, TOGGLE_MENU_OPEN, SET_ACTIVE_TAB
+  TOGGLE_MENU, SET_ACTIVE_TAB
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -30,15 +30,10 @@ const initialState = {
 
 const uiState = (state = initialState, action) => {
   switch (action.type) {
-    case TOGGLE_MENU_CLOSED:
+    case TOGGLE_MENU:
       return {
         ...state,
-        menuIsOpen: false
-      };
-    case TOGGLE_MENU_OPEN:
-      return {
-        ...state,
-        menuIsOpen: true
+        menuIsOpen: !state.menuIsOpen
       };
     case SET_ACTIVE_TAB:
       return {
