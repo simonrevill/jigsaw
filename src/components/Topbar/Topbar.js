@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { getDarkMode } from '../redux/selectors/defaultSettings';
-import toggleDarkMode from '../redux/actions/defaultSettings/toggleDarkMode';
+import { getDarkMode } from '../../redux/selectors/defaultSettings';
+import toggleDarkMode from '../../redux/actions/defaultSettings/toggleDarkMode';
 
-import Slider from './Slider';
-import '../scss/bem/Topbar.scss';
+import Slider from '../Slider/Slider';
+import '../../scss/bem/Topbar.scss';
 
 const Topbar = ({ darkMode, toggleDarkMode }) => {
 

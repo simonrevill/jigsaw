@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { ReactComponent as ConnectLine } from '../icons/connect-line.svg';
-import { ReactComponent as Dot } from '../icons/dot.svg';
-import { ReactComponent as ConnectStep } from '../icons/connect-step.svg';
-import { ReactComponent as ConnectSeparator } from '../icons/connect-separator.svg';
+import { ReactComponent as ConnectLine } from '../../icons/connect-line.svg';
+import { ReactComponent as Dot } from '../../icons/dot.svg';
+import { ReactComponent as ConnectStep } from '../../icons/connect-step.svg';
+import { ReactComponent as ConnectSeparator } from '../../icons/connect-separator.svg';
 
-import Button from './Button';
+import Button from '../Button/Button';
 
-import '../scss/bem/UserCard.scss';
+import '../../scss/bem/UserCard.scss';
 
 const UserCard = ({ currentUserInfo }) => {
 
@@ -19,7 +19,7 @@ const UserCard = ({ currentUserInfo }) => {
     <div className="my-profile__card">
       <div className="my-profile__card-inner">
         <div className="my-profile__avatar">
-          <img src={require(`../image-library/users/${userName}/${userName}.jpg`)} className="my-profile__avatar-img" alt="Mary Smith" />
+          <img src={require(`../../image-library/users/${userName}/${userName}.jpg`)} className="my-profile__avatar-img" alt="Mary Smith" />
         </div>
         <div className="my-profile__bio">
           <div className="my-profile__bullets">

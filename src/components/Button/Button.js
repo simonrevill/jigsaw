@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../scss/bem/Button.scss';
+import '../../scss/bem/Button.scss';
 
 const Button = ({ buttonText, onClick }) => {
   return (

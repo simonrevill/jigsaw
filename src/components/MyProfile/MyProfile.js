@@ -1,9 +1,9 @@
 import React from 'react';
 
-import UserCard from './UserCard';
-import FavouriteImages from './FavouriteImages';
+import UserCard from '../UserCard/UserCard';
+import FavouriteImages from '../FavouriteImages/FavouriteImages';
 
-import '../scss/bem/MyProfile.scss';
+import '../../scss/bem/MyProfile.scss';
 
 const MyProfile = ({ currentUserInfo, isActive }) => {
 

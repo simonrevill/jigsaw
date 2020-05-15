@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { getMenuIsOpen, getTabs } from '../redux/selectors/uiState';
-import { getCurrentUserInfo } from '../redux/selectors/users';
+import { getMenuIsOpen, getTabs } from '../../redux/selectors/uiState';
+import { getCurrentUserInfo } from '../../redux/selectors/users';
 
-import Topbar from './Topbar';
-import Sidebar from './Sidebar';
-import Main from './Main';
+import Topbar from '../Topbar/Topbar';
+import Sidebar from '../Sidebar/Sidebar';
+import Main from '../Main/Main';
 
-import '../scss/bem/App.scss';
+import '../../scss/bem/App.scss';
 
 const App = ({ currentUserInfo, menuIsOpen, tabs }) => {
   return (

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import MyProfile from './MyProfile';
-import Library from './Library';
-import Upload from './Upload';
-import Settings from './Settings';
-import Board from './Board';
+import MyProfile from '../MyProfile/MyProfile';
+import Library from '../Library/Library';
+import Upload from '../Upload/Upload';
+import Settings from '../Settings/Settings';
+import Board from '../Board/Board';
 
-import '../scss/bem/Main.scss';
+import '../../scss/bem/Main.scss';
 
 const Main = ({ currentUserInfo, tabs }) => {
   return (

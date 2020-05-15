@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../redux/selectors/defaultSettings';
-import toggleBackgroundImage from '../redux/actions/defaultSettings/toggleBackgroundImage';
-import toggleGridOverlay from '../redux/actions/defaultSettings/toggleGridOverlay';
-import toggleCorrectPlacement from '../redux/actions/defaultSettings/toggleCorrectPlacement';
+import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../../redux/selectors/defaultSettings';
+import toggleBackgroundImage from '../../redux/actions/defaultSettings/toggleBackgroundImage';
+import toggleGridOverlay from '../../redux/actions/defaultSettings/toggleGridOverlay';
+import toggleCorrectPlacement from '../../redux/actions/defaultSettings/toggleCorrectPlacement';
 
-import Slider from './Slider';
+import Slider from '../Slider/Slider';
 
-import '../scss/bem/Settings.scss';
+import '../../scss/bem/Settings.scss';
 
 const Settings = ({ isActive, showBackgroundImage, showGridOverlay,
   showCorrectPlacement, toggleBackgroundImage,

@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import toggleMenu from '../redux/actions/uiState/toggleMenu';
+import toggleMenu from '../../redux/actions/uiState/toggleMenu';
 
-import { ReactComponent as MenuOpenButton } from '../icons/menu-open.svg';
-import { ReactComponent as MenuCloseButton } from '../icons/menu-close.svg';
+import { ReactComponent as MenuOpenButton } from '../../icons/menu-open.svg';
+import { ReactComponent as MenuCloseButton } from '../../icons/menu-close.svg';
 
-import Tab from './Tab';
+import Tab from '../Tab/Tab';
 
-import '../scss/bem/Sidebar.scss';
+import '../../scss/bem/Sidebar.scss';
 
 const Sidebar = ({ currentUserInfo, menuIsOpen, tabs, toggleMenu }) => {
 

@@ -8,14 +8,14 @@ import { connect } from 'react-redux';
 // } from '../redux/constants/actionTypes';
 // import activateTab from '../redux/actions/uiState/activateTab';
 
-import setActiveTab from '../redux/actions/uiState/setActiveTab';
+import setActiveTab from '../../redux/actions/uiState/setActiveTab';
 
-import { ReactComponent as LibraryIcon } from '../icons/library.svg';
-import { ReactComponent as UploadIcon } from '../icons/upload.svg';
-import { ReactComponent as SettingsIcon } from '../icons/settings.svg';
-import { ReactComponent as BoardIcon } from '../icons/board.svg';
+import { ReactComponent as LibraryIcon } from '../../icons/library.svg';
+import { ReactComponent as UploadIcon } from '../../icons/upload.svg';
+import { ReactComponent as SettingsIcon } from '../../icons/settings.svg';
+import { ReactComponent as BoardIcon } from '../../icons/board.svg';
 
-import '../scss/bem/Tab.scss';
+import '../../scss/bem/Tab.scss';
 
 const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, setActiveTab }) => {
 
@@ -45,7 +45,7 @@ const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, setActiveTab }) => 
     <div className={isActive ? 'tab tab--selected' : 'tab'} onClick={handleClick} title={title}>
       {
         title === "My Profile" ?
-          <img src={require(`../image-library/users/${userName}/${userName}.jpg`)} className="avatar" alt="Mary Smith" /> :
+          <img src={require(`../../image-library/users/${userName}/${userName}.jpg`)} className="avatar" alt="Mary Smith" /> :
           null
       }
       {renderTabIcon(title)}

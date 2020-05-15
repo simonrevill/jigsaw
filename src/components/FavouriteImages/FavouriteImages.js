@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ReactComponent as HeartSolid } from '../icons/heart-solid.svg';
+import { ReactComponent as HeartSolid } from '../../icons/heart-solid.svg';
 
-import '../scss/bem/FavouriteImages.scss';
+import '../../scss/bem/FavouriteImages.scss';
 
 const FavouriteImages = () => {
   return (
