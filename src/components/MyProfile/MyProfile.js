@@ -1,7 +1,7 @@
 import React from 'react';
 
 import UserCard from '../UserCard/UserCard';
-import FavouriteImages from '../FavouriteImages/FavouriteImages';
+import Favourites from '../Favourites/Favourites';
 
 import '../../scss/bem/MyProfile.scss';
 
@@ -12,7 +12,9 @@ const MyProfile = ({ currentUserInfo, isActive }) => {
       <UserCard
         currentUserInfo={currentUserInfo}
       />
-      <FavouriteImages />
+      <Favourites
+        currentUserInfo={currentUserInfo}
+      />
     </div>
   );
 };

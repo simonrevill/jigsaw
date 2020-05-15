@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.my-profile__card {
+.user-card {
   box-sizing: border-box;
   width: 363px;
   height: 942px;
@@ -10,94 +10,94 @@
   padding: 35px;
 }
 
-.my-profile__card-inner {
+.user-card__inner {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.my-profile__avatar {
+.user-card__avatar {
   display: flex;
   justify-content: center;
 }
 
-.my-profile__avatar-img {
+.user-card__avatar-img {
   display: block;
   border-radius: 189px;
   // border: 2px solid $lighter-purple;
 }
 
-.my-profile__bio {
+.user-card__bio {
   display: flex;
   margin-top: 32px;
 }
 
-.my-profile__bullets {
+.user-card__bullets {
   position: relative;
   width: 38px;
   // border: 1px solid pink;
 }
 
-.my-profile__bullets-connect-line {
+.user-card__bullets-connect-line {
   position: absolute;
   top: 13px;
 }
 
-.my-profile__bullets-dot {
+.user-card__bullets-dot {
   box-shadow: 0px 0px 9px rgba(255, 248, 248, 0.54);
   border-radius: 100%;
   position: absolute;
   z-index: 1;
 }
 
-.my-profile__bullets-dot--1,
-.my-profile__bullets-dot--2,
-.my-profile__bullets-dot--3 {
+.user-card__bullets-dot--1,
+.user-card__bullets-dot--2,
+.user-card__bullets-dot--3 {
   left: -6px;
 }
 
-.my-profile__bullets-dot--2 {
+.user-card__bullets-dot--2 {
   top: 88px;
 }
 
-.my-profile__bullets-dot--3 {
+.user-card__bullets-dot--3 {
   top: 176px;
 }
 
-.my-profile__connect-step {
+.user-card__connect-step {
   position: absolute;
 }
 
-.my-profile__connect-step--1 {
+.user-card__connect-step--1 {
   top: 38px;
 }
 
-.my-profile__connect-step--2 {
+.user-card__connect-step--2 {
   top: 126px;
 }
 
-.my-profile__connect-step--3 {
+.user-card__connect-step--3 {
   top: 215px;
 }
 
-.my-profile__connect-separator {
+.user-card__connect-separator {
   position: absolute;
 }
 
-.my-profile__connect-separator--1 {
+.user-card__connect-separator--1 {
   top: 67px;
 }
 
-.my-profile__connect-separator--2 {
+.user-card__connect-separator--2 {
   top: 153px;
 }
 
-.my-profile__bio-container {
+.user-card__bio-container {
   width: 255px;
   // border: 1px solid pink;
 }
 
-.my-profile__bio-heading {
+.user-card__bio-heading {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
   color: $primary-font-color;
@@ -106,11 +106,11 @@
   margin: 0;
 }
 
-.my-profile__bio-heading--margin-top {
+.user-card__bio-heading--margin-top {
   margin-top: 44px;
 }
 
-.my-profile__bio-text {
+.user-card__bio-text {
   font-family: $primary-font-regular;
   font-size: $secondary-font-size;
   color: $primary-font-color;
@@ -118,12 +118,12 @@
   margin: 20px 0 0 0;
 }
 
-.my-profile__bio-text--line-height {
+.user-card__bio-text--line-height {
   line-height: 1.8;
   margin: 15px 0 0 0;
 }
 
-.my-profile__log-out {
+.user-card__log-out {
   width: 100%;
   position: absolute;
   bottom: 140px;
