@@ -62,7 +62,19 @@ const initialState = {
         imageLibrary: [
           0,
           2,
-          3
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
         ],
         userImageLibrary: [
           'c68fcb9c-0bae-4bc1-b183-0118deb60f37',
