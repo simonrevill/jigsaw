@@ -17,16 +17,24 @@ const myAWSConfig = new AWS.Config({
 
 AWS.config = myAWSConfig;
 
+const bucketName = 'jigsaw-image-library';
+
 const s3 = new AWS.S3({
-  apiVersion: '2006-03-01'
+  apiVersion: '2006-03-01',
+  params: { Bucket: bucketName }
 });
 
 s3.config.update({ credentials: AWS.config.credentials });
 
-s3.listBuckets((err, data) => {
-  err ?
-    console.log('Error: ', err) :
-    console.log('Success: ', data.Buckets);
+s3.listObjectsV2(function (err, data) {
+  if (err) console.log('There was an error listing your albums: ' + err.message);
+
+  console.log(this);
+  const href = this.request.httpRequest.endpoint.href;
+  const bucketUrl = href + bucketName + '/';
+  const imagesFolderUrl = bucketUrl + 'images/';
+  console.log(imagesFolderUrl);
+  console.log(data);
 });
 
 ReactDOM.render(

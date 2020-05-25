@@ -9,8 +9,7 @@ const ImageGallery = ({ currentUserInfo }) => {
   const [...favourites] = currentUserInfo.favourites.imageLibrary;
   const [...userFavourites] = currentUserInfo.favourites.userImageLibrary;
 
-  // console.log(favourites, userFavourites);
-  // console.log(favourites.length + userFavourites.length);
+  const totalFavouriteImages = favourites.length + userFavourites.length;
 
   return (
     <div className="image-gallery">
@@ -19,7 +18,7 @@ const ImageGallery = ({ currentUserInfo }) => {
           {userFavourites.map(id => <Image key={id} imageSrc={id} />)}
           {favourites.map(id => <Image key={id} imageSrc={id} />)}
         </div>
-        <Scroller />
+        {totalFavouriteImages <= 16 ? null : <Scroller />}
       </div>
     </div>
   );
