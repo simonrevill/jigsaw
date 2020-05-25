@@ -4,11 +4,16 @@ import ButtonSmall from '../Button/ButtonSmall';
 
 import '../../scss/bem/Image.scss';
 
-const backgroundImageStyles = {
-  backgroundImage: `url("https://unsplash.it/190")`
-};
 
 const Image = ({ imageSrc }) => {
+
+  const backgroundImageStyles = {
+    backgroundImage: `url("https://unsplash.it/400")`,
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    transformOrigin: 'preserve-3d',
+    transform: `translateZ(75px) perspective(200px)`
+  };
 
   const handleClick = () => console.log('Small button clicked!');
 

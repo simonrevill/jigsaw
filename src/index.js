@@ -7,23 +7,21 @@ import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import './scss/index.scss';
 
-const myCredentials = new AWS.CognitoIdentityCredentials({
+const myAWSCredentials = new AWS.CognitoIdentityCredentials({
   IdentityPoolId: process.env.REACT_APP_AWS_IDENTITY_POOL_ID
 });
 
-const myConfig = new AWS.Config({
-  credentials: myCredentials, region: process.env.REACT_APP_AWS_REGION
+const myAWSConfig = new AWS.Config({
+  credentials: myAWSCredentials, region: process.env.REACT_APP_AWS_REGION
 });
 
-AWS.config = myConfig;
-
-const bucketName = 'jigsaw-image-library';
+AWS.config = myAWSConfig;
 
 const s3 = new AWS.S3({
-  apiVersion: '2006-03-01',
-  params: { Bucket: bucketName },
-  region: process.env.REACT_APP_AWS_REGION
+  apiVersion: '2006-03-01'
 });
+
+s3.config.update({ credentials: AWS.config.credentials });
 
 s3.listBuckets((err, data) => {
   err ?
