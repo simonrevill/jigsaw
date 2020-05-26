@@ -9,7 +9,7 @@ let state = {
 	currentUser: 'marySmith',
 	registeredUsers: {
 		johnSmith: {
-			userName: 'johnSmith',
+			userId: 'f1b557c6-fb19-4ceb-99da-08acf0b69f45',
 			firstName: 'John',
 			lastName: 'Smith',
 			age: 42,
@@ -50,7 +50,7 @@ let state = {
 			]
 		},
 		marySmith: {
-			userName: 'marySmith',
+			userId: 'f3a0f858-57b4-4420-81fa-1f0acdec979d',
 			firstName: 'Mary',
 			lastName: 'Smith',
 			age: 27,
