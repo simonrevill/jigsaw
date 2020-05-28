@@ -1,15 +1,20 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { getDarkMode } from '../../redux/selectors/defaultSettings';
-import toggleDarkMode from '../../redux/actions/defaultSettings/toggleDarkMode';
+import { getUserPreferences } from '../../redux/selectors/users';
+import toggleDarkMode from '../../redux/actions/users/toggleDarkMode';
 
 import Slider from '../Slider/Slider';
 import '../../scss/bem/Topbar.scss';
 
 const Topbar = ({ darkMode, toggleDarkMode }) => {
 
-  const handleClick = () => toggleDarkMode();
+  const updateDb = () => console.log('db update...');
+
+  const handleClick = () => {
+    toggleDarkMode();
+    updateDb();
+  };
 
   return (
     <div className="topbar">
@@ -24,7 +29,8 @@ const Topbar = ({ darkMode, toggleDarkMode }) => {
 };
 
 const mapStateToProps = state => {
-  const darkMode = getDarkMode(state);
+  const userPreferences = getUserPreferences(state);
+  const darkMode = userPreferences.darkMode;
   return { darkMode };
 };
 

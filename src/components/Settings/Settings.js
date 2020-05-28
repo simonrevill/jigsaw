@@ -1,17 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../../redux/selectors/defaultSettings';
-import { getUserShowBackgroundImage, getUserShowGridOverlay, getUserShowCorrectPlacement } from '../../redux/selectors/users';
-import toggleBackgroundImage from '../../redux/actions/defaultSettings/toggleBackgroundImage';
-import toggleGridOverlay from '../../redux/actions/defaultSettings/toggleGridOverlay';
-import toggleCorrectPlacement from '../../redux/actions/defaultSettings/toggleCorrectPlacement';
+import { getUserPreferences } from '../../redux/selectors/users';
+import toggleBackgroundImage from '../../redux/actions/users/toggleBackgroundImage';
+import toggleGridOverlay from '../../redux/actions/users/toggleGridOverlay';
+import toggleCorrectPlacement from '../../redux/actions/users/toggleCorrectPlacement';
 
 import Slider from '../Slider/Slider';
 
 import '../../scss/bem/Settings.scss';
 
-const Settings = ({ currentUserInfo, isActive, showBackgroundImage, showGridOverlay,
-  showCorrectPlacement, toggleBackgroundImage,
+const Settings = ({ currentUserInfo, isActive, showBackgroundImage, showGridOverlay, showCorrectPlacement, toggleBackgroundImage,
   toggleGridOverlay, toggleCorrectPlacement }) => {
 
   const handleToggleBackgroundImage = () => toggleBackgroundImage();
@@ -47,22 +45,11 @@ const Settings = ({ currentUserInfo, isActive, showBackgroundImage, showGridOver
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
-
-  const { userName } = ownProps.currentUserInfo;
-  let showBackgroundImage;
-  let showGridOverlay;
-  let showCorrectPlacement;
-
-  if (userName === 'blankJigsawUser') {
-    showBackgroundImage = getShowBackgroundImage(state);
-    showGridOverlay = getShowGridOverlay(state);
-    showCorrectPlacement = getShowCorrectPlacement(state);
-  } else {
-    showBackgroundImage = getUserShowBackgroundImage(state);
-    showGridOverlay = getUserShowGridOverlay(state);
-    showCorrectPlacement = getUserShowCorrectPlacement(state);
-  }
+const mapStateToProps = state => {
+  const userPreferences = getUserPreferences(state);
+  const showBackgroundImage = userPreferences.difficulty.showBackgroundImage;
+  const showGridOverlay = userPreferences.difficulty.showGridOverlay;
+  const showCorrectPlacement = userPreferences.difficulty.showCorrectPlacement;
 
   return { showBackgroundImage, showGridOverlay, showCorrectPlacement };
 };
