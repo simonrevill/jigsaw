@@ -14,16 +14,21 @@ import { ReactComponent as LibraryIcon } from '../../icons/library.svg';
 import { ReactComponent as UploadIcon } from '../../icons/upload.svg';
 import { ReactComponent as SettingsIcon } from '../../icons/settings.svg';
 import { ReactComponent as BoardIcon } from '../../icons/board.svg';
+import { ReactComponent as BlankJigsawUserIcon } from '../../image-library/users/blankJigsawUser/blankJigsawUser.svg';
 
 import '../../scss/bem/Tab.scss';
 
 const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, setActiveTab }) => {
-
   const { userName } = currentUserInfo;
 
   const handleClick = e => {
     if (!menuIsOpen) return;
     setActiveTab(e.currentTarget.title);
+  };
+
+  const renderProfileAvatar = userName => {
+    if (userName === 'blankJigsawUser') return <BlankJigsawUserIcon className="tab__icon" alt={`${userName}`} />;
+    return <img src={require(`../../image-library/users/${userName}/${userName}.jpg`)} className="avatar" alt={`${userName}`} />
   };
 
   const renderTabIcon = title => {
@@ -45,7 +50,7 @@ const Tab = ({ currentUserInfo, title, isActive, menuIsOpen, setActiveTab }) => 
     <div className={isActive ? 'tab tab--selected' : 'tab'} onClick={handleClick} title={title}>
       {
         title === "My Profile" ?
-          <img src={require(`../../image-library/users/${userName}/${userName}.jpg`)} className="avatar" alt="Mary Smith" /> :
+          renderProfileAvatar(userName) :
           null
       }
       {renderTabIcon(title)}

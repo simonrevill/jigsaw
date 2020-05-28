@@ -7,3 +7,6 @@ export const TOGGLE_CORRECT_PLACEMENT = 'TOGGLE_CORRECT_PLACEMENT';
 // uiState:
 export const TOGGLE_MENU = 'TOGGLE_MENU';
 export const SET_ACTIVE_TAB = 'SET_ACTIVE_TAB';
+
+// users:
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';

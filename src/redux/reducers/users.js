@@ -1,110 +1,41 @@
+import { SET_CURRENT_USER } from '../constants/actionTypes';
+
 const initialState = {
-  currentUser: 'marySmith',
-  registeredUsers: {
-    johnSmith: {
-      userName: 'johnSmith',
-      firstName: 'John',
-      lastName: 'Smith',
-      age: 42,
-      aboutMe: 'My name is John, and I\'m pretty boring.',
-      email: 'jsmith2000@yahoo.com',
-      isLoggedIn: false,
-      userPreferences: {
-        darkMode: false,
-        difficulty: {
-          showBackgroundImage: true,
-          showGridOverlay: false,
-          showCorrectPlacement: true
-        },
-      },
-      favourites: {
-        imageLibrary: [
-          1,
-          2
-        ],
-        userImageLibrary: [
-          '6d1fe2e1-e2b3-4f59-a25e-a92af4658c7d',
-          '1cae9141-a191-446b-8d4e-0282041817e1'
-        ]
-      },
-      userImageLibrary: [
-        {
-          imageName: 'beetles.jpg',
-          id: '6d1fe2e1-e2b3-4f59-a25e-a92af4658c7d'
-        },
-        {
-          imageName: 'castle.jpg',
-          id: '1cae9141-a191-446b-8d4e-0282041817e1'
-        },
-        {
-          imageName: 'yellow-flowers-in-a-field.jpg',
-          id: '55f5362e-24ac-42f6-a8c4-a6e16c6ef7fa'
-        }
-      ]
+  currentUser: '',
+  currentUserInfo: {
+    aboutMe: '',
+    age: undefined,
+    email: '',
+    favourites: {
+      imageLibrary: [],
+      userImageLibrary: []
     },
-    marySmith: {
-      userName: 'marySmith',
-      firstName: 'Mary',
-      lastName: 'Smith',
-      age: 27,
-      aboutMe: 'My name is Mary, and I just love jigsaw puzzles! My favourite jigsaw category is Architecture, but I also like ones with plants in them.',
-      email: 'mary_smith@gmail.com',
-      isLoggedIn: true,
-      userPreferences: {
-        darkMode: true,
-        difficulty: {
-          showBackgroundImage: false,
-          showGridOverlay: false,
-          showCorrectPlacement: true
-        },
+    firstName: '',
+    lastName: '',
+    userId: '',
+    userImageLibrary: [],
+    userName: 'blankJigsawUser',
+    userPreferences: {
+      darkMode: true,
+      difficulty: {
+        showBackgroundImage: false,
+        showGridOverlay: false,
+        showCorrectPlacement: false
       },
-      favourites: {
-        imageLibrary: [
-          0,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15
-        ],
-        userImageLibrary: [
-          'c68fcb9c-0bae-4bc1-b183-0118deb60f37',
-          '63ad8bfb-90b5-4eeb-a944-4b1882d5ddb1'
-        ]
-      },
-      userImageLibrary: [
-        {
-          imageName: 'beach-stones.jpg',
-          id: '73dc9e0b-5449-43fc-a547-fc18fce922a2'
-        },
-        {
-          imageName: 'meteorite.jpg',
-          id: 'ea2a34c3-17bc-416b-a5ad-56ab2a583728'
-        },
-        {
-          imageName: 'the-graveyard.jpg',
-          id: 'c68fcb9c-0bae-4bc1-b183-0118deb60f37'
-        },
-        {
-          imageName: 'basketball.jpg',
-          id: '63ad8bfb-90b5-4eeb-a944-4b1882d5ddb1'
-        }
-      ]
     }
   }
 };
 
 const users = (state = initialState, action) => {
   switch (action.type) {
+    case SET_CURRENT_USER:
+      return {
+        ...state,
+        currentUser: action.currentUserInfo.userId,
+        currentUserInfo: {
+          ...action.currentUserInfo
+        }
+      };
     default:
       return state;
   }

@@ -4,6 +4,7 @@ import { ReactComponent as ConnectLine } from '../../icons/connect-line.svg';
 import { ReactComponent as Dot } from '../../icons/dot.svg';
 import { ReactComponent as ConnectStep } from '../../icons/connect-step.svg';
 import { ReactComponent as ConnectSeparator } from '../../icons/connect-separator.svg';
+import { ReactComponent as BlankJigsawUserIcon } from '../../image-library/users/blankJigsawUser/blankJigsawUser.svg';
 
 import Button from '../Button/Button';
 
@@ -13,13 +14,18 @@ const UserCard = ({ currentUserInfo }) => {
 
   const { userName, firstName, lastName, age, aboutMe } = currentUserInfo;
 
+  const renderProfileAvatar = userName => {
+    if (userName === 'blankJigsawUser') return <BlankJigsawUserIcon className="user-card__avatar-img" alt={`${userName}`} />;
+    return <img src={require(`../../image-library/users/${userName}/${userName}.jpg`)} className="user-card__avatar-img" alt={`${userName}`} />
+  };
+
   const handleButtonClick = () => console.log('Log out button clicked!');
 
   return (
     <div className="user-card">
       <div className="user-card__inner">
         <div className="user-card__avatar">
-          <img src={require(`../../image-library/users/${userName}/${userName}.jpg`)} className="user-card__avatar-img" alt="Mary Smith" />
+          {renderProfileAvatar(userName)}
         </div>
         <div className="user-card__bio">
           <div className="user-card__bullets">
