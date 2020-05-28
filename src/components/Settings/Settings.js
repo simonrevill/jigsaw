@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getShowBackgroundImage, getShowGridOverlay, getShowCorrectPlacement } from '../../redux/selectors/defaultSettings';
+import { getUserShowBackgroundImage, getUserShowGridOverlay, getUserShowCorrectPlacement } from '../../redux/selectors/users';
 import toggleBackgroundImage from '../../redux/actions/defaultSettings/toggleBackgroundImage';
 import toggleGridOverlay from '../../redux/actions/defaultSettings/toggleGridOverlay';
 import toggleCorrectPlacement from '../../redux/actions/defaultSettings/toggleCorrectPlacement';
@@ -9,7 +10,7 @@ import Slider from '../Slider/Slider';
 
 import '../../scss/bem/Settings.scss';
 
-const Settings = ({ isActive, showBackgroundImage, showGridOverlay,
+const Settings = ({ currentUserInfo, isActive, showBackgroundImage, showGridOverlay,
   showCorrectPlacement, toggleBackgroundImage,
   toggleGridOverlay, toggleCorrectPlacement }) => {
 
@@ -46,12 +47,27 @@ const Settings = ({ isActive, showBackgroundImage, showGridOverlay,
   );
 };
 
-const mapStateToProps = state => {
-  const showBackgroundImage = getShowBackgroundImage(state);
-  const showGridOverlay = getShowGridOverlay(state);
-  const showCorrectPlacement = getShowCorrectPlacement(state);
+const mapStateToProps = (state, ownProps) => {
+
+  const { userName } = ownProps.currentUserInfo;
+  let showBackgroundImage;
+  let showGridOverlay;
+  let showCorrectPlacement;
+
+  if (userName === 'blankJigsawUser') {
+    showBackgroundImage = getShowBackgroundImage(state);
+    showGridOverlay = getShowGridOverlay(state);
+    showCorrectPlacement = getShowCorrectPlacement(state);
+  } else {
+    showBackgroundImage = getUserShowBackgroundImage(state);
+    showGridOverlay = getUserShowGridOverlay(state);
+    showCorrectPlacement = getUserShowCorrectPlacement(state);
+  }
+
   return { showBackgroundImage, showGridOverlay, showCorrectPlacement };
 };
+
+const mapDispatchToProps = () => { };
 
 export default connect(
   mapStateToProps,

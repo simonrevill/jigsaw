@@ -14,7 +14,7 @@ const Main = ({ currentUserInfo, tabs }) => {
       <MyProfile currentUserInfo={currentUserInfo} isActive={tabs[0].isActive} />
       <Library isActive={tabs[1].isActive} />
       <Upload isActive={tabs[2].isActive} />
-      <Settings isActive={tabs[3].isActive} />
+      <Settings currentUserInfo={currentUserInfo} isActive={tabs[3].isActive} />
       <Board isActive={tabs[4].isActive} />
     </div>
   );

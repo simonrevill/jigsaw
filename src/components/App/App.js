@@ -29,7 +29,7 @@ AWS.config = config;
 
 // DynamoDB database:
 
-const userId = 'f1b557c6-fb19-4ceb-99da-08acf0b69f45';
+const userId = 'f3a0f858-57b4-4420-81fa-1f0acdec979d';
 const tableName = 'registeredUsers';
 const docClient = new AWS.DynamoDB.DocumentClient();
 const params = {
