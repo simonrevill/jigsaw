@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../scss/bem/Slider.scss';
+import '../../scss/bem/Slider.scss';
 
 const Slider = ({ sliderLabel, showSliderState, sliderState, onClick }) => {
 
@@ -19,7 +19,6 @@ const Slider = ({ sliderLabel, showSliderState, sliderState, onClick }) => {
           </div> :
           null
       }
-
     </div>
   );
 };

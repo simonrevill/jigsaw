@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ReactComponent as UploadDragAndDropIcon } from '../icons/upload-drag-and-drop.svg';
+import { ReactComponent as UploadDragAndDropIcon } from '../../icons/upload-drag-and-drop.svg';
 
-import Button from './Button';
+import Button from '../Button/Button';
 
-import '../scss/bem/Upload.scss';
+import '../../scss/bem/Upload.scss';
 
 const Upload = ({ isActive }) => {
 

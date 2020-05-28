@@ -1,0 +1,35 @@
+@import '../variables.scss';
+
+.button--small {
+  padding: 7px 14px;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color $medium;
+}
+
+.button__text--small {
+  font-family: $primary-font-bold;
+  font-size: $secondary-font-size;
+  color: $primary-font-color;
+  text-transform: uppercase;
+  letter-spacing: 0.265rem;
+  text-align: center;
+  transition: color $medium;
+}
+
+.button--small:hover {
+  background-color: $white;
+
+  .button__text--small {
+    color: $black;
+  }
+}
+
+.button--favourites {
+  position: absolute;
+  top: calc(50% + 5px);
+  left: calc(50% + 5px);
+  transform: translate(-50%, -50%);
+}

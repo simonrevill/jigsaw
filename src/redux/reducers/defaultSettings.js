@@ -1,6 +1,5 @@
 import {
-  DARK_MODE_OFF, DARK_MODE_ON, SHOW_BACKGROUND_IMAGE_OFF, SHOW_BACKGROUND_IMAGE_ON,
-  SHOW_GRID_OVERLAY_OFF, SHOW_GRID_OVERLAY_ON, SHOW_CORRECT_PLACEMENT_OFF, SHOW_CORRECT_PLACEMENT_ON
+  TOGGLE_DARK_MODE, TOGGLE_BACKGROUND_IMAGE, TOGGLE_GRID_OVERLAY, TOGGLE_CORRECT_PLACEMENT
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -13,45 +12,25 @@ const initialState = {
 
 const defaultSettings = (state = initialState, action) => {
   switch (action.type) {
-    case DARK_MODE_OFF:
+    case TOGGLE_DARK_MODE:
       return {
         ...state,
-        darkMode: false
+        darkMode: !state.darkMode
       };
-    case DARK_MODE_ON:
+    case TOGGLE_BACKGROUND_IMAGE:
       return {
         ...state,
-        darkMode: true
+        showBackgroundImage: !state.showBackgroundImage
       };
-    case SHOW_BACKGROUND_IMAGE_OFF:
+    case TOGGLE_GRID_OVERLAY:
       return {
         ...state,
-        showBackgroundImage: false
+        showGridOverlay: !state.showGridOverlay
       };
-    case SHOW_BACKGROUND_IMAGE_ON:
+    case TOGGLE_CORRECT_PLACEMENT:
       return {
         ...state,
-        showBackgroundImage: true
-      };
-    case SHOW_GRID_OVERLAY_OFF:
-      return {
-        ...state,
-        showGridOverlay: false
-      };
-    case SHOW_GRID_OVERLAY_ON:
-      return {
-        ...state,
-        showGridOverlay: true
-      };
-    case SHOW_CORRECT_PLACEMENT_OFF:
-      return {
-        ...state,
-        showCorrectPlacement: false
-      };
-    case SHOW_CORRECT_PLACEMENT_ON:
-      return {
-        ...state,
-        showCorrectPlacement: true
+        showCorrectPlacement: !state.showCorrectPlacement
       };
     default:
       return state;

@@ -9,21 +9,9 @@ let state = {
 	currentUser: 'marySmith',
 	registeredUsers: {
 		johnSmith: {
-			userName: 'johnSmith',
-			firstName: 'John',
-			lastName: 'Smith',
+			aboutMe: "My name is John, and I'm pretty boring.",
 			age: 42,
-			aboutMe: 'My name is John, and I\'m pretty boring.',
 			email: 'jsmith2000@yahoo.com',
-			isLoggedIn: false,
-			userPreferences: {
-				darkMode: false,
-				difficulty: {
-					showBackgroundImage: true,
-					showGridOverlay: false,
-					showCorrectPlacement: true
-				},
-			},
 			favourites: {
 				imageLibrary: [
 					1,
@@ -34,6 +22,9 @@ let state = {
 					'1cae9141-a191-446b-8d4e-0282041817e1'
 				]
 			},
+			firstName: 'John',
+			lastName: 'Smith',
+			userId: 'f1b557c6-fb19-4ceb-99da-08acf0b69f45',
 			userImageLibrary: [
 				{
 					imageName: 'beetles.jpg',
@@ -47,24 +38,21 @@ let state = {
 					imageName: 'yellow-flowers-in-a-field.jpg',
 					id: '55f5362e-24ac-42f6-a8c4-a6e16c6ef7fa'
 				}
-			]
-		},
-		marySmith: {
-			userName: 'marySmith',
-			firstName: 'Mary',
-			lastName: 'Smith',
-			age: 27,
-			aboutMe: 'My name is Mary, and I just love jigsaw puzzles! My favourite jigsaw category is Architecture, but I also like ones with plants in them.',
-			email: 'mary_smith@gmail.com',
-			isLoggedIn: true,
+			],
+			userName: 'johnSmith',
 			userPreferences: {
-				darkMode: true,
+				darkMode: false,
 				difficulty: {
-					showBackgroundImage: false,
+					showBackgroundImage: true,
 					showGridOverlay: false,
 					showCorrectPlacement: true
-				},
-			},
+				}
+			}
+		},
+		marySmith: {
+			aboutMe: 'My name is Mary, and I just love jigsaw puzzles! My favourite jigsaw category is Architecture, but I also like ones with plants in them.',
+			age: 27,
+			email: 'mary_smith@gmail.com',
 			favourites: {
 				imageLibrary: [
 					0,
@@ -76,6 +64,9 @@ let state = {
 					'63ad8bfb-90b5-4eeb-a944-4b1882d5ddb1'
 				]
 			},
+			firstName: 'Mary',
+			lastName: 'Smith',
+			userId: 'f3a0f858-57b4-4420-81fa-1f0acdec979d',
 			userImageLibrary: [
 				{
 					imageName: 'beach-stones.jpg',
@@ -93,7 +84,16 @@ let state = {
 					imageName: 'basketball.jpg',
 					id: '63ad8bfb-90b5-4eeb-a944-4b1882d5ddb1'
 				}
-			]
+			],
+			userName: 'marySmith',
+			userPreferences: {
+				darkMode: true,
+				difficulty: {
+					showBackgroundImage: false,
+					showGridOverlay: false,
+					showCorrectPlacement: true
+				}
+			}
 		}
 	},
 	imageLibrary: [

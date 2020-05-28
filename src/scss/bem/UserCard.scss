@@ -1,0 +1,139 @@
+@import '../variables.scss';
+
+.user-card {
+  box-sizing: border-box;
+  width: 363px;
+  height: 942px;
+  border: 1px solid $lighter-purple;
+  margin-right: 20px;
+  position: relative;
+  padding: 35px;
+}
+
+.user-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.user-card__avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.user-card__avatar-img {
+  display: block;
+  border-radius: 189px;
+  // border: 2px solid $lighter-purple;
+}
+
+.user-card__bio {
+  display: flex;
+  margin-top: 32px;
+}
+
+.user-card__bullets {
+  position: relative;
+  width: 38px;
+  // border: 1px solid pink;
+}
+
+.user-card__bullets-connect-line {
+  position: absolute;
+  top: 13px;
+}
+
+.user-card__bullets-dot {
+  box-shadow: 0px 0px 9px rgba(255, 248, 248, 0.54);
+  border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.user-card__bullets-dot--1,
+.user-card__bullets-dot--2,
+.user-card__bullets-dot--3 {
+  left: -6px;
+}
+
+.user-card__bullets-dot--2 {
+  top: 88px;
+}
+
+.user-card__bullets-dot--3 {
+  top: 176px;
+}
+
+.user-card__connect-step {
+  position: absolute;
+}
+
+.user-card__connect-step--1 {
+  top: 38px;
+}
+
+.user-card__connect-step--2 {
+  top: 126px;
+}
+
+.user-card__connect-step--3 {
+  top: 215px;
+}
+
+.user-card__connect-separator {
+  position: absolute;
+}
+
+.user-card__connect-separator--1 {
+  top: 67px;
+}
+
+.user-card__connect-separator--2 {
+  top: 153px;
+}
+
+.user-card__bio-container {
+  width: 255px;
+  // border: 1px solid pink;
+}
+
+.user-card__bio-heading {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  text-transform: uppercase;
+  letter-spacing: 0.265rem;
+  margin: 0;
+}
+
+.user-card__bio-heading--margin-top {
+  margin-top: 44px;
+}
+
+.user-card__bio-text {
+  font-family: $primary-font-regular;
+  font-size: $secondary-font-size;
+  color: $primary-font-color;
+  letter-spacing: 0.265rem;
+  margin: 20px 0 0 0;
+}
+
+.user-card__bio-text--line-height {
+  line-height: 1.8;
+  margin: 15px 0 0 0;
+}
+
+.user-card__log-out {
+  width: 100%;
+  position: absolute;
+  bottom: 140px;
+
+  .button {
+    padding: 19px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin: 0 auto auto;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+.image {
+  width: 190px;
+  height: 190px;
+  background-color: $dark-purple;
+  position: relative;
+  cursor: pointer;
+}
+
+.image__overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 180px;
+  height: 180px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity $medium;
+}
+
+.image:hover {
+  .image__overlay {
+    opacity: 1;
+  }
+}

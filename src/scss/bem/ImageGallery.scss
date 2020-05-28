@@ -1,0 +1,28 @@
+@import '../variables.scss';
+
+.image-gallery {
+  flex: 1;
+}
+
+.image-gallery__gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.image-gallery__gallery {
+  width: 790px;
+  height: 790px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 190px;
+  grid-gap: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.image-gallery__gallery::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
