@@ -7,6 +7,12 @@ import ImageGallery from '../ImageGallery/ImageGallery';
 import '../../scss/bem/Favourites.scss';
 
 const FavouriteImages = ({ currentUserInfo }) => {
+
+  const [...favourites] = currentUserInfo.favourites.imageLibrary;
+  const [...userFavourites] = currentUserInfo.favourites.userImageLibrary;
+  const totalFavouriteImages = favourites.length + userFavourites.length;
+  const galleryRows = Math.ceil(totalFavouriteImages / 4);
+
   return (
     <div className="favourites">
       <div className="favourites__heading">
@@ -19,6 +25,10 @@ const FavouriteImages = ({ currentUserInfo }) => {
       </div>
       <ImageGallery
         currentUserInfo={currentUserInfo}
+        favourites={favourites}
+        userFavourites={userFavourites}
+        totalFavouriteImages={totalFavouriteImages}
+        galleryRows={galleryRows}
       />
     </div>
   );
