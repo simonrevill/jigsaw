@@ -54,8 +54,6 @@ const mapStateToProps = state => {
   return { showBackgroundImage, showGridOverlay, showCorrectPlacement };
 };
 
-const mapDispatchToProps = () => { };
-
 export default connect(
   mapStateToProps,
   { toggleBackgroundImage, toggleGridOverlay, toggleCorrectPlacement }
