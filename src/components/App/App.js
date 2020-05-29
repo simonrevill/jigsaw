@@ -59,7 +59,7 @@ const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser }) => {
 
   return (
     <React.Fragment>
-      <Topbar />
+      <Topbar currentUserInfo={currentUserInfo} />
       <div className="container">
         <Sidebar currentUserInfo={currentUserInfo} menuIsOpen={menuIsOpen} tabs={tabs} />
         <Main currentUserInfo={currentUserInfo} tabs={tabs} />
