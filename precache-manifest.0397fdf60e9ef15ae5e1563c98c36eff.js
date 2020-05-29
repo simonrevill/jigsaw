@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d41751ea7fe801ef47a480f5d3a7c9a8",
+    "revision": "edb53fb6db97d80d71c70b2e5683c0f0",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "1c8eea533f323c470538",
-    "url": "/jigsaw/static/css/main.e6ddcd85.chunk.css"
+    "revision": "50d424847352a26bda1d",
+    "url": "/jigsaw/static/css/main.52662995.chunk.css"
   },
   {
-    "revision": "0cee5f2e50d32c951e2a",
-    "url": "/jigsaw/static/js/2.65742644.chunk.js"
+    "revision": "958ea954c8b6185f90c9",
+    "url": "/jigsaw/static/js/2.8aab7e7f.chunk.js"
   },
   {
-    "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/jigsaw/static/js/2.65742644.chunk.js.LICENSE.txt"
+    "revision": "0ec9300b90a1964ccb21b13048e7fb5c",
+    "url": "/jigsaw/static/js/2.8aab7e7f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1c8eea533f323c470538",
-    "url": "/jigsaw/static/js/main.3775e5d8.chunk.js"
+    "revision": "50d424847352a26bda1d",
+    "url": "/jigsaw/static/js/main.bcc2bf89.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c2488bfda16e6a811f62414da90e51e4",
     "url": "/jigsaw/static/media/Comfortaa-Regular.c2488bfd.ttf"
+  },
+  {
+    "revision": "cd1c89b4d3fdf444cf76628d4fab32d5",
+    "url": "/jigsaw/static/media/blankJigsawUser.cd1c89b4.svg"
   },
   {
     "revision": "b8e5c13c40ddf908ad51f8310a5fb2a9",
