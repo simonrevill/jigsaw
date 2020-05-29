@@ -4,19 +4,30 @@ import { getUserPreferences } from '../../redux/selectors/users';
 import toggleBackgroundImage from '../../redux/actions/users/toggleBackgroundImage';
 import toggleGridOverlay from '../../redux/actions/users/toggleGridOverlay';
 import toggleCorrectPlacement from '../../redux/actions/users/toggleCorrectPlacement';
+import { updateDatabase } from '../../aws/dynamodb_updateData';
 
 import Slider from '../Slider/Slider';
-
 import '../../scss/bem/Settings.scss';
 
 const Settings = ({ currentUserInfo, isActive, showBackgroundImage, showGridOverlay, showCorrectPlacement, toggleBackgroundImage,
   toggleGridOverlay, toggleCorrectPlacement }) => {
 
-  const handleToggleBackgroundImage = () => toggleBackgroundImage();
+  const { userId } = currentUserInfo;
 
-  const handleToggleGridOverlay = () => toggleGridOverlay();
+  const handleToggleBackgroundImage = () => {
+    toggleBackgroundImage();
+    updateDatabase('showBackgroundImage', userId, showBackgroundImage);
+  };
 
-  const handleToggleCorrectPlacement = () => toggleCorrectPlacement();
+  const handleToggleGridOverlay = () => {
+    toggleGridOverlay();
+    updateDatabase('showGridOverlay', userId, showGridOverlay);
+  };
+
+  const handleToggleCorrectPlacement = () => {
+    toggleCorrectPlacement();
+    updateDatabase('showCorrectPlacement', userId, showCorrectPlacement);
+  };
 
   return (
     <div className={isActive ? "settings d-block" : "settings d-none"}>

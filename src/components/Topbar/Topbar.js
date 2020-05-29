@@ -13,7 +13,7 @@ const Topbar = ({ currentUserInfo, darkMode, toggleDarkMode }) => {
 
   const handleClick = () => {
     toggleDarkMode();
-    updateDatabase('darkMode', userId, darkMode);
+    updateDatabase('darkModeOn', userId, darkMode);
   };
 
   return (
