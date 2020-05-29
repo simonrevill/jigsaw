@@ -14,13 +14,13 @@ const logDbUpdateSuccess = data => console.log("UpdateItem succeeded: ", JSON.st
 const update = params => docClient.update(params, (err, data) => err ? logDbUpdateError(err) : logDbUpdateSuccess(data));
 
 // Update Dark Mode settings:
-const updateDarkMode = (userId, darkMode) => {
+const updateDarkMode = (userId, darkModeOn) => {
   const params = {
     TableName: REGISTERED_USERS_TABLE,
     Key: { userId },
     UpdateExpression: "set userPreferences.darkMode = :d",
     ExpressionAttributeValues: {
-      ":d": !darkMode
+      ":d": !darkModeOn
     },
     ReturnValues: "UPDATED_NEW"
   };
