@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import '../../scss/bem/Scroller.scss';
 
@@ -30,12 +30,24 @@ Scroller event notes:
 */
 
 
-const Scroller = ({ galleryRows }) => {
-  return (
-    <div className="scroller">
-      <div className="scroller__thumb"></div>
-    </div>
-  );
+const Scroller = () => {
+   useEffect(() => {
+      // Calculate scroller__thumb height after render:
+      const gallery = document.querySelector('.image-gallery__gallery');
+      const galleryVisibleArea = 790;
+      const galleryContentHeight = gallery.scrollHeight;
+      const scrollerPercentage = (galleryVisibleArea / galleryContentHeight) * 100;
+      const scrollerThumb = document.querySelector('.scroller__thumb');
+      // Height is calculated from resulting percentage minus 2px.
+      // The scroller__thumb is always 2px less in height than its container:
+      scrollerThumb.style.height = `calc(${scrollerPercentage}% - 2px)`;
+   });
+
+   return (
+      <div className="scroller">
+         <div className="scroller__thumb"></div>
+      </div>
+   );
 };
 
 export default Scroller;

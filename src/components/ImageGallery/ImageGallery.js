@@ -5,8 +5,7 @@ import Scroller from '../Scroller/Scroller';
 import '../../scss/bem/ImageGallery.scss';
 
 const ImageGallery = ({ currentUserInfo, favourites, userFavourites,
-  totalFavouriteImages, galleryRows }) => {
-
+  totalFavouriteImages }) => {
   return (
     <div className="image-gallery">
       <div className="image-gallery__gallery-container">
@@ -15,11 +14,9 @@ const ImageGallery = ({ currentUserInfo, favourites, userFavourites,
           {favourites.map(id => <Image key={id} imageSrc={id} />)}
         </div>
         {
-          totalFavouriteImages <= 16 ?
+          totalFavouriteImages < 16 ?
             null :
-            <Scroller
-              galleryRows={galleryRows}
-            />
+            <Scroller />
         }
       </div>
     </div>
