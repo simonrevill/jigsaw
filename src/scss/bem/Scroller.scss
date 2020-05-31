@@ -11,7 +11,7 @@
 
 .scroller__thumb {
   width: 15px;
-  height: 40px;
+  min-height: 10px;
   position: absolute;
   left: 1px;
   top: 1px;

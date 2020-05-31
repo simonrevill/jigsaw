@@ -30,7 +30,8 @@ Scroller event notes:
 */
 
 
-const Scroller = () => {
+const Scroller = ({ scrollTop }) => {
+
    useEffect(() => {
       // Calculate scroller__thumb height after render:
       const gallery = document.querySelector('.image-gallery__gallery');
@@ -45,7 +46,7 @@ const Scroller = () => {
 
    return (
       <div className="scroller">
-         <div className="scroller__thumb"></div>
+         <div className="scroller__thumb" style={{ top: `calc(${(scrollTop / 2) + 1}px)` }}></div>
       </div>
    );
 };
