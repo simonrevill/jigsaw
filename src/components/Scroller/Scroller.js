@@ -37,21 +37,21 @@ const Scroller = ({ scrollTop }) => {
       const gallery = document.querySelector('.image-gallery__gallery');
       const visibleArea = 790;
       const contentHeight = gallery.scrollHeight;
-      console.log('visibleArea: ', visibleArea);
-      console.log('contentHeight: ', contentHeight);
       const scrollerPercentage = (visibleArea / contentHeight) * 100;
-      console.log('scrollerPercentage:');
-      console.log('(visibleArea / contentHeight) * 100: ', scrollerPercentage);
-      const scrollerThumb = document.querySelector('.scroller__thumb');
-      // Height is calculated from resulting percentage minus 2px.
+      // Height is calculated from this resulting percentage minus 2px.
       // The scroller__thumb is always 2px less in height than its container:
+      const scrollerThumb = document.querySelector('.scroller__thumb');
       scrollerThumb.style.height = `calc(${scrollerPercentage}% - 2px)`;
-   }, []);
+   }, [scrollTop]);
 
    console.log(scrollTop);
 
    return (
       <div className="scroller">
+         {/*
+            Style Note - scrollTop determines the position of the scroller__thumb.
+            1px added to keep a 1px margin from the top of its container:
+         */}
          <div className="scroller__thumb" style={{ top: `calc(${scrollTop + 1}px)` }}></div>
       </div>
    );
