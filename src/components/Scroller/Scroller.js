@@ -42,6 +42,9 @@ const Scroller = ({ scrollTop }) => {
       // The scroller__thumb is always 2px less in height than its container:
       const scrollerThumb = document.querySelector('.scroller__thumb');
       scrollerThumb.style.height = `calc(${scrollerPercentage}% - 2px)`;
+
+      // what is the contentHeight percentage of the visibleArea;
+      // once the scale 
    }, [scrollTop]);
 
    console.log(scrollTop);

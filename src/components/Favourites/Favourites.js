@@ -10,8 +10,6 @@ const FavouriteImages = ({ currentUserInfo }) => {
 
   const [...favourites] = currentUserInfo.favourites.imageLibrary;
   const [...userFavourites] = currentUserInfo.favourites.userImageLibrary;
-  const totalFavouriteImages = favourites.length + userFavourites.length;
-  const galleryRows = Math.ceil(totalFavouriteImages / 4);
 
   return (
     <div className="favourites">
@@ -27,8 +25,6 @@ const FavouriteImages = ({ currentUserInfo }) => {
         currentUserInfo={currentUserInfo}
         favourites={favourites}
         userFavourites={userFavourites}
-        totalFavouriteImages={totalFavouriteImages}
-        galleryRows={galleryRows}
       />
     </div>
   );

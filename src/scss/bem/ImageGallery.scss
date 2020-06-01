@@ -18,9 +18,9 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 190px;
   grid-gap: 10px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  scrollbar-width: none;
+  // overflow-x: hidden;
+  // overflow-y: scroll;
+  // scrollbar-width: none;
 }
 
 .image-gallery__gallery::-webkit-scrollbar {
