@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/jigsaw/static/css/main.52662995.chunk.css",
-    "main.js": "/jigsaw/static/js/main.bcc2bf89.chunk.js",
-    "main.js.map": "/jigsaw/static/js/main.bcc2bf89.chunk.js.map",
+    "main.css": "/jigsaw/static/css/main.31afd83e.chunk.css",
+    "main.js": "/jigsaw/static/js/main.e924fb09.chunk.js",
+    "main.js.map": "/jigsaw/static/js/main.e924fb09.chunk.js.map",
     "runtime-main.js": "/jigsaw/static/js/runtime-main.49702581.js",
     "runtime-main.js.map": "/jigsaw/static/js/runtime-main.49702581.js.map",
-    "static/js/2.8aab7e7f.chunk.js": "/jigsaw/static/js/2.8aab7e7f.chunk.js",
-    "static/js/2.8aab7e7f.chunk.js.map": "/jigsaw/static/js/2.8aab7e7f.chunk.js.map",
+    "static/js/2.0b13254a.chunk.js": "/jigsaw/static/js/2.0b13254a.chunk.js",
+    "static/js/2.0b13254a.chunk.js.map": "/jigsaw/static/js/2.0b13254a.chunk.js.map",
     "index.html": "/jigsaw/index.html",
-    "precache-manifest.0397fdf60e9ef15ae5e1563c98c36eff.js": "/jigsaw/precache-manifest.0397fdf60e9ef15ae5e1563c98c36eff.js",
+    "precache-manifest.e1e476ba9c2a17db47b198aa3d8cd5aa.js": "/jigsaw/precache-manifest.e1e476ba9c2a17db47b198aa3d8cd5aa.js",
     "service-worker.js": "/jigsaw/service-worker.js",
-    "static/css/main.52662995.chunk.css.map": "/jigsaw/static/css/main.52662995.chunk.css.map",
-    "static/js/2.8aab7e7f.chunk.js.LICENSE.txt": "/jigsaw/static/js/2.8aab7e7f.chunk.js.LICENSE.txt",
+    "static/css/main.31afd83e.chunk.css.map": "/jigsaw/static/css/main.31afd83e.chunk.css.map",
+    "static/js/2.0b13254a.chunk.js.LICENSE.txt": "/jigsaw/static/js/2.0b13254a.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/jigsaw/static/media/Comfortaa-Regular.c2488bfd.ttf",
     "static/media/blankJigsawUser.cd1c89b4.svg": "/jigsaw/static/media/blankJigsawUser.cd1c89b4.svg",
     "static/media/board.b8e5c13c.svg": "/jigsaw/static/media/board.b8e5c13c.svg",
@@ -23,16 +23,16 @@
     "static/media/johnSmith.jpg": "/jigsaw/static/media/johnSmith.f04d44a8.jpg",
     "static/media/library.4f902cd9.svg": "/jigsaw/static/media/library.4f902cd9.svg",
     "static/media/marySmith.jpg": "/jigsaw/static/media/marySmith.edbf9c5f.jpg",
-    "static/media/menu-close.f0a47e1d.svg": "/jigsaw/static/media/menu-close.f0a47e1d.svg",
-    "static/media/menu-open.53e3a30e.svg": "/jigsaw/static/media/menu-open.53e3a30e.svg",
+    "static/media/menu-close.65ed9ed9.svg": "/jigsaw/static/media/menu-close.65ed9ed9.svg",
+    "static/media/menu-open.0e20a9d8.svg": "/jigsaw/static/media/menu-open.0e20a9d8.svg",
     "static/media/settings.2191dfa2.svg": "/jigsaw/static/media/settings.2191dfa2.svg",
     "static/media/upload-drag-and-drop.9b899c94.svg": "/jigsaw/static/media/upload-drag-and-drop.9b899c94.svg",
     "static/media/upload.2e4df2eb.svg": "/jigsaw/static/media/upload.2e4df2eb.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.49702581.js",
-    "static/js/2.8aab7e7f.chunk.js",
-    "static/css/main.52662995.chunk.css",
-    "static/js/main.bcc2bf89.chunk.js"
+    "static/js/2.0b13254a.chunk.js",
+    "static/css/main.31afd83e.chunk.css",
+    "static/js/main.e924fb09.chunk.js"
   ]
 }

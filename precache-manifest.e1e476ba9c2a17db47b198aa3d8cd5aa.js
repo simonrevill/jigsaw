@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "edb53fb6db97d80d71c70b2e5683c0f0",
+    "revision": "1ffb12e44c67aef80904f3d33a48933f",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "50d424847352a26bda1d",
-    "url": "/jigsaw/static/css/main.52662995.chunk.css"
+    "revision": "09483196821125109e22",
+    "url": "/jigsaw/static/css/main.31afd83e.chunk.css"
   },
   {
-    "revision": "958ea954c8b6185f90c9",
-    "url": "/jigsaw/static/js/2.8aab7e7f.chunk.js"
+    "revision": "cd0c153330ec9d912f0d",
+    "url": "/jigsaw/static/js/2.0b13254a.chunk.js"
   },
   {
     "revision": "0ec9300b90a1964ccb21b13048e7fb5c",
-    "url": "/jigsaw/static/js/2.8aab7e7f.chunk.js.LICENSE.txt"
+    "url": "/jigsaw/static/js/2.0b13254a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "50d424847352a26bda1d",
-    "url": "/jigsaw/static/js/main.bcc2bf89.chunk.js"
+    "revision": "09483196821125109e22",
+    "url": "/jigsaw/static/js/main.e924fb09.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
@@ -72,12 +72,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/media/marySmith.edbf9c5f.jpg"
   },
   {
-    "revision": "f0a47e1dc62a941da7401cbdcf15aaee",
-    "url": "/jigsaw/static/media/menu-close.f0a47e1d.svg"
+    "revision": "65ed9ed9339ae15ef650e005fe99478c",
+    "url": "/jigsaw/static/media/menu-close.65ed9ed9.svg"
   },
   {
-    "revision": "53e3a30e813c80408164fa0f6e9259c2",
-    "url": "/jigsaw/static/media/menu-open.53e3a30e.svg"
+    "revision": "0e20a9d8d29c1f01c05f44cc2fb39e0d",
+    "url": "/jigsaw/static/media/menu-open.0e20a9d8.svg"
   },
   {
     "revision": "2191dfa2445d03be595c315d1fa73760",
