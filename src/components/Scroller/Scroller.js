@@ -35,18 +35,24 @@ const Scroller = ({ scrollTop }) => {
    useEffect(() => {
       // Calculate scroller__thumb height after render:
       const gallery = document.querySelector('.image-gallery__gallery');
-      const galleryVisibleArea = 790;
-      const galleryContentHeight = gallery.scrollHeight;
-      const scrollerPercentage = (galleryVisibleArea / galleryContentHeight) * 100;
+      const visibleArea = 790;
+      const contentHeight = gallery.scrollHeight;
+      console.log('visibleArea: ', visibleArea);
+      console.log('contentHeight: ', contentHeight);
+      const scrollerPercentage = (visibleArea / contentHeight) * 100;
+      console.log('scrollerPercentage:');
+      console.log('(visibleArea / contentHeight) * 100: ', scrollerPercentage);
       const scrollerThumb = document.querySelector('.scroller__thumb');
       // Height is calculated from resulting percentage minus 2px.
       // The scroller__thumb is always 2px less in height than its container:
       scrollerThumb.style.height = `calc(${scrollerPercentage}% - 2px)`;
-   });
+   }, []);
+
+   console.log(scrollTop);
 
    return (
       <div className="scroller">
-         <div className="scroller__thumb" style={{ top: `calc(${(scrollTop / 2) + 1}px)` }}></div>
+         <div className="scroller__thumb" style={{ top: `calc(${scrollTop + 1}px)` }}></div>
       </div>
    );
 };
