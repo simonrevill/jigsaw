@@ -6,6 +6,8 @@ import '../../scss/bem/ImageGallery.scss';
 
 const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
 
+  const totalFavouriteImages = favourites.length + userFavourites.length;
+
   const trackVerticalStyles = {
     backgroundColor: '#555061',
     width: '17px',
@@ -24,19 +26,40 @@ const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
     paddingTop: '1px'
   };
 
+  const renderImageGallery = (userFavourites, favourites) => (
+    <div className="image-gallery__gallery">
+      {userFavourites.map(id => <Image key={id} imageSrc={id} />)}
+      {favourites.map(id => <Image key={id} imageSrc={id} />)}
+    </div>
+  );
+
   return (
     <div className="image-gallery">
       <div className="image-gallery__gallery-container">
-        <Scrollbars
-          style={{ width: 815, height: 790 }}
-          renderTrackVertical={props => <div {...props} style={trackVerticalStyles} className="track-vertical" />}
-          renderThumbVertical={props => <div {...props} style={thumbVerticalStyles} className="thumb-vertical" />}
-        >
-          <div className="image-gallery__gallery">
-            {userFavourites.map(id => <Image key={id} imageSrc={id} />)}
-            {favourites.map(id => <Image key={id} imageSrc={id} />)}
-          </div>
-        </Scrollbars>
+        {
+          totalFavouriteImages >= 17 ?
+            <Scrollbars
+              style={{ width: 815, height: 790 }}
+              renderTrackVertical={props =>
+                <div
+                  {...props}
+                  style={trackVerticalStyles}
+                  className="track-vertical"
+                />
+              }
+              renderThumbVertical={props =>
+                <div
+                  {...props}
+                  style={thumbVerticalStyles}
+                  className="thumb-vertical"
+                />
+              }
+            >
+              {renderImageGallery(userFavourites, favourites)}
+            </Scrollbars>
+            :
+            renderImageGallery(userFavourites, favourites)
+        }
       </div>
     </div>
   );
