@@ -18,12 +18,24 @@ const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
   };
 
   const thumbVerticalStyles = {
-    backgroundColor: '#262034',
+    backgroundColor: 'transparent',
     position: 'absolute',
     left: '1px',
     width: '15px',
     borderRadius: '20px',
-    paddingTop: '1px'
+    paddingTop: '1px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+
+  const innerThumbStyles = {
+    backgroundColor: '#262034',
+    borderRadius: '20px',
+    width: '15px',
+    height: 'calc(100% - 3px)',
+    position: 'absolute',
+    top: '1px'
   };
 
   const renderImageGallery = (userFavourites, favourites) => (
@@ -52,7 +64,13 @@ const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
                   {...props}
                   style={thumbVerticalStyles}
                   className="thumb-vertical"
-                />
+                >
+                  <div
+                    style={innerThumbStyles}
+                    className="inner-thumb"
+                  >
+                  </div>
+                </div>
               }
             >
               {renderImageGallery(userFavourites, favourites)}
