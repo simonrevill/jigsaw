@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/jigsaw/static/css/main.31afd83e.chunk.css",
-    "main.js": "/jigsaw/static/js/main.e924fb09.chunk.js",
-    "main.js.map": "/jigsaw/static/js/main.e924fb09.chunk.js.map",
+    "main.css": "/jigsaw/static/css/main.f9329403.chunk.css",
+    "main.js": "/jigsaw/static/js/main.9ada4c1b.chunk.js",
+    "main.js.map": "/jigsaw/static/js/main.9ada4c1b.chunk.js.map",
     "runtime-main.js": "/jigsaw/static/js/runtime-main.49702581.js",
     "runtime-main.js.map": "/jigsaw/static/js/runtime-main.49702581.js.map",
-    "static/js/2.0b13254a.chunk.js": "/jigsaw/static/js/2.0b13254a.chunk.js",
-    "static/js/2.0b13254a.chunk.js.map": "/jigsaw/static/js/2.0b13254a.chunk.js.map",
+    "static/js/2.1d943c38.chunk.js": "/jigsaw/static/js/2.1d943c38.chunk.js",
+    "static/js/2.1d943c38.chunk.js.map": "/jigsaw/static/js/2.1d943c38.chunk.js.map",
     "index.html": "/jigsaw/index.html",
-    "precache-manifest.e1e476ba9c2a17db47b198aa3d8cd5aa.js": "/jigsaw/precache-manifest.e1e476ba9c2a17db47b198aa3d8cd5aa.js",
+    "precache-manifest.a14ac8f56ebac69a26fc843431f17ec8.js": "/jigsaw/precache-manifest.a14ac8f56ebac69a26fc843431f17ec8.js",
     "service-worker.js": "/jigsaw/service-worker.js",
-    "static/css/main.31afd83e.chunk.css.map": "/jigsaw/static/css/main.31afd83e.chunk.css.map",
-    "static/js/2.0b13254a.chunk.js.LICENSE.txt": "/jigsaw/static/js/2.0b13254a.chunk.js.LICENSE.txt",
+    "static/css/main.f9329403.chunk.css.map": "/jigsaw/static/css/main.f9329403.chunk.css.map",
+    "static/js/2.1d943c38.chunk.js.LICENSE.txt": "/jigsaw/static/js/2.1d943c38.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/jigsaw/static/media/Comfortaa-Regular.c2488bfd.ttf",
     "static/media/blankJigsawUser.cd1c89b4.svg": "/jigsaw/static/media/blankJigsawUser.cd1c89b4.svg",
     "static/media/board.b8e5c13c.svg": "/jigsaw/static/media/board.b8e5c13c.svg",
@@ -20,6 +20,7 @@
     "static/media/connect-step.f21216a9.svg": "/jigsaw/static/media/connect-step.f21216a9.svg",
     "static/media/dot.3921d590.svg": "/jigsaw/static/media/dot.3921d590.svg",
     "static/media/heart-solid.f9971033.svg": "/jigsaw/static/media/heart-solid.f9971033.svg",
+    "static/media/jigsaw-topbar-logo.deec01d6.svg": "/jigsaw/static/media/jigsaw-topbar-logo.deec01d6.svg",
     "static/media/johnSmith.jpg": "/jigsaw/static/media/johnSmith.f04d44a8.jpg",
     "static/media/library.4f902cd9.svg": "/jigsaw/static/media/library.4f902cd9.svg",
     "static/media/marySmith.jpg": "/jigsaw/static/media/marySmith.edbf9c5f.jpg",
@@ -31,8 +32,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.49702581.js",
-    "static/js/2.0b13254a.chunk.js",
-    "static/css/main.31afd83e.chunk.css",
-    "static/js/main.e924fb09.chunk.js"
+    "static/js/2.1d943c38.chunk.js",
+    "static/css/main.f9329403.chunk.css",
+    "static/js/main.9ada4c1b.chunk.js"
   ]
 }

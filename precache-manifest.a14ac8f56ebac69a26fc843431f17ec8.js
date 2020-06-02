@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ffb12e44c67aef80904f3d33a48933f",
+    "revision": "d2808ae181bc304c14084f3aca133442",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "09483196821125109e22",
-    "url": "/jigsaw/static/css/main.31afd83e.chunk.css"
+    "revision": "fa2c3ded1e25a8640804",
+    "url": "/jigsaw/static/css/main.f9329403.chunk.css"
   },
   {
-    "revision": "cd0c153330ec9d912f0d",
-    "url": "/jigsaw/static/js/2.0b13254a.chunk.js"
+    "revision": "7a68a95773b41ed5a690",
+    "url": "/jigsaw/static/js/2.1d943c38.chunk.js"
   },
   {
     "revision": "0ec9300b90a1964ccb21b13048e7fb5c",
-    "url": "/jigsaw/static/js/2.0b13254a.chunk.js.LICENSE.txt"
+    "url": "/jigsaw/static/js/2.1d943c38.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "09483196821125109e22",
-    "url": "/jigsaw/static/js/main.e924fb09.chunk.js"
+    "revision": "fa2c3ded1e25a8640804",
+    "url": "/jigsaw/static/js/main.9ada4c1b.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
@@ -58,6 +58,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f9971033a9a3a359f6a512aaf051ba03",
     "url": "/jigsaw/static/media/heart-solid.f9971033.svg"
+  },
+  {
+    "revision": "deec01d694797e41ed846ed1812e8aed",
+    "url": "/jigsaw/static/media/jigsaw-topbar-logo.deec01d6.svg"
   },
   {
     "revision": "f04d44a8c5698cb9cf59411d5930af82",
