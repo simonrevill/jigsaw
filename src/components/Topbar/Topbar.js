@@ -5,6 +5,7 @@ import toggleDarkMode from '../../redux/actions/users/toggleDarkMode';
 import { updateDatabase } from '../../aws/dynamodb_updateData';
 
 import Slider from '../Slider/Slider';
+import { ReactComponent as JigsawTopbarLogo } from '../../icons/jigsaw-topbar-logo.svg';
 import '../../scss/bem/Topbar.scss';
 
 const Topbar = ({ currentUserInfo, darkMode, toggleDarkMode }) => {
@@ -18,6 +19,9 @@ const Topbar = ({ currentUserInfo, darkMode, toggleDarkMode }) => {
 
   return (
     <div className="topbar">
+      <JigsawTopbarLogo
+        className="topbar__jigsaw--logo"
+      />
       <Slider
         sliderLabel="Dark Mode:"
         showSliderState={true}
