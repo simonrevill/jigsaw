@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ReactComponent as UploadDragAndDropIcon } from '../../icons/upload-drag-and-drop.svg';
 
-import Button from '../Button/Button';
+import ButtonLabel from '../Button/ButtonLabel';
 
 import '../../scss/bem/Upload.scss';
 
@@ -31,10 +31,11 @@ const Upload = ({ isActive }) => {
             <br />
             or
           </span>
-          <Button
+          <ButtonLabel
             buttonText="Browse files"
-            onClick={handleButtonClick}
+            htmlFor="browseImages"
           />
+          <input type="file" className="d-none" id="browseImages" name="browseImages" accept="image/png, image/jpeg" multiple></input>
         </div>
       </div>
     </div>

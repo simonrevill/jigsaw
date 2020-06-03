@@ -40,7 +40,7 @@ const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
 
   const renderImageGallery = (userFavourites, favourites) => (
     <div className="image-gallery__gallery">
-      {userFavourites.map(image => <Image key={image} imageName={image.name} imageSrc={image} />)}
+      {userFavourites.map(image => <Image key={image} imageName={image.name} imageSrc={image.url} />)}
       {favourites.map(image => <Image key={image.id} imageName={image.name} imageSrc={image.url} />)}
     </div>
   );

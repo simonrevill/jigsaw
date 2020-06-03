@@ -18,7 +18,7 @@ const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser }) => {
 
   // Current user is temporarily hard-coded until
   // login system is built and user is loaded into Redux store:
-  const userId = 'e5aa91dc-4017-44f4-a327-666565d2026c';
+  const userId = 'f3a0f858-57b4-4420-81fa-1f0acdec979d';
 
   // Get and set user data on load:
   useEffect(() => {
