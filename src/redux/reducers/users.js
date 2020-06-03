@@ -7,7 +7,7 @@ const initialState = {
   currentUser: '8888888888888888',
   currentUserInfo: {
     aboutMe: "I'm a blank Jigsaw User. Nothing to see here.",
-    age: undefined,
+    age: null,
     email: 'blankjigsawuser@jigsaw.org',
     favourites: {
       imageLibrary: [],

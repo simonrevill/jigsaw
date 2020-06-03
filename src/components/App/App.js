@@ -12,12 +12,13 @@ import '../../scss/bem/App.scss';
 const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser }) => {
 
   // users:
+  // blankJigsawUser - 'e5aa91dc-4017-44f4-a327-666565d2026c'
   // marySmith - 'f3a0f858-57b4-4420-81fa-1f0acdec979d'
   // johnSmith - 'f1b557c6-fb19-4ceb-99da-08acf0b69f45'
 
   // Current user is temporarily hard-coded until
   // login system is built and user is loaded into Redux store:
-  const userId = 'f3a0f858-57b4-4420-81fa-1f0acdec979d';
+  const userId = 'e5aa91dc-4017-44f4-a327-666565d2026c';
 
   // Get and set user data on load:
   useEffect(() => {
