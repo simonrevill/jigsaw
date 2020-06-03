@@ -18,6 +18,17 @@
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: opacity $medium;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image__name {
+  color: $white;
+  font-family: $primary-font-regular;
+  font-size: $primary-font-size;
+  margin: 20px 2px 0 2px;
+  text-align: center;
 }
 
 .image:hover {

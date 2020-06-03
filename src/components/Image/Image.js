@@ -5,10 +5,11 @@ import ButtonSmall from '../Button/ButtonSmall';
 import '../../scss/bem/Image.scss';
 
 
-const Image = ({ imageSrc }) => {
+const Image = ({ imageSrc, imageName }) => {
 
   const backgroundImageStyles = {
-    backgroundImage: `url("https://unsplash.it/400")`,
+    backgroundImage: `url("${imageSrc}")`,
+    backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     transformOrigin: 'preserve-3d',
@@ -21,6 +22,7 @@ const Image = ({ imageSrc }) => {
     <div className="image" style={backgroundImageStyles}>
       <div className="image__overlay">
         <ButtonSmall buttonText="Play" onClick={handleClick} extraClasses="button--favourites" />
+        <p className="image__name">{imageName}</p>
       </div>
     </div>
   );
