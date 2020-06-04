@@ -4,7 +4,11 @@ import { handleFileUploadError, handleFileUploadSuccess, handleValidation } from
 import ButtonLabel from '../Button/ButtonLabel';
 import '../../scss/bem/Upload.scss';
 
-const Upload = ({ isActive }) => {
+const Upload = ({ currentUserInfo, isActive }) => {
+
+  const { hasBucket } = currentUserInfo;
+
+  console.log(hasBucket);
 
   const handleImageUpload = e => {
     // Firstly, convert imagesFiles from a FileList to an array and perform validation.

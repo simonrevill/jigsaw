@@ -1,83 +1,79 @@
 import React from 'react';
 import Image from '../Image/Image';
 import { Scrollbars } from 'react-custom-scrollbars';
-
+import { trackVerticalStyles, thumbVerticalStyles, innerThumbStyles } from './scrollbarStyles';
+import { ReactComponent as Heart } from '../../icons/heart.svg';
 import '../../scss/bem/ImageGallery.scss';
 
 const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
 
   const totalFavouriteImages = favourites.length + userFavourites.length;
 
-  const trackVerticalStyles = {
-    backgroundColor: '#555061',
-    width: '17px',
-    height: '790px',
-    position: 'absolute',
-    right: '0',
-    borderRadius: '20px'
-  };
+  const renderFavourites = favourites => favourites.map(image => <Image key={image.id} imageName={image.name} imageSrc={image.url} />);
 
-  const thumbVerticalStyles = {
-    backgroundColor: 'transparent',
-    position: 'absolute',
-    left: '1px',
-    width: '15px',
-    borderRadius: '20px',
-    paddingTop: '1px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  };
+  const renderUserFavourites = userFavourites => userFavourites.map(image => <Image key={image.id} imageName={image.name} imageSrc={image.url} />);
 
-  const innerThumbStyles = {
-    backgroundColor: '#262034',
-    borderRadius: '20px',
-    width: '15px',
-    height: 'calc(100% - 3px)',
-    position: 'absolute',
-    top: '1px'
+  const renderGallery = totalImages => {
+    if (totalImages === 0) {
+      return (
+        <div className="image-gallery__gallery--no-favourites">
+          <p className="image-gallery__no-favourites-message">
+            You have no favourite images yet.
+            <br />
+            <br />
+            To add images to your favourites list, go to the Image Library and click on the
+            <span className="image-gallery__no-favourites-heart-icon">
+              <Heart />
+            </span>
+            icon inside an image.
+          </p>
+        </div>
+      );
+    } else if (totalImages < 17) {
+      return (
+        <div className="image-gallery__gallery">
+          {renderUserFavourites(userFavourites)}
+          {renderFavourites(favourites)}
+        </div>
+      );
+    } else {
+      return (
+        <Scrollbars
+          style={{ width: 815, height: 790 }}
+          renderTrackVertical={props =>
+            <div
+              {...props}
+              style={trackVerticalStyles}
+              className="track-vertical"
+            />
+          }
+          renderThumbVertical={props =>
+            <div
+              {...props}
+              style={thumbVerticalStyles}
+              className="thumb-vertical"
+            >
+              <div
+                style={innerThumbStyles}
+                className="inner-thumb"
+              >
+              </div>
+            </div>
+          }
+        >
+          <div className="image-gallery__gallery">
+            {renderUserFavourites(userFavourites)}
+            {renderFavourites(favourites)}
+          </div>
+        </Scrollbars>
+      );
+    }
   };
-
-  const renderImageGallery = (userFavourites, favourites) => (
-    <div className="image-gallery__gallery">
-      {userFavourites.map(image => <Image key={image} imageName={image.name} imageSrc={image.url} />)}
-      {favourites.map(image => <Image key={image.id} imageName={image.name} imageSrc={image.url} />)}
-    </div>
-  );
 
   return (
     <div className="image-gallery">
       <div className="image-gallery__gallery-container">
-        {
-          totalFavouriteImages >= 17 ?
-            <Scrollbars
-              style={{ width: 815, height: 790 }}
-              renderTrackVertical={props =>
-                <div
-                  {...props}
-                  style={trackVerticalStyles}
-                  className="track-vertical"
-                />
-              }
-              renderThumbVertical={props =>
-                <div
-                  {...props}
-                  style={thumbVerticalStyles}
-                  className="thumb-vertical"
-                >
-                  <div
-                    style={innerThumbStyles}
-                    className="inner-thumb"
-                  >
-                  </div>
-                </div>
-              }
-            >
-              {renderImageGallery(userFavourites, favourites)}
-            </Scrollbars>
-            :
-            renderImageGallery(userFavourites, favourites)
-        }
+        {renderGallery(totalFavouriteImages)}
       </div>
     </div>
   );
