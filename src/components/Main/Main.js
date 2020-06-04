@@ -12,7 +12,7 @@ const Main = ({ currentUserInfo, tabs }) => {
   return (
     <div className="main">
       <MyProfile currentUserInfo={currentUserInfo} isActive={tabs[0].isActive} />
-      <Library isActive={tabs[1].isActive} />
+      <Library currentUserInfo={currentUserInfo} isActive={tabs[1].isActive} />
       <Upload currentUserInfo={currentUserInfo} isActive={tabs[2].isActive} />
       <Settings currentUserInfo={currentUserInfo} isActive={tabs[3].isActive} />
       <Board isActive={tabs[4].isActive} />
