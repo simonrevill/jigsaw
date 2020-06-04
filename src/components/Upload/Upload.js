@@ -1,15 +1,35 @@
 import React from 'react';
-
 import { ReactComponent as UploadDragAndDropIcon } from '../../icons/upload-drag-and-drop.svg';
-
+import { handleFileUploadError, handleFileUploadSuccess, handleValidation } from './imageValidation';
 import ButtonLabel from '../Button/ButtonLabel';
-
 import '../../scss/bem/Upload.scss';
 
 const Upload = ({ isActive }) => {
 
-  const handleButtonClick = () => {
-    console.log('Button clicked!');
+  const handleImageUpload = e => {
+    // Firstly, convert imagesFiles from a FileList to an array and perform validation.
+    // Then, for validation results, return a new array of objects indicating whether validation
+    // has succeeded or failed for each particular image:
+    const validationResults = handleValidation([...e.target.files]);
+
+    // Split this array into two new filtered arrays:
+    const invalidFiles = validationResults.filter(result => !result.hasPassedValidation ? result : null);
+    const validFiles = validationResults.filter(result => result.hasPassedValidation ? result : null);
+
+    // Check for any errors:
+    if (invalidFiles.length) {
+      console.log('Validation errors occurred:');
+      // Run a function here 'handleFileUploadError' to display an error message modal
+      // prompting the user to retry uploding image. They will recieve a list
+      // of files that were not validated:
+      invalidFiles.forEach(file => handleFileUploadError(file.name));
+      return;
+    }
+
+    // Proceed to next step - create or add to bucket, write to database etc...
+    console.log('validation succeeded!');
+    validFiles.forEach(file => handleFileUploadSuccess(file.name));
+
   };
 
   return (
@@ -35,7 +55,15 @@ const Upload = ({ isActive }) => {
             buttonText="Browse files"
             htmlFor="browseImages"
           />
-          <input type="file" className="d-none" id="browseImages" name="browseImages" accept="image/png, image/jpeg" multiple></input>
+          <input
+            type="file"
+            className="d-none"
+            id="browseImages"
+            name="browseImages"
+            accept="image/png, image/jpeg"
+            onChange={handleImageUpload}
+            multiple
+          />
         </div>
       </div>
     </div>
