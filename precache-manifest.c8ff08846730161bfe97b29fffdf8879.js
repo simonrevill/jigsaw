@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "858dd0c87b440b2cee0f3a0adc7148a3",
+    "revision": "a687aada5f7ee929cc789b2e075462f9",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "62c58491654791010238",
-    "url": "/jigsaw/static/css/main.f9329403.chunk.css"
+    "revision": "5efc3d8d11aeb03b7e7b",
+    "url": "/jigsaw/static/css/main.b5d55235.chunk.css"
   },
   {
-    "revision": "7a68a95773b41ed5a690",
-    "url": "/jigsaw/static/js/2.1d943c38.chunk.js"
+    "revision": "516ca4700e89842bf507",
+    "url": "/jigsaw/static/js/2.cf0e1147.chunk.js"
   },
   {
     "revision": "0ec9300b90a1964ccb21b13048e7fb5c",
-    "url": "/jigsaw/static/js/2.1d943c38.chunk.js.LICENSE.txt"
+    "url": "/jigsaw/static/js/2.cf0e1147.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "62c58491654791010238",
-    "url": "/jigsaw/static/js/main.dbdaa537.chunk.js"
+    "revision": "5efc3d8d11aeb03b7e7b",
+    "url": "/jigsaw/static/js/main.e4cc2064.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/media/Comfortaa-Regular.c2488bfd.ttf"
   },
   {
-    "revision": "cd1c89b4d3fdf444cf76628d4fab32d5",
-    "url": "/jigsaw/static/media/blankJigsawUser.cd1c89b4.svg"
+    "revision": "335ec79ac3f0d8d78b881b2e9999f587",
+    "url": "/jigsaw/static/media/blankJigsawUser.335ec79a.svg"
   },
   {
     "revision": "b8e5c13c40ddf908ad51f8310a5fb2a9",
@@ -58,6 +58,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f9971033a9a3a359f6a512aaf051ba03",
     "url": "/jigsaw/static/media/heart-solid.f9971033.svg"
+  },
+  {
+    "revision": "b79cc249def2b8179183dfb12cef4593",
+    "url": "/jigsaw/static/media/heart.b79cc249.svg"
   },
   {
     "revision": "deec01d694797e41ed846ed1812e8aed",
@@ -86,6 +90,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2191dfa2445d03be595c315d1fa73760",
     "url": "/jigsaw/static/media/settings.2191dfa2.svg"
+  },
+  {
+    "revision": "b3f495d4c61257a9d9f93f7d2a978413",
+    "url": "/jigsaw/static/media/star-solid.b3f495d4.svg"
+  },
+  {
+    "revision": "aee3f83c67f5ac9528f7217b357f4c93",
+    "url": "/jigsaw/static/media/star.aee3f83c.svg"
   },
   {
     "revision": "9b899c9460e74cddca2e7cec05f9e654",
