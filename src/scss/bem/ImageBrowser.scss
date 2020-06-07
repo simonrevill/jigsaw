@@ -1,0 +1,52 @@
+@import '../variables.scss';
+
+.image-browser {
+  width: 847px;
+  height: 491px;
+}
+
+.image-browser__tabs {
+  display: flex;
+  border-bottom: 1px solid $darker-purple;
+}
+
+.image-browser__tab {
+  width: 423px;
+  padding: 13px 0;
+  cursor: pointer;
+}
+
+.image-browser__tab:hover {
+  background-color: $darker-purple;
+}
+
+.image-browser__tab-active {
+  position: relative;
+  background-color: $darker-purple;
+}
+
+.image-browser__tab-active::before {
+  content: '';
+  width: 413px;
+  height: 30px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border: 3px solid $lighter-purple;
+}
+
+.image-browser__tab-title {
+  margin: 0;
+  font-family: $primary-font-regular;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  letter-spacing: 0.265rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.image-browser__tab-separator {
+  width: 0px;
+  height: 40px;
+  border-left: 1px solid $darker-purple;
+}

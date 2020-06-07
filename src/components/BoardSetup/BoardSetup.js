@@ -4,7 +4,7 @@ import GridSetup from '../GridSetup/GridSetup';
 import Button from '../Button/Button';
 import '../../scss/bem/BoardSetup.scss';
 
-const BoardSetup = () => {
+const BoardSetup = ({ currentUserInfo }) => {
 
   const handlePlayButtonClick = () => console.log('Play button clicked!');
 
