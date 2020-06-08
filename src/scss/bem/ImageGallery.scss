@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 190px;
-  grid-gap: 10px;
+  gap: 10px;
 }
 
 .image-gallery__gallery::-webkit-scrollbar {

@@ -1,7 +1,7 @@
 export const trackVerticalStyles = {
   backgroundColor: '#555061',
   width: '17px',
-  height: '790px',
+  height: '450px',
   position: 'absolute',
   right: '0',
   borderRadius: '20px'
