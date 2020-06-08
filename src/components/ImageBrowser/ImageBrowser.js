@@ -21,6 +21,12 @@ const ImageBrowser = ({ currentUserInfo, favourites, userFavourites, activeImage
 
   The following variables 'totalLibraryImages' and 'totalUserLibraryImages'
   should be measuring the length of these instead (not favourites!).
+
+  Refactor non-DRY code:
+
+  'renderMainLibraryImageBrowser' and 'renderUserLibraryImageBrowser'
+  functions can be refactored as they are duplicates.
+  Just pass in the 'libraryName' parameter!
   
   */
 
