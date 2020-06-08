@@ -1,5 +1,5 @@
 import {
-  TOGGLE_MENU, SET_ACTIVE_TAB
+  TOGGLE_MENU, SET_ACTIVE_TAB, SET_ACTIVE_IMAGE_BROWSER_TAB
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -25,7 +25,21 @@ const initialState = {
       name: 'Board',
       isActive: false
     }
-  ]
+  ],
+  library: {
+    imageBrowser: {
+      activeTabs: [
+        {
+          name: 'mainLibrary',
+          isActive: true
+        },
+        {
+          name: 'userLibrary',
+          isActive: false
+        }
+      ]
+    }
+  }
 };
 
 const uiState = (state = initialState, action) => {
@@ -42,7 +56,21 @@ const uiState = (state = initialState, action) => {
           ({ ...tab, isActive: true }) :
           ({ ...tab, isActive: false })
         )
-      }
+      };
+    case SET_ACTIVE_IMAGE_BROWSER_TAB:
+      return {
+        ...state,
+        library: {
+          ...state.library,
+          imageBrowser: {
+            ...state.library.imageBrowser,
+            activeTabs: state.library.imageBrowser.activeTabs.map(tab => tab.name === action.tabName ?
+              ({ ...tab, isActive: true }) :
+              ({ ...tab, isActive: false })
+            )
+          }
+        }
+      };
     default:
       return state;
   };

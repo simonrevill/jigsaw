@@ -1,6 +1,7 @@
 // uiState:
 export const TOGGLE_MENU = 'TOGGLE_MENU';
 export const SET_ACTIVE_TAB = 'SET_ACTIVE_TAB';
+export const SET_ACTIVE_IMAGE_BROWSER_TAB = 'SET_ACTIVE_IMAGE_BROWSER_TAB';
 
 // users:
 export const TOGGLE_DARK_MODE = 'TOGGLE_DARK_MODE';

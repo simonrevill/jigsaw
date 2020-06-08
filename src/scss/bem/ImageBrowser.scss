@@ -52,10 +52,14 @@
 }
 
 .image-browser__browser-container {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
+}
+
+.image-browser__browser-container--active {
+  display: flex;
 }
 
 .image-browser__browser {
@@ -73,7 +77,6 @@
 .box {
   width: 190px;
   height: 190px;
-  background-color: green;
+  background-color: $dark-purple;
   box-sizing: border-box;
-  border: 1px solid black;
 }
