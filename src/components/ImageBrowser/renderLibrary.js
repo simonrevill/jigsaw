@@ -27,10 +27,7 @@ const renderLibrary = (activeTab, libraryName, images) => {
         }
       >
         <div className="image-browser__browser">
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
+          {images.map(image => <Image key={image.name} imageSrc={image.url} imageName={image.name} />)}
         </div>
       </div>
     );
@@ -40,6 +37,7 @@ const renderLibrary = (activeTab, libraryName, images) => {
         style={activeTab === libraryName ?
           ({ width: 847, height: 450 }) :
           ({ width: 847, height: 450, display: 'none' })}
+        renderTrackHorizontal={props => <div {...props} className="d-none" />}
         renderTrackVertical={props =>
           <div
             {...props}
@@ -68,7 +66,7 @@ const renderLibrary = (activeTab, libraryName, images) => {
           }
         >
           <div className="image-browser__browser image-browser__browser--scrollbars">
-            {images.map(image => <Image imageSrc={image.url} imageName={image.name} />)}
+            {images.map(image => <Image key={image.name} imageSrc={image.url} imageName={image.name} />)}
           </div>
         </div>
       </Scrollbars>

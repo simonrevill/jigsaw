@@ -5,7 +5,7 @@ import { getActiveImageBrowserTabName } from '../../redux/selectors/uiState';
 import setActiveImageBrowserTab from '../../redux/actions/uiState/setActiveImageBrowserTab';
 import '../../scss/bem/ImageBrowser.scss';
 
-const ImageBrowser = ({ currentUserInfo, imageLibrary, activeImageBrowserTabName, setActiveImageBrowserTab }) => {
+const ImageBrowser = ({ currentUserInfo, imageLibrary, userImageLibrary, activeImageBrowserTabName, setActiveImageBrowserTab }) => {
   /*
   
   Todo:
@@ -36,7 +36,7 @@ const ImageBrowser = ({ currentUserInfo, imageLibrary, activeImageBrowserTabName
         </div>
       </div>
       {renderLibrary(activeImageBrowserTabName, 'mainLibrary', imageLibrary)}
-      {/* {renderLibrary(activeImageBrowserTabName, 'userLibrary')} */}
+      {renderLibrary(activeImageBrowserTabName, 'userLibrary', userImageLibrary)}
     </div>
   );
 };

@@ -6,15 +6,18 @@ import '../../scss/bem/Upload.scss';
 
 const Upload = ({ currentUserInfo, isActive }) => {
 
+  // Check if current user has a bucket.
+  // If not, they'll need a new one creating before they can upload.
+  // This should be done behind the scenes as part of their first upload.
   const { hasBucket } = currentUserInfo;
 
-  console.log(hasBucket);
-
   const handleImageUpload = e => {
-    // Firstly, convert imagesFiles from a FileList to an array and perform validation.
+    // Firstly, store the image file/files:
+    const files = e.target.files;
+    // Convert imagesFiles from a FileList to an array and perform validation.
     // Then, for validation results, return a new array of objects indicating whether validation
     // has succeeded or failed for each particular image:
-    const validationResults = handleValidation([...e.target.files]);
+    const validationResults = handleValidation([...files]);
 
     // Split this array into two new filtered arrays:
     const invalidFiles = validationResults.filter(result => !result.hasPassedValidation ? result : null);
@@ -32,7 +35,10 @@ const Upload = ({ currentUserInfo, isActive }) => {
 
     // Proceed to next step - create or add to bucket, write to database etc...
     console.log('validation succeeded!');
-    validFiles.forEach(file => handleFileUploadSuccess(file.name));
+
+    // Check if use has a bucket already...
+
+    // validFiles.forEach(file => handleFileUploadSuccess(file.name));
 
   };
 

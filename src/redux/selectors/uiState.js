@@ -7,3 +7,6 @@ export const getActiveImageBrowserTabName = store => {
   const activeTab = tabStates.filter(tab => tab.isActive)[0];
   return activeTab.name;
 };
+
+export const getMainImageLibrary = store => store.uiState.imageLibrary;
+export const getTheUserImageLibrary = store => store.uiState.userImageLibrary;
