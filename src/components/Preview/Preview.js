@@ -3,10 +3,9 @@ import Carousel from '../Carousel/Carousel';
 import ImageBrowser from '../ImageBrowser/ImageBrowser';
 import '../../scss/bem/Preview.scss';
 
-const Preview = ({ currentUserInfo }) => {
+const Preview = ({ currentUserInfo, imageLibrary }) => {
 
-  const [...favourites] = currentUserInfo.favourites.imageLibrary;
-  const [...userFavourites] = currentUserInfo.favourites.userImageLibrary;
+  // Todo: grab the userImageLibrary!
 
   return (
     <div className="preview">
@@ -16,8 +15,7 @@ const Preview = ({ currentUserInfo }) => {
       <Carousel />
       <ImageBrowser
         currentUserInfo={currentUserInfo}
-        favourites={favourites}
-        userFavourites={userFavourites}
+        imageLibrary={imageLibrary}
       />
     </div>
   );
