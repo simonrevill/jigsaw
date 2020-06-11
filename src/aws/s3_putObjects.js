@@ -16,6 +16,17 @@ export const uploadFile = (userId, file) => {
         Body: file,
         ACL: "public-read"
       }
+    }).on('httpUploadProgress', progress => {
+      // document.querySelector('.uploadProgress').textContent = `${progress.loaded} of ${progress.total} bytes.`;
+      const progressBar = document.querySelector('.uploadProgress');
+      function showProgress() {
+        progressBar.max = progress.total;
+        progressBar.value = progress.loaded;
+        if (progressBar.value < progress.total) {
+          setTimeout(showProgress, progress.total);
+        }
+      };
+      showProgress();
     });
 
     upload.promise()

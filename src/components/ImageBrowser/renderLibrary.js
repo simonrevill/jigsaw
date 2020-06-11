@@ -3,7 +3,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { trackVerticalStyles, thumbVerticalStyles, innerThumbStyles } from './scrollbarStyles';
 import Image from '../Image/Image';
 
-const renderLibrary = libraryNa(activeTab, me, images) => {
+const renderLibrary = (activeTab, libraryName, images) => {
 
   const totalImages = images.length;
 

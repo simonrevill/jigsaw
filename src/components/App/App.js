@@ -12,7 +12,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';
 import '../../scss/bem/App.scss';
 
-const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrary, setUserImageLibrary, imageLibrary, userImageLibrary }) => {
+const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrary, imageLibrary, userImageLibrary }) => {
   // users:
   // blankJigsawUser - 'e5aa91dc-4017-44f4-a327-666565d2026c'
   // marySmith - 'f3a0f858-57b4-4420-81fa-1f0acdec979d'
@@ -38,6 +38,7 @@ const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrar
 
   return (
     <React.Fragment>
+      <progress className="uploadProgress" value='0'></progress>
       <Topbar currentUserInfo={currentUserInfo} />
       <div className="container">
         <Sidebar currentUserInfo={currentUserInfo} menuIsOpen={menuIsOpen} tabs={tabs} />

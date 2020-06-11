@@ -93,8 +93,6 @@ const users = (state = initialState, action) => {
         }
       };
     case SET_USER_IMAGE_LIBRARY:
-      console.log('action data type: ', typeof action.data);
-      console.log('action data: ', action.data);
       return {
         ...state,
         currentUserInfo: {
