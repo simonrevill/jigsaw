@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getMenuIsOpen, getTabs, getMainImageLibrary, getTheUserImageLibrary } from '../../redux/selectors/uiState';
-import { getCurrentUserInfo } from '../../redux/selectors/users';
+import { getMenuIsOpen, getTabs, getMainImageLibrary } from '../../redux/selectors/uiState';
+import { getCurrentUserInfo, getTheUserImageLibrary } from '../../redux/selectors/users';
 import setCurrentUser from '../../redux/actions/users/setCurrentUser';
 import setImageLibrary from '../../redux/actions/uiState/setImageLibrary';
-import setUserImageLibrary from '../../redux/actions/uiState/setUserImageLibrary';
+import setUserImageLibrary from '../../redux/actions/users/setUserImageLibrary';
 import { getUserData } from '../../aws/dynamodb_getData';
-import { getImageLibrary, getUserImageLibrary } from '../../aws/s3_listObjects';
+import { getImageLibrary } from '../../aws/s3_listObjects';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';
@@ -34,16 +34,7 @@ const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrar
     getImageLibrary()
       .then(data => setImageLibrary(data))
       .catch(err => console.log(err));
-  }, [setImageLibrary]);
-
-  // Get user image library:
-  useEffect(() => {
-    getUserImageLibrary(userId)
-      .then(data => {
-        setUserImageLibrary(data);
-      })
-      .catch(err => console.log(err))
-  }, [setUserImageLibrary]);
+  }, []);
 
   return (
     <React.Fragment>

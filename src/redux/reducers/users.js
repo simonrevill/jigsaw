@@ -1,6 +1,6 @@
 import { SET_CURRENT_USER } from '../constants/actionTypes';
 import {
-  TOGGLE_DARK_MODE, TOGGLE_BACKGROUND_IMAGE, TOGGLE_GRID_OVERLAY, TOGGLE_CORRECT_PLACEMENT
+  TOGGLE_DARK_MODE, TOGGLE_BACKGROUND_IMAGE, TOGGLE_GRID_OVERLAY, TOGGLE_CORRECT_PLACEMENT, SET_USER_IMAGE_LIBRARY
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -91,6 +91,19 @@ const users = (state = initialState, action) => {
         currentUserInfo: {
           ...action.currentUserInfo
         }
+      };
+    case SET_USER_IMAGE_LIBRARY:
+      console.log('action data type: ', typeof action.data);
+      console.log('action data: ', action.data);
+      return {
+        ...state,
+        currentUserInfo: {
+          ...state.currentUserInfo,
+          userImageLibrary: [
+            ...state.currentUserInfo.userImageLibrary,
+            action.data
+          ]
+        },
       };
     default:
       return state;

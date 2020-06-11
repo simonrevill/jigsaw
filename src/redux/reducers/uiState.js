@@ -1,5 +1,5 @@
 import {
-  TOGGLE_MENU, SET_ACTIVE_TAB, SET_ACTIVE_IMAGE_BROWSER_TAB, SET_IMAGE_LIBRARY, SET_USER_IMAGE_LIBRARY
+  TOGGLE_MENU, SET_ACTIVE_TAB, SET_ACTIVE_IMAGE_BROWSER_TAB, SET_IMAGE_LIBRARY
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -41,7 +41,6 @@ const initialState = {
     }
   },
   imageLibrary: [],
-  userImageLibrary: []
 };
 
 const uiState = (state = initialState, action) => {
@@ -77,11 +76,6 @@ const uiState = (state = initialState, action) => {
       return {
         ...state,
         imageLibrary: action.data
-      };
-    case SET_USER_IMAGE_LIBRARY:
-      return {
-        ...state,
-        userImageLibrary: action.data
       };
     default:
       return state;

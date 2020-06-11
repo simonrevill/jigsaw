@@ -1,23 +1,28 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { ReactComponent as UploadDragAndDropIcon } from '../../icons/upload-drag-and-drop.svg';
 import { handleFileUploadError, handleFileUploadSuccess, handleValidation } from './imageValidation';
+import { uploadFile } from '../../aws/s3_putObjects';
+import { updateDatabase } from '../../aws/dynamodb_updateData';
+import { v4 as uuidv4 } from 'uuid';
+import setUserImageLibrary from '../../redux/actions/users/setUserImageLibrary';
 import ButtonLabel from '../Button/ButtonLabel';
 import '../../scss/bem/Upload.scss';
 
-const Upload = ({ currentUserInfo, isActive }) => {
+const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
 
-  // Check if current user has a bucket.
-  // If not, they'll need a new one creating before they can upload.
-  // This should be done behind the scenes as part of their first upload.
-  const { hasBucket } = currentUserInfo;
+  // // Check if current user has a bucket.
+  // // If not, they'll need a new one creating before they can upload.
+  // // This should be done behind the scenes as part of their first upload.
+  const { userId } = currentUserInfo;
 
   const handleImageUpload = e => {
-    // Firstly, store the image file/files:
-    const files = e.target.files;
+    //   // Firstly, store the image file/files:
+    const files = [...e.target.files];
     // Convert imagesFiles from a FileList to an array and perform validation.
     // Then, for validation results, return a new array of objects indicating whether validation
     // has succeeded or failed for each particular image:
-    const validationResults = handleValidation([...files]);
+    const validationResults = handleValidation(files);
 
     // Split this array into two new filtered arrays:
     const invalidFiles = validationResults.filter(result => !result.hasPassedValidation ? result : null);
@@ -33,15 +38,37 @@ const Upload = ({ currentUserInfo, isActive }) => {
       return;
     }
 
+    validFiles.forEach(file => handleFileUploadSuccess(file.name));
     // Proceed to next step - create or add to bucket, write to database etc...
+
     console.log('validation succeeded!');
+    // Check if user has a bucket already...
 
-    // Check if use has a bucket already...
+    if (!currentUserInfo.hasBucket) /* create a new bucket for the user... */ console.log('someone needs a new bucket!');
 
-    // validFiles.forEach(file => handleFileUploadSuccess(file.name));
+    files.forEach(file => {
+      uploadFile(userId, file)
+        .then(storageDataResponse => {
+          // info to update database:
+          // to work with dynamodb's update_list function,
+          // the info object must be returned inside an array:
+          const databaseInfo = [{
+            id: uuidv4(),
+            name: file.name,
+            rating: 0,
+            url: storageDataResponse.Location
+          }];
+          return databaseInfo;
+        })
+        .then(databaseInfo => {
+          const [item] = databaseInfo;
+          updateDatabase('userImageLibrary', userId, databaseInfo);
+          setUserImageLibrary(item);
+        })
+        .catch(err => console.log(err));
+    });
 
   };
-
   return (
     <div className={isActive ? "upload d-block" : "upload d-none"}>
       <div className="upload__inner">
@@ -80,4 +107,7 @@ const Upload = ({ currentUserInfo, isActive }) => {
   );
 };
 
-export default Upload
+export default connect(
+  null,
+  { setUserImageLibrary }
+)(Upload);

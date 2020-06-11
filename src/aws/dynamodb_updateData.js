@@ -73,6 +73,21 @@ const updateCorrectPlacement = (userId, showCorrectPlacement) => {
   update(params);
 };
 
+// Update User Image Library:
+const updateUserImageLibrary = (userId, data) => {
+  const params = {
+    TableName: REGISTERED_USERS_TABLE,
+    Key: { userId },
+    UpdateExpression: "set userImageLibrary = list_append(:d, userImageLibrary)",
+    ExpressionAttributeValues: {
+      ":d": data
+    },
+    ReturnValues: "UPDATED_NEW"
+  };
+  // Send update to db:
+  update(params);
+};
+
 export const updateDatabase = (parameter, userId, value) => {
   switch (parameter) {
     case 'darkModeOn':
@@ -87,6 +102,8 @@ export const updateDatabase = (parameter, userId, value) => {
     case 'showCorrectPlacement':
       updateCorrectPlacement(userId, value);
       break;
+    case 'userImageLibrary':
+      updateUserImageLibrary(userId, value);
     default:
       break;
   };

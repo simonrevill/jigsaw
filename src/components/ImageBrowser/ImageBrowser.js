@@ -6,13 +6,6 @@ import setActiveImageBrowserTab from '../../redux/actions/uiState/setActiveImage
 import '../../scss/bem/ImageBrowser.scss';
 
 const ImageBrowser = ({ currentUserInfo, imageLibrary, userImageLibrary, activeImageBrowserTabName, setActiveImageBrowserTab }) => {
-  /*
-  
-  Todo:
-
-  render the userLibrary.
-  
-  */
 
   const handleTabClick = e => setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
 
