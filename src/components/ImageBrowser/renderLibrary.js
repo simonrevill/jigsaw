@@ -17,7 +17,6 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
           'image-browser__browser-container'
         }
       >
-
         {
           libraryName === 'userLibrary' ?
             <div className="image-browser__browser image-browser__browser--empty">
@@ -39,7 +38,7 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
                 </p>
             </div>
         }
-      </div >
+      </div>
     );
   } else if (totalImages < 9) {
     return (
