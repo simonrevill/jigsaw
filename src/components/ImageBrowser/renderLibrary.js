@@ -35,7 +35,7 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
               <Spinner className="image-browser__spinner" />
               <p className="image-browser__empty-message">
                 Fetching image library...
-                </p>
+              </p>
             </div>
         }
       </div>
