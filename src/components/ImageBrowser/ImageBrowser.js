@@ -1,20 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import renderLibrary from './renderLibrary';
-import { getActiveImageBrowserTabName } from '../../redux/selectors/uiState';
+import { getActiveImageBrowserTabName, getMenuIsOpen } from '../../redux/selectors/uiState';
 import setActiveTab from '../../redux/actions/uiState/setActiveTab';
 import toggleMenu from '../../redux/actions/uiState/toggleMenu';
 import setActiveImageBrowserTab from '../../redux/actions/uiState/setActiveImageBrowserTab';
 import '../../scss/bem/ImageBrowser.scss';
 
 const ImageBrowser = ({
-  currentUserInfo, imageLibrary, userImageLibrary,
+  currentUserInfo, menuIsOpen, imageLibrary, userImageLibrary,
   activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab, toggleMenu }) => {
 
   const handleTabClick = e => setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
 
   const handleUploadButtonClick = () => {
-    toggleMenu();
+    if (!menuIsOpen) toggleMenu();
     setActiveTab('Upload');
   };
 
@@ -44,8 +44,9 @@ const ImageBrowser = ({
 };
 
 const mapStateToProps = state => {
+  const menuIsOpen = getMenuIsOpen(state);
   const activeImageBrowserTabName = getActiveImageBrowserTabName(state);
-  return { activeImageBrowserTabName };
+  return { activeImageBrowserTabName, menuIsOpen };
 };
 
 export default connect(
