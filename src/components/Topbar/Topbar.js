@@ -22,6 +22,7 @@ const Topbar = ({ currentUserInfo, darkMode, toggleDarkMode }) => {
       <JigsawTopbarLogo
         className="topbar__jigsaw--logo"
       />
+      <progress className="uploadProgress" value='0'></progress>
       <Slider
         sliderLabel="Dark Mode:"
         showSliderState={true}

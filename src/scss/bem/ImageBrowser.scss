@@ -80,3 +80,59 @@
   background-color: $dark-purple;
   box-sizing: border-box;
 }
+
+.image-browser__browser--empty {
+  font-family: $primary-font-regular;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  letter-spacing: 0.265rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px;
+  height: 330px;
+  background-color: $dark-purple;
+}
+
+.image-browser__browser--empty-fetching-state {
+  background-color: transparent;
+}
+
+.image-browser__empty-message {
+  margin: 0;
+}
+
+.image-browser__browser--empty .button {
+  padding: 19px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+}
+
+.image-browser__spinner {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 20px;
+  animation: spin 800ms linear infinite;
+  border: 1px solid $lighter-purple;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.9;
+  }
+}

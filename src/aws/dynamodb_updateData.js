@@ -104,6 +104,7 @@ export const updateDatabase = (parameter, userId, value) => {
       break;
     case 'userImageLibrary':
       updateUserImageLibrary(userId, value);
+      break;
     default:
       break;
   };

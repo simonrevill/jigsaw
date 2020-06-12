@@ -27,7 +27,7 @@ const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrar
     getUserData(userId)
       .then(data => setCurrentUser(data))
       .catch(err => console.log(err));
-  }, [setCurrentUser]);
+  }, []);
 
   // Get main image library:
   useEffect(() => {
@@ -38,7 +38,6 @@ const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrar
 
   return (
     <React.Fragment>
-      <progress className="uploadProgress" value='0'></progress>
       <Topbar currentUserInfo={currentUserInfo} />
       <div className="container">
         <Sidebar currentUserInfo={currentUserInfo} menuIsOpen={menuIsOpen} tabs={tabs} />

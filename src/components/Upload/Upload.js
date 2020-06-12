@@ -65,7 +65,8 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
           updateDatabase('userImageLibrary', userId, databaseInfo);
           setUserImageLibrary(item);
           const progressBar = document.querySelector('.uploadProgress');
-          progressBar.style.display = 'none';
+          progressBar.setAttribute('max', '0');
+          progressBar.setAttribute('value', '0');
         })
         .catch(err => console.log(err));
     });

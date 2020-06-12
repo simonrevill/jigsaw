@@ -2,8 +2,10 @@ import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { trackVerticalStyles, thumbVerticalStyles, innerThumbStyles } from './scrollbarStyles';
 import Image from '../Image/Image';
+import Button from '../Button/Button';
+import { ReactComponent as Spinner } from '../../icons/spinner.svg';
 
-const renderLibrary = (activeTab, libraryName, images) => {
+const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
 
   const totalImages = images.length;
 
@@ -15,8 +17,29 @@ const renderLibrary = (activeTab, libraryName, images) => {
           'image-browser__browser-container'
         }
       >
-        <div className="image-browser__browser">EMPTY</div>
-      </div>
+
+        {
+          libraryName === 'userLibrary' ?
+            <div className="image-browser__browser image-browser__browser--empty">
+              <p className="image-browser__empty-message">
+                Oops...
+                <br />
+                <br />
+                It looks like you haven't added any images yet.
+              </p>
+              <Button
+                buttonText={'Upload images'}
+                onClick={uploadTrigger}
+              />
+            </div> :
+            <div className="image-browser__browser image-browser__browser--empty image-browser__browser--empty-fetching-state">
+              <Spinner className="image-browser__spinner" />
+              <p className="image-browser__empty-message">
+                Fetching image library...
+                </p>
+            </div>
+        }
+      </div >
     );
   } else if (totalImages < 9) {
     return (

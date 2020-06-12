@@ -13,6 +13,7 @@ const s3 = new AWS.S3({
 });
 
 export const getImageLibrary = () => {
+  console.log('getImageLibrary called...');
   return new Promise((resolve, reject) => {
     s3.listObjectsV2({ Prefix: 'image-library/images/' }, function (err, data) {
       if (err) reject(err);

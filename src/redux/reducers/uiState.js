@@ -3,15 +3,15 @@ import {
 } from '../constants/actionTypes';
 
 const initialState = {
-  menuIsOpen: false,
+  menuIsOpen: true,
   tabs: [
     {
       name: 'My Profile',
-      isActive: true
+      isActive: false
     },
     {
       name: 'Library',
-      isActive: false
+      isActive: true
     },
     {
       name: 'Upload',

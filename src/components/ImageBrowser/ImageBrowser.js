@@ -2,12 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import renderLibrary from './renderLibrary';
 import { getActiveImageBrowserTabName } from '../../redux/selectors/uiState';
+import setActiveTab from '../../redux/actions/uiState/setActiveTab';
 import setActiveImageBrowserTab from '../../redux/actions/uiState/setActiveImageBrowserTab';
 import '../../scss/bem/ImageBrowser.scss';
 
-const ImageBrowser = ({ currentUserInfo, imageLibrary, userImageLibrary, activeImageBrowserTabName, setActiveImageBrowserTab }) => {
+const ImageBrowser = ({ currentUserInfo, imageLibrary, userImageLibrary, activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab }) => {
 
   const handleTabClick = e => setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
+
+  const handleUploadButtonClick = () => setActiveTab('Upload');
 
   return (
     <div className="image-browser">
@@ -28,8 +31,8 @@ const ImageBrowser = ({ currentUserInfo, imageLibrary, userImageLibrary, activeI
           <p className="image-browser__tab-title">User Library</p>
         </div>
       </div>
-      {renderLibrary(activeImageBrowserTabName, 'mainLibrary', imageLibrary)}
-      {renderLibrary(activeImageBrowserTabName, 'userLibrary', userImageLibrary)}
+      {renderLibrary(activeImageBrowserTabName, 'mainLibrary', imageLibrary, handleUploadButtonClick)}
+      {renderLibrary(activeImageBrowserTabName, 'userLibrary', userImageLibrary, handleUploadButtonClick)}
     </div>
   );
 };
@@ -41,5 +44,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { setActiveImageBrowserTab }
-)(ImageBrowser);
+  { setActiveImageBrowserTab, setActiveTab }
+)(ImageBrowser, setActiveTab);
