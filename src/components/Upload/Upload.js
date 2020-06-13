@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { ReactComponent as UploadDragAndDropIcon } from '../../icons/upload-drag-and-drop.svg';
 import { handleFileUploadError, handleFileUploadSuccess, handleValidation } from './imageValidation';
@@ -11,14 +11,17 @@ import '../../scss/bem/Upload.scss';
 
 const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
 
+  const [dragOver, setDragOver] = useState(false);
+
   // // Check if current user has a bucket.
   // // If not, they'll need a new one creating before they can upload.
   // // This should be done behind the scenes as part of their first upload.
   const { userId } = currentUserInfo;
 
-  const handleImageUpload = e => {
+  const handleImageUpload = (e, dragged = false, files) => {
+    console.log(files);
     //   // Firstly, store the image file/files:
-    const files = [...e.target.files];
+    if (!dragged) var files = [...e.target.files];
     // Convert imagesFiles from a FileList to an array and perform validation.
     // Then, for validation results, return a new array of objects indicating whether validation
     // has succeeded or failed for each particular image:
@@ -70,19 +73,43 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
         })
         .catch(err => console.log(err));
     });
-
   };
+
+  const handleDragOver = e => {
+    e.preventDefault();
+    setDragOver(true);
+    console.log('drag enter event triggered...');
+  };
+
+  const handleDragLeave = e => {
+    e.preventDefault();
+    setDragOver(false);
+    console.log('drag leave event triggered...');
+  };
+
+  const handleDrop = e => {
+    e.preventDefault();
+    setDragOver(false);
+    const dataTransfer = e.dataTransfer;
+    const files = [...dataTransfer.files];
+    handleImageUpload(undefined, true, files);
+    console.log('drop event triggered...');
+  };
+
   return (
     <div className={isActive ? "upload d-block" : "upload d-none"}>
       <div className="upload__inner">
-        <div className="upload__center">
+        <div className="upload__center" >
           <span className="upload__title">
             Make your own puzzles using custom images!
             <br />
             Jigsaw accepts .jpg & .png image files
           </span>
           <UploadDragAndDropIcon
-            className="upload__icon"
+            className={dragOver ? "upload__icon upload__icon--drag-over" : "upload__icon"}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
           />
           <span className="upload__title">
             Drag & drop your image files here to
