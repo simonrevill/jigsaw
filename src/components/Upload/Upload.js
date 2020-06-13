@@ -19,7 +19,6 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
   const { userId } = currentUserInfo;
 
   const handleImageUpload = (e, dragged = false, files) => {
-    console.log(files);
     //   // Firstly, store the image file/files:
     if (!dragged) var files = [...e.target.files];
     // Convert imagesFiles from a FileList to an array and perform validation.
@@ -78,13 +77,11 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
   const handleDragOver = e => {
     e.preventDefault();
     setDragOver(true);
-    console.log('drag enter event triggered...');
   };
 
   const handleDragLeave = e => {
     e.preventDefault();
     setDragOver(false);
-    console.log('drag leave event triggered...');
   };
 
   const handleDrop = e => {
@@ -93,7 +90,6 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
     const dataTransfer = e.dataTransfer;
     const files = [...dataTransfer.files];
     handleImageUpload(undefined, true, files);
-    console.log('drop event triggered...');
   };
 
   return (
