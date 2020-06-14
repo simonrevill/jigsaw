@@ -9,6 +9,8 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
 
   const totalImages = images.length;
 
+  const renderImages = images => images.map(image => <Image key={image.id} imageSrc={image.url} imageName={image.name} imageRating={image.rating} />);
+
   if (totalImages === 0) {
     return (
       <div
@@ -49,7 +51,7 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
         }
       >
         <div className="image-browser__browser">
-          {images.map(image => <Image key={image.name} imageSrc={image.url} imageName={image.name} />)}
+          {renderImages(images)}
         </div>
       </div>
     );
@@ -88,7 +90,7 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
           }
         >
           <div className="image-browser__browser image-browser__browser--scrollbars">
-            {images.map(image => <Image key={image.name} imageSrc={image.url} imageName={image.name} />)}
+            {renderImages(images)}
           </div>
         </div>
       </Scrollbars>
