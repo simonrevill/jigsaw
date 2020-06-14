@@ -14,14 +14,19 @@
   width: 423px;
   padding: 13px 0;
   cursor: pointer;
+  transition: background-color $medium;
 }
 
 .image-browser__tab:hover {
-  background-color: $darker-purple;
+  background-color: $lighter-purple;
 }
 
 .image-browser__tab-active {
   position: relative;
+  background-color: $darker-purple;
+}
+
+.image-browser__tab-active:hover {
   background-color: $darker-purple;
 }
 

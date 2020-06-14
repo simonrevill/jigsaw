@@ -5,3 +5,50 @@
   height: 421px;
   border-bottom: 1px solid $darker-purple;
 }
+
+.carousel__browser {
+  width: 847px;
+  height: 351px;
+  border-bottom: 1px solid $darker-purple;
+}
+
+.carousel__browser-panel {
+  width: 847px;
+  height: 69px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel__button {
+  width: 262px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color $medium;
+}
+
+.carousel__button:hover {
+  background-color: $lighter-purple;
+}
+
+.carousel__file-name {
+  width: 321px;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid $darker-purple;
+  border-right: 1px solid $darker-purple;
+}
+
+.carousel__file-name-text {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  letter-spacing: 0.265rem;
+  text-align: center;
+  margin: 0;
+}
