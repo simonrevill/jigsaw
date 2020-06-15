@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/jigsaw/static/css/main.b5d55235.chunk.css",
-    "main.js": "/jigsaw/static/js/main.e4cc2064.chunk.js",
-    "main.js.map": "/jigsaw/static/js/main.e4cc2064.chunk.js.map",
+    "main.css": "/jigsaw/static/css/main.486f4673.chunk.css",
+    "main.js": "/jigsaw/static/js/main.bac0a7f8.chunk.js",
+    "main.js.map": "/jigsaw/static/js/main.bac0a7f8.chunk.js.map",
     "runtime-main.js": "/jigsaw/static/js/runtime-main.49702581.js",
     "runtime-main.js.map": "/jigsaw/static/js/runtime-main.49702581.js.map",
-    "static/js/2.cf0e1147.chunk.js": "/jigsaw/static/js/2.cf0e1147.chunk.js",
-    "static/js/2.cf0e1147.chunk.js.map": "/jigsaw/static/js/2.cf0e1147.chunk.js.map",
+    "static/js/2.387dbff3.chunk.js": "/jigsaw/static/js/2.387dbff3.chunk.js",
+    "static/js/2.387dbff3.chunk.js.map": "/jigsaw/static/js/2.387dbff3.chunk.js.map",
     "index.html": "/jigsaw/index.html",
-    "precache-manifest.c8ff08846730161bfe97b29fffdf8879.js": "/jigsaw/precache-manifest.c8ff08846730161bfe97b29fffdf8879.js",
+    "precache-manifest.5c79e87d6b756c659bda7c3d28c186a9.js": "/jigsaw/precache-manifest.5c79e87d6b756c659bda7c3d28c186a9.js",
     "service-worker.js": "/jigsaw/service-worker.js",
-    "static/css/main.b5d55235.chunk.css.map": "/jigsaw/static/css/main.b5d55235.chunk.css.map",
-    "static/js/2.cf0e1147.chunk.js.LICENSE.txt": "/jigsaw/static/js/2.cf0e1147.chunk.js.LICENSE.txt",
+    "static/css/main.486f4673.chunk.css.map": "/jigsaw/static/css/main.486f4673.chunk.css.map",
+    "static/js/2.387dbff3.chunk.js.LICENSE.txt": "/jigsaw/static/js/2.387dbff3.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/jigsaw/static/media/Comfortaa-Regular.c2488bfd.ttf",
     "static/media/blankJigsawUser.335ec79a.svg": "/jigsaw/static/media/blankJigsawUser.335ec79a.svg",
     "static/media/board.b8e5c13c.svg": "/jigsaw/static/media/board.b8e5c13c.svg",
+    "static/media/carousel-button-next.a8274c67.svg": "/jigsaw/static/media/carousel-button-next.a8274c67.svg",
+    "static/media/carousel-button-prev.710f4b73.svg": "/jigsaw/static/media/carousel-button-prev.710f4b73.svg",
     "static/media/connect-line.e010dd79.svg": "/jigsaw/static/media/connect-line.e010dd79.svg",
     "static/media/connect-separator.e976f5ba.svg": "/jigsaw/static/media/connect-separator.e976f5ba.svg",
     "static/media/connect-step.f21216a9.svg": "/jigsaw/static/media/connect-step.f21216a9.svg",
@@ -28,6 +30,7 @@
     "static/media/menu-close.65ed9ed9.svg": "/jigsaw/static/media/menu-close.65ed9ed9.svg",
     "static/media/menu-open.0e20a9d8.svg": "/jigsaw/static/media/menu-open.0e20a9d8.svg",
     "static/media/settings.2191dfa2.svg": "/jigsaw/static/media/settings.2191dfa2.svg",
+    "static/media/spinner.ef428380.svg": "/jigsaw/static/media/spinner.ef428380.svg",
     "static/media/star-solid.b3f495d4.svg": "/jigsaw/static/media/star-solid.b3f495d4.svg",
     "static/media/star.aee3f83c.svg": "/jigsaw/static/media/star.aee3f83c.svg",
     "static/media/upload-drag-and-drop.9b899c94.svg": "/jigsaw/static/media/upload-drag-and-drop.9b899c94.svg",
@@ -35,8 +38,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.49702581.js",
-    "static/js/2.cf0e1147.chunk.js",
-    "static/css/main.b5d55235.chunk.css",
-    "static/js/main.e4cc2064.chunk.js"
+    "static/js/2.387dbff3.chunk.js",
+    "static/css/main.486f4673.chunk.css",
+    "static/js/main.bac0a7f8.chunk.js"
   ]
 }

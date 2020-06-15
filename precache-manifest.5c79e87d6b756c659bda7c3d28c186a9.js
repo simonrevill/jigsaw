@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a687aada5f7ee929cc789b2e075462f9",
+    "revision": "e7cff96cfac6946817aac80f7945b916",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "5efc3d8d11aeb03b7e7b",
-    "url": "/jigsaw/static/css/main.b5d55235.chunk.css"
+    "revision": "7cc6521b611b6e302d7a",
+    "url": "/jigsaw/static/css/main.486f4673.chunk.css"
   },
   {
-    "revision": "516ca4700e89842bf507",
-    "url": "/jigsaw/static/js/2.cf0e1147.chunk.js"
+    "revision": "9a30bf410938df829e47",
+    "url": "/jigsaw/static/js/2.387dbff3.chunk.js"
   },
   {
     "revision": "0ec9300b90a1964ccb21b13048e7fb5c",
-    "url": "/jigsaw/static/js/2.cf0e1147.chunk.js.LICENSE.txt"
+    "url": "/jigsaw/static/js/2.387dbff3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5efc3d8d11aeb03b7e7b",
-    "url": "/jigsaw/static/js/main.e4cc2064.chunk.js"
+    "revision": "7cc6521b611b6e302d7a",
+    "url": "/jigsaw/static/js/main.bac0a7f8.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
@@ -38,6 +38,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b8e5c13c40ddf908ad51f8310a5fb2a9",
     "url": "/jigsaw/static/media/board.b8e5c13c.svg"
+  },
+  {
+    "revision": "a8274c67121ef80cf008e913c6f9263a",
+    "url": "/jigsaw/static/media/carousel-button-next.a8274c67.svg"
+  },
+  {
+    "revision": "710f4b730ad11e075760372d5502fbef",
+    "url": "/jigsaw/static/media/carousel-button-prev.710f4b73.svg"
   },
   {
     "revision": "e010dd79bf4a265e45765bec4b513b61",
@@ -90,6 +98,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2191dfa2445d03be595c315d1fa73760",
     "url": "/jigsaw/static/media/settings.2191dfa2.svg"
+  },
+  {
+    "revision": "ef4283802648723e013f2edc545d2961",
+    "url": "/jigsaw/static/media/spinner.ef428380.svg"
   },
   {
     "revision": "b3f495d4c61257a9d9f93f7d2a978413",
