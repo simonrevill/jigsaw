@@ -1,51 +1,35 @@
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { trackVerticalStyles, thumbVerticalStyles, innerThumbStyles } from './scrollbarStyles';
-import Image from '../Image/Image';
-import Button from '../Button/Button';
+import BrowserImage from '../BrowserImage/BrowserImage';
 import { ReactComponent as Spinner } from '../../icons/spinner.svg';
 
-const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
+const renderMainImageLibrary = (activeTab, images) => {
 
   const totalImages = images.length;
 
-  const renderImages = images => images.map(image => <Image key={image.id} imageSrc={image.url} imageName={image.name} imageRating={image.rating} />);
+  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageSrc={image.url} imageName={image.name} isFavourite={image.isFavourite} />);
 
   if (totalImages === 0) {
     return (
       <div
-        className={activeTab === libraryName ?
+        className={activeTab === 'mainLibrary' ?
           'image-browser__browser-container image-browser__browser-container--active' :
           'image-browser__browser-container'
         }
       >
-        {
-          libraryName === 'userLibrary' ?
-            <div className="image-browser__browser image-browser__browser--empty">
-              <p className="image-browser__empty-message">
-                Oops...
-                <br />
-                <br />
-                It looks like you haven't added any images yet.
-              </p>
-              <Button
-                buttonText={'Upload images'}
-                onClick={uploadTrigger}
-              />
-            </div> :
-            <div className="image-browser__browser image-browser__browser--empty image-browser__browser--empty-fetching-state">
-              <Spinner className="image-browser__spinner" />
-              <p className="image-browser__empty-message">
-                Fetching image library...
-              </p>
-            </div>
-        }
+        <div className="image-browser__browser image-browser__browser--empty image-browser__browser--empty-fetching-state">
+          <Spinner className="image-browser__spinner" />
+          <p className="image-browser__empty-message">
+            Fetching image library...
+          </p>
+        </div>
       </div>
     );
   } else if (totalImages < 9) {
     return (
       <div
-        className={activeTab === libraryName ?
+        className={activeTab === 'mainLibrary' ?
           'image-browser__browser-container image-browser__browser-container--active' :
           'image-browser__browser-container'
         }
@@ -58,7 +42,7 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
   } else {
     return (
       <Scrollbars
-        style={activeTab === libraryName ?
+        style={activeTab === 'mainLibrary' ?
           ({ width: 847, height: 450 }) :
           ({ width: 847, height: 450, display: 'none' })}
         renderTrackHorizontal={props => <div {...props} className="d-none" />}
@@ -84,7 +68,7 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
         }
       >
         <div
-          className={activeTab === libraryName ?
+          className={activeTab === 'mainLibrary' ?
             'image-browser__browser-container image-browser__browser-container--active' :
             'image-browser__browser-container'
           }
@@ -98,4 +82,4 @@ const renderLibrary = (activeTab, libraryName, images, uploadTrigger) => {
   }
 };
 
-export default renderLibrary;
+export default renderMainImageLibrary;

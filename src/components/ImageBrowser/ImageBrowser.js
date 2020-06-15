@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import renderLibrary from './renderLibrary';
+import renderMainImageLibrary from './renderMainImageLibrary';
+import renderUserImageLibrary from './renderUserImageLibrary';
 import { getActiveImageBrowserTabName, getMenuIsOpen } from '../../redux/selectors/uiState';
 import setActiveTab from '../../redux/actions/uiState/setActiveTab';
 import toggleMenu from '../../redux/actions/uiState/toggleMenu';
@@ -10,6 +11,10 @@ import '../../scss/bem/ImageBrowser.scss';
 const ImageBrowser = ({
   currentUserInfo, menuIsOpen, imageLibrary, userImageLibrary,
   activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab, toggleMenu }) => {
+
+  console.log('imageLibrary: ', imageLibrary);
+  console.log('userImageLibrary: ', userImageLibrary);
+  console.log('user favourites: ', currentUserInfo.favourites);
 
   const handleTabClick = e => setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
 
@@ -37,8 +42,8 @@ const ImageBrowser = ({
           <p className="image-browser__tab-title">User Library</p>
         </div>
       </div>
-      {renderLibrary(activeImageBrowserTabName, 'mainLibrary', imageLibrary, handleUploadButtonClick)}
-      {renderLibrary(activeImageBrowserTabName, 'userLibrary', userImageLibrary, handleUploadButtonClick)}
+      {renderMainImageLibrary(activeImageBrowserTabName, imageLibrary)}
+      {renderUserImageLibrary(activeImageBrowserTabName, userImageLibrary, handleUploadButtonClick)}
     </div>
   );
 };
