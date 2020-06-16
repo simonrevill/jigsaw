@@ -8,7 +8,7 @@ const renderUserImageLibrary = (activeTab, images, uploadTrigger) => {
 
   const totalImages = images.length;
 
-  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageSrc={image.url} imageName={image.name} isFavourite={image.isFavourite} />);
+  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageSrc={image.url} imageName={image.name} isUserFavourite={image.isUserFavourite} />);
 
   if (totalImages === 0) {
     return (

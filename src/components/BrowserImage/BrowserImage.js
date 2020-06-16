@@ -3,7 +3,7 @@ import { ReactComponent as Heart } from '../../icons/heart.svg';
 import { ReactComponent as HeartSolid } from '../../icons/heart-solid.svg';
 import '../../scss/bem/BrowserImage.scss';
 
-const BrowserImage = ({ imageSrc, imageName, isFavourite }) => {
+const BrowserImage = ({ imageSrc, imageName, isUserFavourite }) => {
 
   const backgroundImageStyles = {
     backgroundImage: `url("${imageSrc}")`,
@@ -17,7 +17,7 @@ const BrowserImage = ({ imageSrc, imageName, isFavourite }) => {
   return (
     <div className="browser-image" style={backgroundImageStyles}>
       {
-        isFavourite ?
+        isUserFavourite ?
           <HeartSolid className="browser-image__is-user-favourite" /> :
           <Heart className="browser-image__is-user-favourite" />
       }

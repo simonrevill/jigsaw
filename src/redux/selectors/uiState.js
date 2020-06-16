@@ -10,7 +10,6 @@ export const getActiveImageBrowserTabName = store => {
   return activeTab.name;
 };
 
-
 const addFavouritesToImageLibrary = (mainLibrary, userFavourites) => {
   const libraryWithFavourites = mainLibrary.map(image => {
     const imageUrl = image.url;
