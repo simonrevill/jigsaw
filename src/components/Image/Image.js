@@ -32,7 +32,6 @@ const Image = ({ imageSrc, imageName, imageRating }) => {
       solidStars = imageRating;
       emptyStars = 5 - solidStars;
     }
-    console.log({ solidStars, emptyStars });
     return { solidStars, emptyStars };
   };
 

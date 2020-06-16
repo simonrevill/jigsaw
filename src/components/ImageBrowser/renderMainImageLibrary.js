@@ -8,7 +8,7 @@ const renderMainImageLibrary = (activeTab, images) => {
 
   const totalImages = images.length;
 
-  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageSrc={image.url} imageName={image.name} isFavourite={image.isFavourite} />);
+  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageSrc={image.url} imageName={image.name} isFavourite={image.isUserFavourite} />);
 
   if (totalImages === 0) {
     return (

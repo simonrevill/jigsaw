@@ -7,8 +7,6 @@ import '../../scss/bem/ImageGallery.scss';
 
 const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
 
-  console.log('favourites: ', favourites);
-
   const totalFavouriteImages = favourites.length + userFavourites.length;
 
   const renderFavourites = favourites => favourites.map(image => <Image key={image.id} imageName={image.name} imageSrc={image.url} imageRating={image.rating} />);

@@ -10,7 +10,20 @@ const initialState = {
     age: null,
     email: 'blankjigsawuser@jigsaw.org',
     favourites: {
-      imageLibrary: [],
+      imageLibrary: [
+        {
+          "id": "51058e2a-3c0d-43f2-bd0b-c5f704b88933",
+          "name": "bird.jpg",
+          "rating": 2,
+          "url": "https://jigsaw-image-library.s3.eu-west-2.amazonaws.com/image-library/images/bird.jpg"
+        },
+        {
+          "id": "0354494b-b294-4021-80b6-963ee0db09a6",
+          "name": "porsche.jpg",
+          "rating": 4,
+          "url": "https://jigsaw-image-library.s3.eu-west-2.amazonaws.com/image-library/images/porsche.jpg"
+        }
+      ],
       userImageLibrary: []
     },
     firstName: 'Blank',

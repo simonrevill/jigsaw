@@ -12,11 +12,8 @@ const ImageBrowser = ({
   currentUserInfo, menuIsOpen, imageLibrary, userImageLibrary,
   activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab, toggleMenu }) => {
 
-  console.log('imageLibrary: ', imageLibrary);
-  console.log('userImageLibrary: ', userImageLibrary);
-  console.log('user favourites: ', currentUserInfo.favourites);
-
   const handleTabClick = e => setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
+  console.log();
 
   const handleUploadButtonClick = () => {
     if (!menuIsOpen) toggleMenu();

@@ -11,3 +11,5 @@ export const getUserPreferences = store => {
 };
 
 export const getTheUserImageLibrary = store => store.users.currentUserInfo.userImageLibrary;
+
+export const getUserFavourites = store => store.users.currentUserInfo.favourites.imageLibrary;
