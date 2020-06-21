@@ -58,7 +58,7 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
             id: uuidv4(),
             name: file.name,
             rating: 0,
-            isFavourite: false,
+            isUserFavourite: false,
             url: storageDataResponse.Location
           }];
           return databaseInfo;

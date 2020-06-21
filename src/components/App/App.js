@@ -5,8 +5,7 @@ import { getCurrentUserInfo, getTheUserImageLibrary } from '../../redux/selector
 import setCurrentUser from '../../redux/actions/users/setCurrentUser';
 import setImageLibrary from '../../redux/actions/uiState/setImageLibrary';
 import setUserImageLibrary from '../../redux/actions/users/setUserImageLibrary';
-import { getUserData } from '../../aws/dynamodb_getData';
-import { getImageLibrary } from '../../aws/s3_listObjects';
+import { getUserData, getImageLibrary } from '../../aws/dynamodb_getData';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';

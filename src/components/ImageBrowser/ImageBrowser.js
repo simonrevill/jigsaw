@@ -3,22 +3,120 @@ import { connect } from 'react-redux';
 import renderMainImageLibrary from './renderMainImageLibrary';
 import renderUserImageLibrary from './renderUserImageLibrary';
 import { getActiveImageBrowserTabName, getMenuIsOpen } from '../../redux/selectors/uiState';
+import { getUserFavourites } from '../../redux/selectors/users';
 import setActiveTab from '../../redux/actions/uiState/setActiveTab';
 import toggleMenu from '../../redux/actions/uiState/toggleMenu';
+import addFavouriteLibraryImage from '../../redux/actions/users/addFavouriteLibraryImage';
+import deleteFavouriteLibraryImage from '../../redux/actions/users/deleteFavouriteLibraryImage';
 import setActiveImageBrowserTab from '../../redux/actions/uiState/setActiveImageBrowserTab';
 import '../../scss/bem/ImageBrowser.scss';
+import { updateDatabase } from '../../aws/dynamodb_updateData';
 
 const ImageBrowser = ({
   currentUserInfo, menuIsOpen, imageLibrary, userImageLibrary,
-  activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab, toggleMenu }) => {
+  activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab, toggleMenu,
+  addFavouriteLibraryImage, deleteFavouriteLibraryImage, favourites }) => {
+
+  const userId = currentUserInfo.userId;
 
   const handleTabClick = e => setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
-  console.log();
 
   const handleUploadButtonClick = () => {
     if (!menuIsOpen) toggleMenu();
     setActiveTab('Upload');
   };
+
+  const handleToggleLibraryFavourite = e => {
+    const browserImageElement = e.currentTarget.parentNode
+    const imageId = browserImageElement.dataset.id;
+    const isFavourite = e.currentTarget.parentNode.classList.contains('js-favourite-true');
+
+    if (isFavourite) {
+      const filteredFavourites = favourites.filter(favourite => favourite.id !== imageId);
+
+      // Transform filteredFavourites for DynamoDb into a new Object using reduce:
+      const filteredFavouritesTransformed = filteredFavourites.reduce((accumulator, currentValue) => {
+        accumulator[currentValue.id] = currentValue;
+        return accumulator;
+      }, {});
+
+      // Update db:
+      updateDatabase('deleteImageLibraryFavourite', userId, filteredFavouritesTransformed)
+        .then(data => {
+          console.log("UpdateItem succeeded: ", JSON.stringify(data, undefined, 2));
+          // update redux store:
+          deleteFavouriteLibraryImage(imageId);
+        })
+        .catch(err => {
+          console.error("Unable to update item: ", JSON.stringify(err, undefined, 2))
+        });
+
+      return;
+    }
+
+    // else if image is !isFavourite:
+
+    let newFavouriteData = imageLibrary.filter(image => image.id === imageId);
+
+    const newFavourite = {
+      name: newFavouriteData[0].name,
+      rating: newFavouriteData[0].rating,
+      id: newFavouriteData[0].id,
+      url: newFavouriteData[0].url
+    };
+
+    const newFavourites = favourites.concat(newFavourite);
+
+    // Transform newFavourite for DynamoDb into a new Object using reduce:
+    let newFavouritesTransformed = newFavourites.reduce((accumulator, currentValue) => {
+      accumulator[currentValue.id] = currentValue;
+      return accumulator;
+    }, {});
+
+    // Update db:
+    updateDatabase('addImageLibraryFavourite', userId, newFavouritesTransformed)
+      .then(data => {
+        console.log("UpdateItem succeeded: ", JSON.stringify(data, undefined, 2));
+        //update redux store:
+        addFavouriteLibraryImage(newFavourite);
+      })
+      .catch(err => {
+        console.error("Unable to update item: ", JSON.stringify(err, undefined, 2))
+      });
+  };
+
+  const handleToggleUserLibraryFavourite = e => {
+
+    console.log('user fav triggers!!');
+
+    // const browserImageElement = e.currentTarget.parentNode
+    // const imageId = browserImageElement.dataset.id;
+    // const isUserFavourite = e.currentTarget.parentNode.classList.contains('js-favourite-true');
+
+    // if (isUserFavourite) {
+    //   const filteredFavourites = favourites.filter(favourite => favourite.id !== imageId);
+
+    //   // Transform filteredFavourites for DynamoDb into a new Object using reduce:
+    //   const filteredFavouritesTransformed = filteredFavourites.reduce((accumulator, currentValue) => {
+    //     accumulator[currentValue.id] = currentValue;
+    //     return accumulator;
+    //   }, {});
+
+    //   // Update db:
+    //   updateDatabase('deleteImageLibraryFavourite', userId, filteredFavouritesTransformed)
+    //     .then(data => {
+    //       console.log("UpdateItem succeeded: ", JSON.stringify(data, undefined, 2));
+    //       // update redux store:
+    //       deleteFavouriteLibraryImage(imageId);
+    //     })
+    //     .catch(err => {
+    //       console.error("Unable to update item: ", JSON.stringify(err, undefined, 2))
+    //     });
+
+    //   return;
+    // }
+  };
+
 
   return (
     <div className="image-browser">
@@ -39,8 +137,8 @@ const ImageBrowser = ({
           <p className="image-browser__tab-title">User Library</p>
         </div>
       </div>
-      {renderMainImageLibrary(activeImageBrowserTabName, imageLibrary)}
-      {renderUserImageLibrary(activeImageBrowserTabName, userImageLibrary, handleUploadButtonClick)}
+      {renderMainImageLibrary(activeImageBrowserTabName, imageLibrary, handleToggleLibraryFavourite)}
+      {renderUserImageLibrary(activeImageBrowserTabName, userImageLibrary, handleUploadButtonClick, handleToggleUserLibraryFavourite)}
     </div>
   );
 };
@@ -48,10 +146,11 @@ const ImageBrowser = ({
 const mapStateToProps = state => {
   const menuIsOpen = getMenuIsOpen(state);
   const activeImageBrowserTabName = getActiveImageBrowserTabName(state);
-  return { activeImageBrowserTabName, menuIsOpen };
+  const favourites = getUserFavourites(state);
+  return { activeImageBrowserTabName, menuIsOpen, favourites };
 };
 
 export default connect(
   mapStateToProps,
-  { setActiveImageBrowserTab, setActiveTab, toggleMenu }
-)(ImageBrowser, setActiveTab);
+  { setActiveImageBrowserTab, setActiveTab, toggleMenu, addFavouriteLibraryImage, deleteFavouriteLibraryImage }
+)(ImageBrowser);

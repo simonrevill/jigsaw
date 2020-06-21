@@ -4,11 +4,11 @@ import { trackVerticalStyles, thumbVerticalStyles, innerThumbStyles } from './sc
 import BrowserImage from '../BrowserImage/BrowserImage';
 import Button from '../Button/Button';
 
-const renderUserImageLibrary = (activeTab, images, uploadTrigger) => {
+const renderUserImageLibrary = (activeTab, images, uploadTrigger, handleToggleUserLibraryFavourite) => {
 
   const totalImages = images.length;
 
-  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageSrc={image.url} imageName={image.name} isUserFavourite={image.isUserFavourite} />);
+  const renderImages = images => images.map(image => <BrowserImage key={image.id} id={image.id} imageSrc={image.url} imageName={image.name} isUserFavourite={image.isUserFavourite} uploadTrigger={uploadTrigger} handleToggleUserLibraryFavourite={handleToggleUserLibraryFavourite} />);
 
   if (totalImages === 0) {
     return (

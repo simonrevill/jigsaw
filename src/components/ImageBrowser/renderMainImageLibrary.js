@@ -4,11 +4,11 @@ import { trackVerticalStyles, thumbVerticalStyles, innerThumbStyles } from './sc
 import BrowserImage from '../BrowserImage/BrowserImage';
 import { ReactComponent as Spinner } from '../../icons/spinner.svg';
 
-const renderMainImageLibrary = (activeTab, images) => {
+const renderMainImageLibrary = (activeTab, images, handleToggleLibraryFavourite) => {
 
   const totalImages = images.length;
 
-  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageSrc={image.url} imageName={image.name} isUserFavourite={image.isUserFavourite} />);
+  const renderImages = images => images.map(image => <BrowserImage key={image.id} imageId={image.id} imageSrc={image.url} imageName={image.name} isUserFavourite={image.isUserFavourite} handleToggleLibraryFavourite={handleToggleLibraryFavourite} />);
 
   if (totalImages === 0) {
     return (

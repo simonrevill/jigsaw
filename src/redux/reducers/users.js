@@ -1,6 +1,8 @@
 import { SET_CURRENT_USER } from '../constants/actionTypes';
 import {
-  TOGGLE_DARK_MODE, TOGGLE_BACKGROUND_IMAGE, TOGGLE_GRID_OVERLAY, TOGGLE_CORRECT_PLACEMENT, SET_USER_IMAGE_LIBRARY
+  TOGGLE_DARK_MODE, TOGGLE_BACKGROUND_IMAGE, TOGGLE_GRID_OVERLAY,
+  TOGGLE_CORRECT_PLACEMENT, SET_USER_IMAGE_LIBRARY, ADD_FAVOURITE_LIBRARY_IMAGE,
+  DELETE_FAVOURITE_LIBRARY_IMAGE
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -10,21 +12,21 @@ const initialState = {
     age: null,
     email: 'blankjigsawuser@jigsaw.org',
     favourites: {
-      imageLibrary: [
-        {
-          "id": "51058e2a-3c0d-43f2-bd0b-c5f704b88933",
+      imageLibrary: {
+        "71ff8060-fcf2-4523-98e5-f48127d7d88b": {
+          "id": "71ff8060-fcf2-4523-98e5-f48127d7d88b",
           "name": "bird.jpg",
-          "rating": 2,
-          "url": "https://jigsaw-image-library.s3.eu-west-2.amazonaws.com/image-library/images/bird.jpg"
+          "rating": 1,
+          "url": "https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/image-library/images/bird.jpg"
         },
-        {
-          "id": "0354494b-b294-4021-80b6-963ee0db09a6",
+        "fea4fd2a-851b-411f-8dc2-1ae0e144188a": {
+          "id": "fea4fd2a-851b-411f-8dc2-1ae0e144188a",
           "name": "porsche.jpg",
-          "rating": 4,
-          "url": "https://jigsaw-image-library.s3.eu-west-2.amazonaws.com/image-library/images/porsche.jpg"
+          "rating": 5,
+          "url": "https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/image-library/images/porsche.jpg"
         }
-      ],
-      userImageLibrary: []
+      },
+      userImageLibrary: {}
     },
     firstName: 'Blank',
     lastName: 'Jigsaw User',
@@ -114,6 +116,28 @@ const users = (state = initialState, action) => {
             ...state.currentUserInfo.userImageLibrary,
             action.data
           ]
+        },
+      };
+    case DELETE_FAVOURITE_LIBRARY_IMAGE:
+      return {
+        ...state,
+        currentUserInfo: {
+          ...state.currentUserInfo,
+          favourites: {
+            ...state.currentUserInfo.favourites,
+            imageLibrary: state.currentUserInfo.favourites.imageLibrary.filter(image => image.id !== action.id)
+          }
+        },
+      };
+    case ADD_FAVOURITE_LIBRARY_IMAGE:
+      return {
+        ...state,
+        currentUserInfo: {
+          ...state.currentUserInfo,
+          favourites: {
+            ...state.currentUserInfo.favourites,
+            imageLibrary: state.currentUserInfo.favourites.imageLibrary.concat(action.newFavourite)
+          }
         },
       };
     default:

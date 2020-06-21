@@ -8,8 +8,13 @@ import '../../scss/bem/Favourites.scss';
 
 const FavouriteImages = ({ currentUserInfo }) => {
 
-  const [...favourites] = currentUserInfo.favourites.imageLibrary;
-  const [...userFavourites] = currentUserInfo.favourites.userImageLibrary;
+  // const favourites = currentUserInfo.favourites.imageLibrary;
+
+  const favourites = Object.keys(currentUserInfo.favourites.imageLibrary).map(favourite => currentUserInfo.favourites.imageLibrary[favourite]);
+
+  // const userFavourites = currentUserInfo.favourites.userImageLibrary;
+
+  const userFavourites = Object.keys(currentUserInfo.favourites.userImageLibrary).map(favourite => currentUserInfo.favourites.userImageLibrary[favourite]);
 
   return (
     <div className="favourites">

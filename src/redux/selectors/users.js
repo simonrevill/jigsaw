@@ -12,4 +12,5 @@ export const getUserPreferences = store => {
 
 export const getTheUserImageLibrary = store => store.users.currentUserInfo.userImageLibrary;
 
+// Needs to return an array, not an object. Use Object.keys() to convert:
 export const getUserFavourites = store => store.users.currentUserInfo.favourites.imageLibrary;

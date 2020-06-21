@@ -1,6 +1,7 @@
 import AWS from 'aws-sdk';
 import config from './config';
 import { REGISTERED_USERS_TABLE } from './dynamodb_constants';
+import { v4 as uuidv4 } from 'uuid';
 
 AWS.config = config;
 const docClient = new AWS.DynamoDB.DocumentClient();
@@ -54,6 +55,7 @@ const updateGridOverlay = (userId, showGridOverlay) => {
     },
     ReturnValues: "UPDATED_NEW"
   };
+
   // Send update to db:
   update(params);
 };
@@ -88,6 +90,53 @@ const updateUserImageLibrary = (userId, data) => {
   update(params);
 };
 
+// Delete Favourite from Image Library:
+const deleteImageLibraryFavourite = async (userId, data) => {
+  const params = {
+    TableName: REGISTERED_USERS_TABLE,
+    Key: { userId },
+    UpdateExpression: "set favourites.imageLibrary = :d",
+    ExpressionAttributeValues: {
+      ":d": data
+    },
+    ReturnValues: "UPDATED_NEW"
+  };
+
+  const deleteImageLibraryFavouritePromise = new Promise((resolve, reject) => {
+    docClient.update(params, (err, data) => {
+      if (err) reject(err);
+      resolve(data);
+    });
+  });
+
+  const newData = await deleteImageLibraryFavouritePromise;
+  return newData;
+};
+
+// Add Favourite to Image Library:
+const addImageLibraryFavourite = async (userId, data) => {
+  const params = {
+    TableName: REGISTERED_USERS_TABLE,
+    Key: { userId },
+    UpdateExpression: "set favourites.imageLibrary = :d",
+    ExpressionAttributeValues: {
+      ":d": data
+    },
+    ReturnValues: "UPDATED_NEW"
+  };
+
+  const addImageLibraryFavouritePromise = new Promise((resolve, reject) => {
+    docClient.update(params, (err, data) => {
+      if (err) reject(err);
+      resolve(data);
+    });
+  });
+
+  const newData = await addImageLibraryFavouritePromise;
+  return newData;
+};
+
+
 export const updateDatabase = (parameter, userId, value) => {
   switch (parameter) {
     case 'darkModeOn':
@@ -104,6 +153,14 @@ export const updateDatabase = (parameter, userId, value) => {
       break;
     case 'userImageLibrary':
       updateUserImageLibrary(userId, value);
+      break;
+    case 'deleteImageLibraryFavourite':
+      // Returns a promise:
+      return deleteImageLibraryFavourite(userId, value);
+      break;
+    case 'addImageLibraryFavourite':
+      // Returns a promise:
+      return addImageLibraryFavourite(userId, value);
       break;
     default:
       break;
