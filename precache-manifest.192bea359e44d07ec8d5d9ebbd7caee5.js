@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7cff96cfac6946817aac80f7945b916",
+    "revision": "f15886b6ea1618eb649e971cd39242d2",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "7cc6521b611b6e302d7a",
-    "url": "/jigsaw/static/css/main.486f4673.chunk.css"
+    "revision": "80fb6e5bf29c9caa096c",
+    "url": "/jigsaw/static/css/main.aa451e4e.chunk.css"
   },
   {
-    "revision": "9a30bf410938df829e47",
-    "url": "/jigsaw/static/js/2.387dbff3.chunk.js"
+    "revision": "57569a772b322ac392ed",
+    "url": "/jigsaw/static/js/2.4d8d89b8.chunk.js"
   },
   {
     "revision": "0ec9300b90a1964ccb21b13048e7fb5c",
-    "url": "/jigsaw/static/js/2.387dbff3.chunk.js.LICENSE.txt"
+    "url": "/jigsaw/static/js/2.4d8d89b8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7cc6521b611b6e302d7a",
-    "url": "/jigsaw/static/js/main.bac0a7f8.chunk.js"
+    "revision": "80fb6e5bf29c9caa096c",
+    "url": "/jigsaw/static/js/main.22a4243f.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
