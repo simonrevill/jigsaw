@@ -62,8 +62,8 @@ const ImageGallery = ({ currentUserInfo, favourites, userFavourites }) => {
           }
         >
           <div className="image-gallery__gallery">
-            {renderUserFavourites(userFavourites)}
             {renderFavourites(favourites)}
+            {renderUserFavourites(userFavourites)}
           </div>
         </Scrollbars>
       );

@@ -80,9 +80,12 @@ const updateUserImageLibrary = (userId, data) => {
   const params = {
     TableName: REGISTERED_USERS_TABLE,
     Key: { userId },
-    UpdateExpression: "set userImageLibrary = list_append(:d, userImageLibrary)",
+    UpdateExpression: "set userImageLibrary.#id = :d",
+    ExpressionAttributeNames: {
+      '#id': data[0].id
+    },
     ExpressionAttributeValues: {
-      ":d": data
+      ":d": data[0]
     },
     ReturnValues: "UPDATED_NEW"
   };
@@ -136,6 +139,52 @@ const addImageLibraryFavourite = async (userId, data) => {
   return newData;
 };
 
+// Delete Favourite from User Image Library:
+const deleteUserImageLibraryFavourite = async (userId, data) => {
+  const params = {
+    TableName: REGISTERED_USERS_TABLE,
+    Key: { userId },
+    UpdateExpression: "set favourites.userImageLibrary = :d",
+    ExpressionAttributeValues: {
+      ":d": data
+    },
+    ReturnValues: "UPDATED_NEW"
+  };
+
+  const deleteUserImageLibraryFavouritePromise = new Promise((resolve, reject) => {
+    docClient.update(params, (err, data) => {
+      if (err) reject(err);
+      resolve(data);
+    });
+  });
+
+  const newData = await deleteUserImageLibraryFavouritePromise;
+  return newData;
+};
+
+// Add Favourite to User Image Library:
+const addUserImageLibraryFavourite = async (userId, data) => {
+  const params = {
+    TableName: REGISTERED_USERS_TABLE,
+    Key: { userId },
+    UpdateExpression: "set favourites.userImageLibrary = :d",
+    ExpressionAttributeValues: {
+      ":d": data
+    },
+    ReturnValues: "UPDATED_NEW"
+  };
+
+  const addUserImageLibraryFavouritePromise = new Promise((resolve, reject) => {
+    docClient.update(params, (err, data) => {
+      if (err) reject(err);
+      resolve(data);
+    });
+  });
+
+  const newData = await addUserImageLibraryFavouritePromise;
+  return newData;
+};
+
 
 export const updateDatabase = (parameter, userId, value) => {
   switch (parameter) {
@@ -157,11 +206,15 @@ export const updateDatabase = (parameter, userId, value) => {
     case 'deleteImageLibraryFavourite':
       // Returns a promise:
       return deleteImageLibraryFavourite(userId, value);
-      break;
     case 'addImageLibraryFavourite':
       // Returns a promise:
       return addImageLibraryFavourite(userId, value);
-      break;
+    case 'deleteUserImageLibraryFavourite':
+      // Returns a promise:
+      return deleteUserImageLibraryFavourite(userId, value);
+    case 'addUserImageLibraryFavourite':
+      // Returns a promise:
+      return addUserImageLibraryFavourite(userId, value);
     default:
       break;
   };

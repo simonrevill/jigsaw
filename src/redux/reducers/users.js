@@ -2,7 +2,7 @@ import { SET_CURRENT_USER } from '../constants/actionTypes';
 import {
   TOGGLE_DARK_MODE, TOGGLE_BACKGROUND_IMAGE, TOGGLE_GRID_OVERLAY,
   TOGGLE_CORRECT_PLACEMENT, SET_USER_IMAGE_LIBRARY, ADD_FAVOURITE_LIBRARY_IMAGE,
-  DELETE_FAVOURITE_LIBRARY_IMAGE
+  DELETE_FAVOURITE_LIBRARY_IMAGE, DELETE_FAVOURITE_USER_LIBRARY_IMAGE, ADD_FAVOURITE_USER_LIBRARY_IMAGE
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -12,21 +12,8 @@ const initialState = {
     age: null,
     email: 'blankjigsawuser@jigsaw.org',
     favourites: {
-      imageLibrary: {
-        "71ff8060-fcf2-4523-98e5-f48127d7d88b": {
-          "id": "71ff8060-fcf2-4523-98e5-f48127d7d88b",
-          "name": "bird.jpg",
-          "rating": 1,
-          "url": "https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/image-library/images/bird.jpg"
-        },
-        "fea4fd2a-851b-411f-8dc2-1ae0e144188a": {
-          "id": "fea4fd2a-851b-411f-8dc2-1ae0e144188a",
-          "name": "porsche.jpg",
-          "rating": 5,
-          "url": "https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/image-library/images/porsche.jpg"
-        }
-      },
-      userImageLibrary: {}
+      imageLibrary: [],
+      userImageLibrary: []
     },
     firstName: 'Blank',
     lastName: 'Jigsaw User',
@@ -108,13 +95,13 @@ const users = (state = initialState, action) => {
         }
       };
     case SET_USER_IMAGE_LIBRARY:
+      console.log('action data: ', action.data);
       return {
         ...state,
         currentUserInfo: {
           ...state.currentUserInfo,
           userImageLibrary: [
-            ...state.currentUserInfo.userImageLibrary,
-            action.data
+            ...state.currentUserInfo.userImageLibrary.concat(action.data)
           ]
         },
       };
@@ -137,6 +124,28 @@ const users = (state = initialState, action) => {
           favourites: {
             ...state.currentUserInfo.favourites,
             imageLibrary: state.currentUserInfo.favourites.imageLibrary.concat(action.newFavourite)
+          }
+        },
+      };
+    case DELETE_FAVOURITE_USER_LIBRARY_IMAGE:
+      return {
+        ...state,
+        currentUserInfo: {
+          ...state.currentUserInfo,
+          favourites: {
+            ...state.currentUserInfo.favourites,
+            userImageLibrary: state.currentUserInfo.favourites.userImageLibrary.filter(image => image.id !== action.id)
+          }
+        },
+      };
+    case ADD_FAVOURITE_USER_LIBRARY_IMAGE:
+      return {
+        ...state,
+        currentUserInfo: {
+          ...state.currentUserInfo,
+          favourites: {
+            ...state.currentUserInfo.favourites,
+            userImageLibrary: state.currentUserInfo.favourites.userImageLibrary.concat(action.newFavourite)
           }
         },
       };

@@ -54,12 +54,17 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
           // info to update database:
           // to work with dynamodb's update_list function,
           // the info object must be returned inside an array:
+
+          const newId = uuidv4();
+
+          // Edit image location URL, to make sure urls match in Redux store:
+          const originalUrl = storageDataResponse.Location.slice(56);
+          const newUrl = `https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/${originalUrl}`;
+
           const databaseInfo = [{
-            id: uuidv4(),
+            id: newId,
             name: file.name,
-            rating: 0,
-            isUserFavourite: false,
-            url: storageDataResponse.Location
+            url: newUrl
           }];
           return databaseInfo;
         })

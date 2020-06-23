@@ -4,7 +4,6 @@ import { getMenuIsOpen, getTabs, getMainImageLibrary } from '../../redux/selecto
 import { getCurrentUserInfo, getTheUserImageLibrary } from '../../redux/selectors/users';
 import setCurrentUser from '../../redux/actions/users/setCurrentUser';
 import setImageLibrary from '../../redux/actions/uiState/setImageLibrary';
-import setUserImageLibrary from '../../redux/actions/users/setUserImageLibrary';
 import { getUserData, getImageLibrary } from '../../aws/dynamodb_getData';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
@@ -13,12 +12,17 @@ import '../../scss/bem/App.scss';
 
 const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrary, imageLibrary, userImageLibrary }) => {
   // users:
-  // blankJigsawUser - 'e5aa91dc-4017-44f4-a327-666565d2026c'
-  // marySmith - 'f3a0f858-57b4-4420-81fa-1f0acdec979d'
-  // johnSmith - 'f1b557c6-fb19-4ceb-99da-08acf0b69f45'
 
   // Current user is temporarily hard-coded until
   // login system is built and user is loaded into Redux store:
+
+  // blankJigsawUser - 'e5aa91dc-4017-44f4-a327-666565d2026c'
+  // const userId = 'e5aa91dc-4017-44f4-a327-666565d2026c';
+
+  // johnSmith - 'f1b557c6-fb19-4ceb-99da-08acf0b69f45'
+  // const userId = 'f1b557c6-fb19-4ceb-99da-08acf0b69f45';
+
+  // marySmith - 'f3a0f858-57b4-4420-81fa-1f0acdec979d'
   const userId = 'f3a0f858-57b4-4420-81fa-1f0acdec979d';
 
   // Get and set user data on load:
@@ -57,5 +61,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { setCurrentUser, setImageLibrary, setUserImageLibrary }
+  { setCurrentUser, setImageLibrary }
 )(App);
