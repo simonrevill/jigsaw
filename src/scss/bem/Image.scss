@@ -5,7 +5,6 @@
   height: 190px;
   background-color: $dark-purple;
   position: relative;
-  cursor: pointer;
 }
 
 .image__overlay {
@@ -15,9 +14,25 @@
   width: 180px;
   height: 180px;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   transition: opacity $medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image__name {
+  color: $white;
+  font-family: $primary-font-regular;
+  font-size: $primary-font-size;
+  margin: 20px 2px 0 2px;
+  text-align: center;
+}
+
+.image__rating {
+  margin: 0 2px 20px 2px;
 }
 
 .image:hover {

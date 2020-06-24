@@ -1,0 +1,67 @@
+@import '../variables.scss';
+
+.grid-setup {
+  width: 342px;
+  height: 424px;
+}
+
+.grid-setup__grid-title {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  letter-spacing: 0.265rem;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+.grid-setup__grid {
+  width: 342px;
+  height: 351px;
+  box-sizing: border-box;
+  background-color: $darker-purple;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(4, 1fr); 
+  gap: 10px;
+}
+
+.grid-setup__grid-item {
+  background-color: $lighter-purple;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color $medium;
+}
+
+.grid-setup__grid-item--selected {
+  background-color: $light-purple;
+}
+
+.grid-setup__grid-item--selected::before {
+  content: '';
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  border: 1px solid $white;
+}
+
+.grid-setup__grid-item-text {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  letter-spacing: 0.05rem;
+  margin: 0;
+}
+
+.grid-setup__grid-item:hover {
+  background-color: $light-purple;
+}
+
+.grid-setup__grid-item-text--none {
+  text-transform: uppercase;
+}

@@ -7,6 +7,15 @@ import ImageGallery from '../ImageGallery/ImageGallery';
 import '../../scss/bem/Favourites.scss';
 
 const FavouriteImages = ({ currentUserInfo }) => {
+
+  // const favourites = currentUserInfo.favourites.imageLibrary;
+
+  const favourites = Object.keys(currentUserInfo.favourites.imageLibrary).map(favourite => currentUserInfo.favourites.imageLibrary[favourite]);
+
+  // const userFavourites = currentUserInfo.favourites.userImageLibrary;
+
+  const userFavourites = Object.keys(currentUserInfo.favourites.userImageLibrary).map(favourite => currentUserInfo.favourites.userImageLibrary[favourite]);
+
   return (
     <div className="favourites">
       <div className="favourites__heading">
@@ -19,6 +28,8 @@ const FavouriteImages = ({ currentUserInfo }) => {
       </div>
       <ImageGallery
         currentUserInfo={currentUserInfo}
+        favourites={favourites}
+        userFavourites={userFavourites}
       />
     </div>
   );

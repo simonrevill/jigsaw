@@ -1,68 +1,50 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getMenuIsOpen, getTabs } from '../../redux/selectors/uiState';
-import { getCurrentUserInfo } from '../../redux/selectors/users';
+import { getMenuIsOpen, getTabs, getMainImageLibrary } from '../../redux/selectors/uiState';
+import { getCurrentUserInfo, getTheUserImageLibrary } from '../../redux/selectors/users';
 import setCurrentUser from '../../redux/actions/users/setCurrentUser';
+import setImageLibrary from '../../redux/actions/uiState/setImageLibrary';
+import { getUserData, getImageLibrary } from '../../aws/dynamodb_getData';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';
 import '../../scss/bem/App.scss';
-import AWS from 'aws-sdk';
-import config from '../../aws/config';
 
-AWS.config = config;
+const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrary, imageLibrary, userImageLibrary }) => {
+  // users:
 
-// S3 Storage:
+  // Current user is temporarily hard-coded until
+  // login system is built and user is loaded into Redux store:
 
-// const s3 = new AWS.S3({
-//   apiVersion: '2006-03-01',
-//   params: { Bucket: 'jigsaw-image-library' }
-// });
+  // blankJigsawUser - 'e5aa91dc-4017-44f4-a327-666565d2026c'
+  // const userId = 'e5aa91dc-4017-44f4-a327-666565d2026c';
 
-// s3.listObjectsV2(function (err, data) {
-//   if (err) console.log('There was an error listing your objects: ' + err.message);
-//   // const href = this.request.httpRequest.endpoint.href;
-//   // const bucketUrl = `${href}${bucketName}/`;
-//   // const imagesFolderUrl = `${bucketUrl}images/`;
-//   console.log(data);
-// });
+  // johnSmith - 'f1b557c6-fb19-4ceb-99da-08acf0b69f45'
+  // const userId = 'f1b557c6-fb19-4ceb-99da-08acf0b69f45';
 
-// DynamoDB database:
+  // marySmith - 'f3a0f858-57b4-4420-81fa-1f0acdec979d'
+  const userId = 'f3a0f858-57b4-4420-81fa-1f0acdec979d';
 
-const userId = 'f3a0f858-57b4-4420-81fa-1f0acdec979d';
-const tableName = 'registeredUsers';
-const docClient = new AWS.DynamoDB.DocumentClient();
-const params = {
-  TableName: tableName,
-  Key: { userId }
-};
-
-const getUserData = async () => {
-  const getDataPromise = new Promise((resolve, reject) => {
-    docClient.get(params, (err, data) => {
-      if (err) reject(err);
-      resolve(data);
-    });
-  });
-
-  const data = await getDataPromise;
-  return data.Item;
-}
-
-const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser }) => {
+  // Get and set user data on load:
   useEffect(() => {
-    getUserData()
+    getUserData(userId)
       .then(data => setCurrentUser(data))
       .catch(err => console.log(err));
-  }, [setCurrentUser]);
+  }, []);
 
+  // Get main image library:
+  useEffect(() => {
+    getImageLibrary()
+      .then(data => setImageLibrary(data))
+      .catch(err => console.log(err));
+  }, []);
 
   return (
     <React.Fragment>
-      <Topbar />
+      <Topbar currentUserInfo={currentUserInfo} />
       <div className="container">
         <Sidebar currentUserInfo={currentUserInfo} menuIsOpen={menuIsOpen} tabs={tabs} />
-        <Main currentUserInfo={currentUserInfo} tabs={tabs} />
+        <Main currentUserInfo={currentUserInfo} tabs={tabs} imageLibrary={imageLibrary} userImageLibrary={userImageLibrary} />
       </div>
     </React.Fragment>
   );
@@ -72,10 +54,12 @@ const mapStateToProps = state => {
   const menuIsOpen = getMenuIsOpen(state);
   const tabs = getTabs(state);
   const currentUserInfo = getCurrentUserInfo(state);
-  return { currentUserInfo, menuIsOpen, tabs };
+  const imageLibrary = getMainImageLibrary(state);
+  const userImageLibrary = getTheUserImageLibrary(state);
+  return { currentUserInfo, menuIsOpen, tabs, imageLibrary, userImageLibrary };
 };
 
 export default connect(
   mapStateToProps,
-  { setCurrentUser }
+  { setCurrentUser, setImageLibrary }
 )(App);

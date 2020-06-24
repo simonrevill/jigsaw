@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.browser-image {
+  width: 190px;
+  height: 190px;
+  background-color: $dark-purple;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.browser-image__overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 180px;
+  height: 180px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity $medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.browser-image__name {
+  color: $white;
+  font-family: $primary-font-regular;
+  font-size: $primary-font-size;
+  margin: 20px 2px 0 2px;
+  text-align: center;
+}
+
+.browser-image__is-user-favourite {
+  margin: 0 15px 15px auto;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.browser-image:hover {
+  .browser-image__overlay {
+    opacity: 1;
+  }
+}

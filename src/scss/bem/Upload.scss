@@ -7,21 +7,22 @@
 }
 
 .upload__inner {
-  padding: 20px;
-  border: 1px dashed $grey;
-  height: 904px;
+  border: 1px dashed #8F8F8F;
+  height: 944px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .upload__center {
-  width: 520px;
-  height: 468px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .upload__title {
@@ -36,4 +37,10 @@
 
 .upload__icon {
   margin: 40px 0;
+  padding: 40px 132px;
+  border: 5px dashed $grey;
+}
+
+.upload__icon--drag-over {
+  background-color: $light-purple;
 }

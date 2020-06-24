@@ -6,11 +6,12 @@
 }
 
 .tab:hover {
-  background-color: $dark-purple;
+  background-color: $lighter-purple;
   transition: background-color $short;
 }
 
-.tab--selected {
+.tab--selected,
+.tab--selected:hover {
   background-color: $dark-purple;
 }
 
