@@ -8,6 +8,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  box-sizing: border-box;
 }
 
 .browser-image__overlay {
@@ -44,5 +45,14 @@
 .browser-image:hover {
   .browser-image__overlay {
     opacity: 1;
+  }
+}
+
+.browser-image--selected {
+  border: 5px solid $neon-green;
+
+  .browser-image__overlay {
+    top: 0;
+    left: 0;
   }
 }
