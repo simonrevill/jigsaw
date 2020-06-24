@@ -37,3 +37,5 @@ const getImageLibraryWithFavourites = store => {
 };
 
 export const getMainImageLibrary = store => getImageLibraryWithFavourites(store);
+
+export const getGridSetting = store => store.uiState.library.boardSetup.gridSetting;

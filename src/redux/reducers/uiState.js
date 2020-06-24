@@ -1,5 +1,5 @@
 import {
-  TOGGLE_MENU, SET_ACTIVE_TAB, SET_ACTIVE_IMAGE_BROWSER_TAB, SET_IMAGE_LIBRARY
+  TOGGLE_MENU, SET_ACTIVE_TAB, SET_ACTIVE_IMAGE_BROWSER_TAB, SET_IMAGE_LIBRARY, SET_GRID_SETTING
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -38,6 +38,9 @@ const initialState = {
           isActive: false
         }
       ]
+    },
+    boardSetup: {
+      gridSetting: 8
     }
   },
   imageLibrary: [],
@@ -76,6 +79,17 @@ const uiState = (state = initialState, action) => {
       return {
         ...state,
         imageLibrary: action.data
+      };
+    case SET_GRID_SETTING:
+      return {
+        ...state,
+        library: {
+          ...state.library,
+          boardSetup: {
+            ...state.library.boardSetup,
+            gridSetting: action.gridSetting
+          }
+        }
       };
     default:
       return state;
