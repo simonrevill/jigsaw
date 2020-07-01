@@ -6,18 +6,25 @@ import {
 } from '../constants/actionTypes';
 
 const initialState = {
-  currentUser: '8888888888888888',
+  currentUser: 'e5aa91dc-4017-44f4-a327-666565d2026c',
   currentUserInfo: {
     aboutMe: "I'm a blank Jigsaw User. Nothing to see here.",
     age: null,
     email: 'blankjigsawuser@jigsaw.org',
     favourites: {
-      imageLibrary: [],
+      imageLibrary: [
+        {
+          "id": "71ff8060-fcf2-4523-98e5-f48127d7d88b",
+          "name": "bird.jpg",
+          "rating": 1,
+          "url": "https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/image-library/images/bird.jpg"
+        }
+      ],
       userImageLibrary: []
     },
     firstName: 'Blank',
     lastName: 'Jigsaw User',
-    userId: '8888888888888888',
+    userId: 'e5aa91dc-4017-44f4-a327-666565d2026c',
     userImageLibrary: [],
     userName: 'blankJigsawUser',
     userPreferences: {

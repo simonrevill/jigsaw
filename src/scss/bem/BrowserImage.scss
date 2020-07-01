@@ -9,6 +9,8 @@
   justify-content: flex-end;
   align-items: flex-end;
   box-sizing: border-box;
+  box-shadow: 0px 0px 0px 0px transparent;
+  transition: box-shadow $short;
 }
 
 .browser-image__overlay {
@@ -49,10 +51,10 @@
 }
 
 .browser-image--selected {
-  border: 5px solid $neon-green;
-
+  box-shadow: 0px 0px 0px 4px $neon-green;
+  
   .browser-image__overlay {
-    top: 0;
-    left: 0;
+    top: 5px;
+    left: 5px;
   }
 }

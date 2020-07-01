@@ -1,5 +1,5 @@
 import {
-  TOGGLE_MENU, SET_ACTIVE_TAB, SET_ACTIVE_IMAGE_BROWSER_TAB, SET_IMAGE_LIBRARY, SET_GRID_SETTING
+  TOGGLE_MENU, SET_ACTIVE_TAB, SET_ACTIVE_IMAGE_BROWSER_TAB, SET_IMAGE_LIBRARY, SET_GRID_SETTING, SET_CURRENT_SELECTED_IMAGE
 } from '../constants/actionTypes';
 
 const initialState = {
@@ -41,6 +41,12 @@ const initialState = {
     },
     boardSetup: {
       gridSetting: 8
+    },
+    currentSelectedImage: {
+      id: '328b913f-b364-47df-929d-925676156e97',
+      name: 'rose.jpg',
+      url: 'https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/image-library/images/rose.jpg',
+      library: 'mainLibrary'
     }
   },
   imageLibrary: [],
@@ -89,6 +95,14 @@ const uiState = (state = initialState, action) => {
             ...state.library.boardSetup,
             gridSetting: action.gridSetting
           }
+        }
+      };
+    case SET_CURRENT_SELECTED_IMAGE:
+      return {
+        ...state,
+        library: {
+          ...state.library,
+          currentSelectedImage: action.data
         }
       };
     default:

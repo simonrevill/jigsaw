@@ -17,7 +17,7 @@ import { updateDatabase } from '../../aws/dynamodb_updateData';
 const ImageBrowser = ({
   currentUserInfo, menuIsOpen, imageLibrary, userImageLibrary,
   activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab, toggleMenu,
-  addFavouriteLibraryImage, deleteFavouriteLibraryImage, favourites, deleteFavouriteUserLibraryImage, addFavouriteUserLibraryImage, userLibraryFavourites }) => {
+  addFavouriteLibraryImage, deleteFavouriteLibraryImage, favourites, deleteFavouriteUserLibraryImage, addFavouriteUserLibraryImage, userLibraryFavourites, currentSelectedImage }) => {
 
   const userId = currentUserInfo.userId;
 
@@ -169,8 +169,8 @@ const ImageBrowser = ({
           <p className="image-browser__tab-title">User Library</p>
         </div>
       </div>
-      {renderMainImageLibrary(activeImageBrowserTabName, imageLibrary, handleToggleLibraryFavourite)}
-      {renderUserImageLibrary(activeImageBrowserTabName, userImageLibrary, handleUploadButtonClick, handleToggleUserLibraryFavourite)}
+      {renderMainImageLibrary(activeImageBrowserTabName, imageLibrary, handleToggleLibraryFavourite, currentSelectedImage)}
+      {renderUserImageLibrary(activeImageBrowserTabName, userImageLibrary, handleToggleUserLibraryFavourite, currentSelectedImage, handleUploadButtonClick)}
     </div>
   );
 };

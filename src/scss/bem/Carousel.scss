@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.carousel {
+.carousel-container {
   width: 847px;
   height: 421px;
   border-bottom: 1px solid $darker-purple;
@@ -10,7 +10,22 @@
   width: 847px;
   height: 351px;
   border-bottom: 1px solid $darker-purple;
-  background-color: $dark-purple
+  background-color: $dark-purple;
+  padding: 10px 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.carousel__browser-image-container {
+  height: 330px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.carousel__image {
+  width: 330px;
+  height: 330px;
 }
 
 .carousel__browser-panel {

@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { ReactComponent as Heart } from '../../icons/heart.svg';
 import { ReactComponent as HeartSolid } from '../../icons/heart-solid.svg';
+import setCurrentSelectedImage from '../../redux/actions/uiState/setCurrentSelectedImage';
 import '../../scss/bem/BrowserImage.scss';
 
-const BrowserImage = ({ imageId, imageSrc, imageName, isUserFavourite, handleToggleLibraryFavourite, handleToggleUserLibraryFavourite }) => {
+const BrowserImage = ({ imageId, imageSrc, imageName, isUserFavourite,
+  handleToggleLibraryFavourite, handleToggleUserLibraryFavourite, currentSelectedImage, activeTab, setCurrentSelectedImage }) => {
+
+  // console.log('activeTab: ', activeTab);
+  // console.log('isUserFavourite: ', isUserFavourite);
+  // console.log('currentSelectedImage: ', currentSelectedImage);
 
   const backgroundImageStyles = {
     backgroundImage: `url("${imageSrc}")`,
@@ -14,21 +21,63 @@ const BrowserImage = ({ imageId, imageSrc, imageName, isUserFavourite, handleTog
     transform: `translateZ(75px) perspective(200px)`
   };
 
+  const renderImageClasses = (imageId, isUserFavourite, currentSelectedImage, activeTab) => {
+    if (isUserFavourite && (imageId === currentSelectedImage.id && currentSelectedImage.library === activeTab)) {
+      return 'browser-image js-favourite-true browser-image--selected';
+    }
+
+    if (!isUserFavourite && (imageId === currentSelectedImage.id && currentSelectedImage.library === activeTab)) {
+      return 'browser-image js-favourite-false browser-image--selected';
+    }
+
+    return 'browser-image js-favourite-false';
+  };
+
+  const handleSelectImage = () => {
+    setCurrentSelectedImage({
+      id: imageId,
+      name: imageName,
+      url: imageSrc,
+      library: activeTab
+    });
+  };
+
+  // handle favourite click function....... not dry atm.
+
+  const handleFavouriteClick = e => {
+    e.stopPropagation();
+
+    console.log(typeof handleToggleLibraryFavourite)
+    console.log(handleToggleLibraryFavourite)
+    console.log(typeof handleToggleUserLibraryFavourite)
+    console.log(handleToggleUserLibraryFavourite)
+
+    if (handleToggleLibraryFavourite) {
+      handleToggleLibraryFavourite(e);
+      return;
+    }
+
+    if (handleToggleUserLibraryFavourite) {
+      handleToggleUserLibraryFavourite(e)
+    };
+  };
+
   return (
     <div
-      className={isUserFavourite ? "browser-image js-favourite-true" : "browser-image js-favourite-false"}
+      className={renderImageClasses(imageId, isUserFavourite, currentSelectedImage, activeTab)}
       style={backgroundImageStyles}
       data-id={imageId}
+      onClick={handleSelectImage}
     >
       {
         isUserFavourite ?
           <HeartSolid
             className="browser-image__is-user-favourite"
-            onClick={handleToggleLibraryFavourite || handleToggleUserLibraryFavourite}
+            onClick={handleFavouriteClick}
           /> :
           <Heart
             className="browser-image__is-user-favourite"
-            onClick={handleToggleLibraryFavourite || handleToggleUserLibraryFavourite}
+            onClick={handleFavouriteClick}
           />
       }
       <div className="browser-image__overlay">
@@ -38,4 +87,7 @@ const BrowserImage = ({ imageId, imageSrc, imageName, isUserFavourite, handleTog
   );
 };
 
-export default BrowserImage;
+export default connect(
+  null,
+  { setCurrentSelectedImage }
+)(BrowserImage);
