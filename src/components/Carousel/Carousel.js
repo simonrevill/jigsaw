@@ -1,6 +1,8 @@
 import React from 'react';
 import { ReactComponent as CarouselButtonPrev } from '../../icons/carousel-button-prev.svg';
 import { ReactComponent as CarouselButtonNext } from '../../icons/carousel-button-next.svg';
+import AliceCarousel from 'react-alice-carousel'
+import "../../../node_modules/react-alice-carousel/lib/scss/alice-carousel.scss";
 import '../../scss/bem/Carousel.scss';
 
 const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelectedImage }) => {
@@ -11,19 +13,35 @@ const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelected
   console.log(imageLibrary);
   console.log(imageLibrary.length);
 
-  const containerWidth = imageLibrary.length * 330;
+  const carouselResponsiveSettings = {
+    0: { items: 1 }
+  }
 
-  console.log(containerWidth);
+  const handleOnDragStart = (e) => e.preventDefault();
+
+  const handlePreviousClick = () => console.log('previous image button clicked...');
+  const handleNextClick = () => console.log('next image button clicked...');
+
+  const startingIndex = imageLibrary.findIndex(image => image.id === currentSelectedImage.id);
+
+  console.log(startingIndex);
 
   return (
     <div className="carousel-container">
       <div className="carousel__browser">
-        <div className="carousel__browser-image-container" style={{ width: `${containerWidth}px` }}>
+        <AliceCarousel
+          mouseTrackingEnabled
+          items={imageLibrary}
+          dotsDisabled={true}
+          responsive={carouselResponsiveSettings}
+          buttonsDisabled={true}
+          startIndex={startingIndex}
+        >
           {
             imageLibrary.map((image, index) => (
               <div
                 key={image.id}
-                className="carousel__image"
+                className={image.id === currentSelectedImage.id ? 'carousel__image carousel__image--selected' : 'carousel__image'}
                 style={{
                   backgroundImage: `url("${image.url}")`,
                   backgroundSize: 'cover',
@@ -33,19 +51,26 @@ const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelected
                   height: '330px',
                   display: 'inline-block'
                 }}
+                onDragStart={handleOnDragStart}
               />
             ))
           }
-        </div>
+        </AliceCarousel>
       </div>
       <div className="carousel__browser-panel">
-        <div className="carousel__button carousel__button--prev">
+        <div
+          className="carousel__button carousel__button--prev"
+          onClick={handlePreviousClick}
+        >
           <CarouselButtonPrev />
         </div>
         <div className="carousel__file-name">
           <p className="carousel__file-name-text">{currentSelectedImage.name}</p>
         </div>
-        <div className="carousel__button carousel-button--next">
+        <div
+          className="carousel__button carousel-button--next"
+          onClick={handleNextClick}
+        >
           <CarouselButtonNext />
         </div>
       </div>

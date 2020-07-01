@@ -24,8 +24,23 @@
 }
 
 .carousel__image {
-  width: 330px;
-  height: 330px;
+  // width: 330px;
+  // height: 330px;
+  // margin: 0 5px;
+  // transform: scale(0.95);
+  // transition: transform $short;
+
+  // position: absolute;
+  // left: 50%;
+  // transform: translateX(-50%);
+}
+
+.carousel__image--selected {
+  // transform: none;
+}
+
+.alice-carousel__stage-item {
+  // width: 330px;
 }
 
 .carousel__browser-panel {
