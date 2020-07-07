@@ -1,7 +1,9 @@
 import { getUserFavourites, getUserLibraryFavourites } from './users';
 
 export const getMenuIsOpen = store => store.uiState.menuIsOpen;
+
 export const getTabs = store => store.uiState.tabs;
+
 export const getImageBrowserTabStates = store => store.uiState.library.imageBrowser.activeTabs;
 
 export const getActiveImageBrowserTabName = store => {
@@ -55,7 +57,7 @@ const getCurrentSelectedImageWithUserAttributes = store => {
     return accumulator;
   }, {});
 
-  // Check is currentSelectedImage id matches any of the userFavourites:
+  // Check if currentSelectedImage id matches any of the userFavourites:
   const userFavouritesTransformedKeys = Object.keys(userFavouritesTransformed);
   const isFavourite = userFavouritesTransformedKeys.indexOf(currentSelectedImage.id);
 
@@ -71,3 +73,35 @@ const getCurrentSelectedImageWithUserAttributes = store => {
 };
 
 export const getCurrentSelectedImage = store => getCurrentSelectedImageWithUserAttributes(store);
+
+const getPreviousLibraryImageIndex = (store, currentSelectedImageIndex) => {
+  const imageLibrary = store.uiState.imageLibrary;
+  if (currentSelectedImageIndex > 0) return currentSelectedImageIndex - 1;
+  // if currentSelectedImageIndex === 0... 
+  // find the index of the last item in the imageLibrary array...
+  return imageLibrary.length - 1;
+};
+
+const getNextLibraryImageIndex = (store, currentSelectedImageIndex) => {
+  const imageLibrary = store.uiState.imageLibrary;
+  if (currentSelectedImageIndex < (imageLibrary.length - 1)) return currentSelectedImageIndex + 1;
+  // if currentSelectedImageIndex === imageLibrary.length - 1 (i.e. the last item)... 
+  // return the index of the first item in the imageLibrary array...
+  return 0;
+};
+
+export const getPreviousLibraryImage = store => {
+  const currentSelectedImage = store.uiState.library.currentSelectedImage;
+  const imageLibrary = store.uiState.imageLibrary;
+  const currentSelectedImageIndex = imageLibrary.findIndex(image => image.id === currentSelectedImage.id);
+  const previousLibraryImageIndex = getPreviousLibraryImageIndex(store, currentSelectedImageIndex);
+  return previousLibraryImageIndex;
+};
+
+export const getNextLibraryImage = store => {
+  const currentSelectedImage = store.uiState.library.currentSelectedImage;
+  const imageLibrary = store.uiState.imageLibrary;
+  const currentSelectedImageIndex = imageLibrary.findIndex(image => image.id === currentSelectedImage.id);
+  const nextLibraryImageIndex = getNextLibraryImageIndex(store, currentSelectedImageIndex);
+  return nextLibraryImageIndex;
+};

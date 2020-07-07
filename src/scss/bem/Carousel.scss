@@ -8,13 +8,15 @@
 
 .carousel__browser {
   width: 847px;
-  height: 351px;
+  height: 422px;
   border-bottom: 1px solid $darker-purple;
   background-color: $dark-purple;
-  padding: 10px 0;
   overflow-x: hidden;
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .carousel__browser-image-container {
@@ -24,30 +26,58 @@
 }
 
 .carousel__image {
-  // width: 330px;
-  // height: 330px;
-  // margin: 0 5px;
-  // transform: scale(0.95);
-  // transition: transform $short;
-
-  // position: absolute;
-  // left: 50%;
-  // transform: translateX(-50%);
+  width: 330px;
+  height: 330px;
+  margin: 0 7px;
 }
 
 .carousel__image--selected {
-  // transform: none;
+  transform: none;
+}
+
+.alice-carousel {
+  padding: 11px 0;
 }
 
 .alice-carousel__stage-item {
-  // width: 330px;
+  display: inline-flex !important;
+  justify-content: center !important;
+  perspective: 1000px;
+  .carousel__image {
+    transition: transform $short;
+  }
 }
+
+.alice-carousel__stage-item.__prev {
+  .carousel__image {
+    transform: scale(0.9) rotateY(-20deg);
+  }
+}
+
+.alice-carousel__stage-item.__active {
+  .carousel__image {
+    transform: rotateY(0deg);
+  }
+}
+
+.alice-carousel__stage-item.__next {
+  .carousel__image {
+    transform: scale(0.9) rotateY(20deg);
+  }
+}
+
+// .alice-carousel__stage-item.__active + .alice-carousel__stage-item {
+//   .carousel__image{
+//     transform: scale(0.5);
+//   }
+// }
 
 .carousel__browser-panel {
   width: 847px;
   height: 69px;
   display: flex;
   justify-content: space-between;
+  background-color: $light-purple;
 }
 
 .carousel__button {

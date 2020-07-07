@@ -1,17 +1,18 @@
 import React from 'react';
 import { ReactComponent as CarouselButtonPrev } from '../../icons/carousel-button-prev.svg';
 import { ReactComponent as CarouselButtonNext } from '../../icons/carousel-button-next.svg';
-import AliceCarousel from 'react-alice-carousel'
+import MainLibraryCarousel from '../MainLibraryCarousel/MainLibraryCarousel';
 import "../../../node_modules/react-alice-carousel/lib/scss/alice-carousel.scss";
+
 import '../../scss/bem/Carousel.scss';
 
-const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelectedImage }) => {
+const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelectedImage, handlePreviousClick, handleNextClick }) => {
 
   // Carousel needs the name of the currently active library tab!
 
-  console.log(currentSelectedImage);
-  console.log(imageLibrary);
-  console.log(imageLibrary.length);
+  // console.log(currentSelectedImage);
+  // console.log(imageLibrary);
+  // console.log(imageLibrary.length);
 
   const carouselResponsiveSettings = {
     0: { items: 1 }
@@ -19,8 +20,7 @@ const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelected
 
   const handleOnDragStart = (e) => e.preventDefault();
 
-  const handlePreviousClick = () => console.log('previous image button clicked...');
-  const handleNextClick = () => console.log('next image button clicked...');
+
 
   const startingIndex = imageLibrary.findIndex(image => image.id === currentSelectedImage.id);
 
@@ -29,35 +29,18 @@ const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelected
   return (
     <div className="carousel-container">
       <div className="carousel__browser">
-        <AliceCarousel
-          mouseTrackingEnabled
-          items={imageLibrary}
-          dotsDisabled={true}
-          responsive={carouselResponsiveSettings}
-          buttonsDisabled={true}
-          startIndex={startingIndex}
-        >
-          {
-            imageLibrary.map((image, index) => (
-              <div
-                key={image.id}
-                className={image.id === currentSelectedImage.id ? 'carousel__image carousel__image--selected' : 'carousel__image'}
-                style={{
-                  backgroundImage: `url("${image.url}")`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center center',
-                  backgroundRepeat: 'no-repeat',
-                  width: '330px',
-                  height: '330px',
-                  display: 'inline-block'
-                }}
-                onDragStart={handleOnDragStart}
-              />
-            ))
-          }
-        </AliceCarousel>
+        {/* <div style={{ width: '660px', margin: '0 auto' }}> */}
+
+        <MainLibraryCarousel
+          imageLibrary={imageLibrary}
+          currentSelectedImage={currentSelectedImage}
+          handlePreviousClick={handlePreviousClick}
+          handleNextClick={handleNextClick}
+        />
+
+        {/* </div> */}
       </div>
-      <div className="carousel__browser-panel">
+      {/* <div className="carousel__browser-panel">
         <div
           className="carousel__button carousel__button--prev"
           onClick={handlePreviousClick}
@@ -73,7 +56,7 @@ const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelected
         >
           <CarouselButtonNext />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
