@@ -28,7 +28,7 @@
 .carousel__image {
   width: 330px;
   height: 330px;
-  margin: 0 7px;
+  // margin: 0 7px;
 }
 
 .carousel__image--selected {
@@ -66,11 +66,15 @@
   }
 }
 
-// .alice-carousel__stage-item.__active + .alice-carousel__stage-item {
-//   .carousel__image{
-//     transform: scale(0.5);
-//   }
-// }
+.carousel__grid-overlay {
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  top: 11px;
+  left: 258px;
+  box-sizing: border-box;
+  // border: 5px solid $blue;
+}
 
 .carousel__browser-panel {
   width: 847px;

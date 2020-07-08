@@ -2,6 +2,7 @@ import React from 'react'
 import AliceCarousel from 'react-alice-carousel';
 import { ReactComponent as CarouselButtonPrev } from '../../icons/carousel-button-prev.svg';
 import { ReactComponent as CarouselButtonNext } from '../../icons/carousel-button-next.svg';
+import { ReactComponent as GridOverlay8 } from '../../icons/grid-overlay-8.svg';
 import '../../../node_modules/react-alice-carousel/lib/alice-carousel.css';
 
 import '../../scss/bem/Carousel.scss';
@@ -10,7 +11,8 @@ class MainLibraryCarousel extends React.Component {
 
   render() {
 
-    const { imageLibrary, currentSelectedImage, handlePreviousClick, handleNextClick } = this.props;
+
+    const { gridSetting, imageLibrary, currentSelectedImage, handlePreviousClick, handleNextClick } = this.props;
 
     const currentIndex = imageLibrary.findIndex(image => image.id === currentSelectedImage.id);
 
@@ -36,10 +38,13 @@ class MainLibraryCarousel extends React.Component {
           dotsDisabled={true}
           duration={150}
           buttonsDisabled={true}
-          stagePadding={{ paddingLeft: 258, paddingRight: 258 }}
+          stagePadding={{ paddingLeft: 253.5, paddingRight: 253.5 }}
           startIndex={currentIndex}
           ref={(el) => (this.Carousel = el)}
         />
+        <div className="carousel__grid-overlay">
+          <GridOverlay8 />
+        </div>
         <div className="carousel__browser-panel">
           <div
             className="carousel__button carousel__button--prev"

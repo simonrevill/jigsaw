@@ -32,6 +32,7 @@ const Carousel = ({ gridSetting, imageLibrary, userImageLibrary, currentSelected
         {/* <div style={{ width: '660px', margin: '0 auto' }}> */}
 
         <MainLibraryCarousel
+          gridSetting={gridSetting}
           imageLibrary={imageLibrary}
           currentSelectedImage={currentSelectedImage}
           handlePreviousClick={handlePreviousClick}
