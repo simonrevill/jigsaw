@@ -76,6 +76,58 @@
   // border: 5px solid $blue;
 }
 
+
+
+
+
+// Appear:
+.carousel__grid-overlay-grid--appear {
+  opacity: 0;
+}
+
+.carousel__grid-overlay-grid--appear-active {
+  opacity: 1;
+  transition: opacity 150ms ease-in-out;
+}
+
+.carousel__grid-overlay-grid--appear-done {
+  opacity: 1;
+}
+
+// Enter: 
+.carousel__grid-overlay-grid--enter {
+  opacity: 0;
+}
+
+.carousel__grid-overlay-grid--enter-active {
+  opacity: 1;
+  transition: opacity 75ms ease-in-out;
+}
+
+.carousel__grid-overlay-grid--enter-done {
+  opacity: 1;
+}
+
+// Exit
+.carousel__grid-overlay-grid--exit {
+  opacity: 1;
+}
+
+.carousel__grid-overlay-grid--exit-active {
+  opacity: 0;
+  transition: opacity 75ms ease-in-out;
+}
+
+.carousel__grid-overlay-grid--exit-done {
+  opacity: 0;
+}
+
+
+
+
+
+
+
 .carousel__browser-panel {
   width: 847px;
   height: 69px;
