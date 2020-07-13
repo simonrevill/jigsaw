@@ -3,14 +3,14 @@
 .carousel-container {
   width: 847px;
   height: 421px;
-  border-bottom: 1px solid $darker-purple;
+  border-bottom: 1px solid var(--darker-purple);
 }
 
 .carousel__browser {
   width: 847px;
   height: 422px;
-  border-bottom: 1px solid $darker-purple;
-  background-color: $dark-purple;
+  border-bottom: 1px solid var(--darker-purple);
+  background-color: var(--dark-purple);
   overflow-x: hidden;
   box-sizing: border-box;
   position: relative;
@@ -123,7 +123,7 @@
   height: 69px;
   display: flex;
   justify-content: space-between;
-  background-color: $light-purple;
+  background-color: var(--light-purple);
 }
 
 .carousel__button {
@@ -137,7 +137,7 @@
 }
 
 .carousel__button:hover {
-  background-color: $lighter-purple;
+  background-color: var(--lighter-purple);
 }
 
 .carousel__file-name {
@@ -147,14 +147,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid $darker-purple;
-  border-right: 1px solid $darker-purple;
+  border-left: 1px solid var(--darker-purple);
+  border-right: 1px solid var(--darker-purple);
 }
 
 .carousel__file-name-text {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   letter-spacing: 0.265rem;
   text-align: center;
   margin: 0;

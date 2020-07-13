@@ -4,7 +4,7 @@
   box-sizing: border-box;
   width: 363px;
   height: 942px;
-  border: 1px solid $lighter-purple;
+  border: 1px solid var(-lighter-purple);
   margin-right: 20px;
   position: relative;
   padding: 35px;
@@ -24,7 +24,7 @@
 .user-card__avatar-img {
   display: block;
   border-radius: 189px;
-  // border: 2px solid $lighter-purple;
+  // border: 2px solid var(--lighter-purple);
 }
 
 .user-card__bio {
@@ -35,7 +35,6 @@
 .user-card__bullets {
   position: relative;
   width: 38px;
-  // border: 1px solid pink;
 }
 
 .user-card__bullets-connect-line {
@@ -94,13 +93,12 @@
 
 .user-card__bio-container {
   width: 255px;
-  // border: 1px solid pink;
 }
 
 .user-card__bio-heading {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   text-transform: uppercase;
   letter-spacing: 0.265rem;
   margin: 0;
@@ -113,7 +111,7 @@
 .user-card__bio-text {
   font-family: $primary-font-regular;
   font-size: $secondary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   letter-spacing: 0.265rem;
   margin: 20px 0 0 0;
 }

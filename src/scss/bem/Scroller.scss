@@ -3,7 +3,7 @@
 .scroller {
   width: 17px;
   height: 790px;
-  background-color: $lighter-purple;
+  background-color: var(--lighter-purple);
   border-radius: 20px;
   position: relative;
   margin-left: 10px;
@@ -15,6 +15,6 @@
   position: absolute;
   left: 1px;
   top: 1px;
-  background-color: $darker-purple;
+  background-color: var(--darker-purple);
   border-radius: 20px;
 }

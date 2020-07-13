@@ -4,7 +4,7 @@
   flex: 1;
   box-sizing: border-box;
   height: 942px;
-  border: 1px solid $lighter-purple;
+  border: 1px solid var(--lighter-purple);
 }
 
 .favourites__heading {
@@ -17,7 +17,7 @@
 .favourites__heading-text {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   text-transform: uppercase;
   letter-spacing: 0.265rem;
   margin-top: 14px;

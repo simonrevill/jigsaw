@@ -12,9 +12,9 @@ const Topbar = ({ currentUserInfo, darkMode, toggleDarkMode }) => {
 
   // Toggle body class for colour theme:
 
-  // darkMode ?
-  //   document.body.classList.remove('light-theme') :
-  //   document.body.classList.add('light-theme');
+  darkMode ?
+    document.body.classList.remove('light-theme') :
+    document.body.classList.add('light-theme');
 
   const { userId } = currentUserInfo;
 

@@ -8,7 +8,7 @@
 .grid-setup__grid-title {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   letter-spacing: 0.265rem;
   width: 100%;
   text-align: center;
@@ -20,7 +20,7 @@
   width: 342px;
   height: 351px;
   box-sizing: border-box;
-  background-color: $darker-purple;
+  background-color: var(--darker-purple);
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
@@ -29,7 +29,7 @@
 }
 
 .grid-setup__grid-item {
-  background-color: $lighter-purple;
+  background-color: var(--lighter-purple);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -39,7 +39,7 @@
 }
 
 .grid-setup__grid-item--selected {
-  background-color: $light-purple;
+  background-color: var(--light-purple);
 }
 
 .grid-setup__grid-item--selected::before {
@@ -47,19 +47,19 @@
   width: 55px;
   height: 55px;
   position: absolute;
-  border: 1px solid $white;
+  border: 1px solid var(--white);
 }
 
 .grid-setup__grid-item-text {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   letter-spacing: 0.05rem;
   margin: 0;
 }
 
 .grid-setup__grid-item:hover {
-  background-color: $light-purple;
+  background-color: var(--light-purple);
 }
 
 .grid-setup__grid-item-text--none {

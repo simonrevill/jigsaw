@@ -3,11 +3,11 @@
 .upload {
   padding: 20px;
   height: 944px;
-  background-color: $dark-purple;  
+  background-color: var(--dark-purple);  
 }
 
 .upload__inner {
-  border: 1px dashed #8F8F8F;
+  border: 1px dashed var(--grey);
   height: 944px;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
 .upload__title {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   text-transform: uppercase;
   letter-spacing: 0.265rem;
   text-align: center;
@@ -38,9 +38,9 @@
 .upload__icon {
   margin: 40px 0;
   padding: 40px 132px;
-  border: 5px dashed $grey;
+  border: 5px dashed var(--grey);
 }
 
 .upload__icon--drag-over {
-  background-color: $light-purple;
+  background-color: var(--light-purple);
 }

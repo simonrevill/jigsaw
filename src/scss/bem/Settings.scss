@@ -3,12 +3,12 @@
 .settings {
   padding: 20px;
   height: 944px;
-  background-color: $light-purple;  
+  background-color: var(--light-purple);  
 }
 
 .settings__inner {
   padding: 20px;
-  border: 1px solid $lighter-purple;
+  border: 1px solid var(--lighter-purple);
   height: 904px;
 }
 
@@ -16,7 +16,7 @@
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
   letter-spacing: $primary-spacing;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 35px;

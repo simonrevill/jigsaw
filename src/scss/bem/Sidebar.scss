@@ -3,8 +3,8 @@
 .sidebar {
   width: 80px;
   height: 984px;
-  background-color: $light-purple;
-  border-right: 1px solid $dark-purple;
+  background-color: var(--light-purple);
+  border-right: 1px solid var(--dark-purple);
   position: relative;
   transition: width $short;
 }

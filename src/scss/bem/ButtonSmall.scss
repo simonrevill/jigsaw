@@ -2,7 +2,7 @@
 
 .button--small {
   padding: 7px 14px;
-  border: 1px solid $white;
+  border: 1px solid var(white);
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
@@ -12,7 +12,7 @@
 .button__text--small {
   font-family: $primary-font-bold;
   font-size: $secondary-font-size;
-  color: $primary-font-color;
+  color: var(primary-font-color);
   text-transform: uppercase;
   letter-spacing: 0.265rem;
   text-align: center;
@@ -20,10 +20,10 @@
 }
 
 .button--small:hover {
-  background-color: $white;
+  background-color: var(white);
 
   .button__text--small {
-    color: $black;
+    color: var(black);
   }
 }
 

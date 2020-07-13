@@ -3,7 +3,7 @@
 .browser-image {
   width: 190px;
   height: 190px;
-  background-color: $dark-purple;
+  background-color: var(--dark-purple);
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -30,7 +30,7 @@
 }
 
 .browser-image__name {
-  color: $white;
+  color: var(--white);
   font-family: $primary-font-regular;
   font-size: $primary-font-size;
   margin: 20px 2px 0 2px;
@@ -51,7 +51,7 @@
 }
 
 .browser-image--selected {
-  box-shadow: 0px 0px 0px 4px $blue;
+  box-shadow: 0px 0px 0px 4px var(--blue);
   
   .browser-image__overlay {
     top: 5px;

@@ -3,8 +3,8 @@
 .topbar {
   width: 1440px;
   height: 40px;
-  background-color: $light-purple;
-  border-bottom: 1px solid $dark-purple;
+  background-color: var(--light-purple);
+  border-bottom: 1px solid var(--dark-purple);
   display: flex;
   justify-content: space-between;
   align-items: center;

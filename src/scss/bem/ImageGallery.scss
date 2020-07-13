@@ -37,7 +37,7 @@
 .image-gallery__no-favourites-message {
   font-family: $primary-font-regular;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   letter-spacing: 0.265rem;
   text-align: center;
   line-height: 2.5;

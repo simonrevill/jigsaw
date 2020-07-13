@@ -1,5 +1,10 @@
 @import './variables.scss';
 
+#root {
+  width: 1440px;
+  height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,10 +13,6 @@ body {
   align-items: center;
 }
 
-#root {
-  width: 1440px;
-  height: 100vh;
-}
 
 // Utility classes:
 

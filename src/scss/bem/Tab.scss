@@ -6,13 +6,13 @@
 }
 
 .tab:hover {
-  background-color: $lighter-purple;
+  background-color: var(--lighter-purple);
   transition: background-color $short;
 }
 
 .tab--selected,
 .tab--selected:hover {
-  background-color: $dark-purple;
+  background-color: var(--dark-purple);
 }
 
 .tab,
@@ -31,7 +31,7 @@
 .tab__title {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   text-transform: uppercase;
   letter-spacing: 0.265rem;
   text-align: center;
@@ -42,6 +42,6 @@
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  border: 2px solid $white;
+  border: 2px solid var(--white);
   margin-top: 20px;
 }

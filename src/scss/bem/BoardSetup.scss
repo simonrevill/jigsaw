@@ -9,13 +9,13 @@
   justify-content: center;
   align-items: center;
   padding: 28px 0;
-  border-bottom: 1px solid $dark-purple;
+  border-bottom: 1px solid var(--dark-purple);
 }
 
 .board-setup__heading-text {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   text-transform: uppercase;
   letter-spacing: 0.265rem;
   margin: 0;

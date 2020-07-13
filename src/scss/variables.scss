@@ -1,5 +1,58 @@
+// Fonts:
+
+@font-face {
+  font-family: 'Comfortaa-Bold';
+  src: url('../fonts/Comfortaa-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comfortaa-Regular';
+  src: url('../fonts/Comfortaa-Regular.ttf') format('truetype');
+}
+
 // Colours:
 
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey: #8F8F8F;
+  --dark-purple: #2A243A;
+  --darker-purple: #262034;
+  --light-purple: #3F3A4E;
+  --lighter-purple: #555061;
+  --gold: #BFAF80;
+  --dark-green: #32AB6A;
+  --light-green: #5AD392;
+  --neon-green: #39FF14;
+  --red: #EB5757;
+  --pink: #FB28C0;
+  --blue: #0BACD2;
+
+  --primary-font-color: #FFFFFF;
+}
+
+// Optional body class for light colour theme:
+
+.light-theme {
+  --white: #000000;
+  --black: #FFFFFF;
+  --grey: #8F8F8F;
+  --dark-purple: #2A243A;
+  --darker-purple: #262034;
+  --light-purple: #3F3A4E;
+  --lighter-purple: #555061;
+  --gold: #BFAF80;
+  --dark-green: #32AB6A;
+  --light-green: #5AD392;
+  --neon-green: #39FF14;
+  --red: #EB5757;
+  --pink: #FB28C0;
+  --blue: #0BACD2;
+
+  --primary-font-color: #000000;
+}
+
+$light-purple: #3F3A4E;
 $white: #FFFFFF;
 $black: #000000;
 $grey: #8F8F8F;
@@ -15,17 +68,6 @@ $red: #EB5757;
 $pink: #FB28C0;
 $blue: #0BACD2;
 
-// Fonts:
-
-@font-face {
-  font-family: 'Comfortaa-Bold';
-  src: url('../fonts/Comfortaa-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Comfortaa-Regular';
-  src: url('../fonts/Comfortaa-Regular.ttf') format('truetype');
-}
 
 $primary-font-bold: 'Comfortaa-Bold';
 $primary-font-regular: 'Comfortaa-Regular';

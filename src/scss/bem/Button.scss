@@ -3,7 +3,7 @@
 .button {
   padding: 19px 35px;
   margin-top: 30px;
-  border: 1px solid $white;
+  border: 1px solid var(--white);
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
@@ -11,13 +11,13 @@
 }
 
 .button:hover {
-  background-color: $lighter-purple;
+  background-color: var(--lighter-purple);
 }
 
 .button__text {
   font-family: $primary-font-bold;
   font-size: $primary-font-size;
-  color: $primary-font-color;
+  color: var(--primary-font-color);
   text-transform: uppercase;
   letter-spacing: 0.265rem;
   text-align: center;
