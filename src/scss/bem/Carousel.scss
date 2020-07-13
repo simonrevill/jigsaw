@@ -76,11 +76,7 @@
   // border: 5px solid $blue;
 }
 
-
-
-
-
-// Appear:
+// Appear Transition Classes:
 .carousel__grid-overlay-grid--appear {
   opacity: 0;
 }
@@ -94,7 +90,7 @@
   opacity: 1;
 }
 
-// Enter: 
+// Enter Transition Classes: 
 .carousel__grid-overlay-grid--enter {
   opacity: 0;
 }
@@ -108,7 +104,7 @@
   opacity: 1;
 }
 
-// Exit
+// Exit Transition Classes:
 .carousel__grid-overlay-grid--exit {
   opacity: 1;
 }
@@ -121,12 +117,6 @@
 .carousel__grid-overlay-grid--exit-done {
   opacity: 0;
 }
-
-
-
-
-
-
 
 .carousel__browser-panel {
   width: 847px;

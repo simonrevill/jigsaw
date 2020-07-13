@@ -57,7 +57,6 @@ const ImageBrowser = ({
     }
 
     // else if image is !isFavourite:
-
     let newFavouriteData = imageLibrary.filter(image => image.id === imageId);
 
     const newFavourite = {
@@ -88,8 +87,6 @@ const ImageBrowser = ({
   };
 
   const handleToggleUserLibraryFavourite = e => {
-
-    console.log('user fav triggers!!');
 
     const browserImageElement = e.currentTarget.parentNode
     const imageId = browserImageElement.dataset.id;

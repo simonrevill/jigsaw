@@ -8,10 +8,6 @@ import '../../scss/bem/BrowserImage.scss';
 const BrowserImage = ({ imageId, imageSrc, imageName, isUserFavourite,
   handleToggleLibraryFavourite, handleToggleUserLibraryFavourite, currentSelectedImage, activeTab, setCurrentSelectedImage }) => {
 
-  // console.log('activeTab: ', activeTab);
-  // console.log('isUserFavourite: ', isUserFavourite);
-  // console.log('currentSelectedImage: ', currentSelectedImage);
-
   const backgroundImageStyles = {
     backgroundImage: `url("${imageSrc}")`,
     backgroundSize: 'cover',
@@ -22,15 +18,30 @@ const BrowserImage = ({ imageId, imageSrc, imageName, isUserFavourite,
   };
 
   const renderImageClasses = (imageId, isUserFavourite, currentSelectedImage, activeTab) => {
+
     if (isUserFavourite && (imageId === currentSelectedImage.id && currentSelectedImage.library === activeTab)) {
       return 'browser-image js-favourite-true browser-image--selected';
+    }
+
+    if (isUserFavourite && (imageId !== currentSelectedImage.id && currentSelectedImage.library === activeTab)) {
+      return 'browser-image js-favourite-true';
+    }
+
+    if (isUserFavourite && (imageId !== currentSelectedImage.id && currentSelectedImage.library !== activeTab)) {
+      return 'browser-image js-favourite-true';
     }
 
     if (!isUserFavourite && (imageId === currentSelectedImage.id && currentSelectedImage.library === activeTab)) {
       return 'browser-image js-favourite-false browser-image--selected';
     }
 
-    return 'browser-image js-favourite-false';
+    if (!isUserFavourite && (imageId !== currentSelectedImage.id && currentSelectedImage.library === activeTab)) {
+      return 'browser-image js-favourite-false';
+    }
+
+    if (!isUserFavourite && (imageId !== currentSelectedImage.id && currentSelectedImage.library !== activeTab)) {
+      return 'browser-image js-favourite-false';
+    }
   };
 
   const handleSelectImage = () => {
@@ -46,11 +57,6 @@ const BrowserImage = ({ imageId, imageSrc, imageName, isUserFavourite,
 
   const handleFavouriteClick = e => {
     e.stopPropagation();
-
-    console.log(typeof handleToggleLibraryFavourite)
-    console.log(handleToggleLibraryFavourite)
-    console.log(typeof handleToggleUserLibraryFavourite)
-    console.log(handleToggleUserLibraryFavourite)
 
     if (handleToggleLibraryFavourite) {
       handleToggleLibraryFavourite(e);
