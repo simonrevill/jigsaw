@@ -6,6 +6,7 @@ import { getActiveImageBrowserTabName, getMenuIsOpen } from '../../redux/selecto
 import { getUserFavourites, getUserLibraryFavourites } from '../../redux/selectors/users';
 import setActiveTab from '../../redux/actions/uiState/setActiveTab';
 import toggleMenu from '../../redux/actions/uiState/toggleMenu';
+import setCurrentSelectedImage from '../../redux/actions/uiState/setCurrentSelectedImage';
 import addFavouriteLibraryImage from '../../redux/actions/users/addFavouriteLibraryImage';
 import deleteFavouriteLibraryImage from '../../redux/actions/users/deleteFavouriteLibraryImage';
 import deleteFavouriteUserLibraryImage from '../../redux/actions/users/deleteFavouriteUserLibraryImage';
@@ -17,11 +18,29 @@ import { updateDatabase } from '../../aws/dynamodb_updateData';
 const ImageBrowser = ({
   currentUserInfo, menuIsOpen, imageLibrary, userImageLibrary,
   activeImageBrowserTabName, setActiveImageBrowserTab, setActiveTab, toggleMenu,
-  addFavouriteLibraryImage, deleteFavouriteLibraryImage, favourites, deleteFavouriteUserLibraryImage, addFavouriteUserLibraryImage, userLibraryFavourites, currentSelectedImage }) => {
+  addFavouriteLibraryImage, deleteFavouriteLibraryImage, favourites, deleteFavouriteUserLibraryImage, addFavouriteUserLibraryImage, userLibraryFavourites, currentSelectedImage, setCurrentSelectedImage }) => {
 
   const userId = currentUserInfo.userId;
 
-  const handleTabClick = e => setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
+  const handleTabClick = e => {
+    if (e.currentTarget.dataset.tabname === 'mainLibrary') {
+      setCurrentSelectedImage({
+        id: imageLibrary[0].id,
+        name: imageLibrary[0].name,
+        url: imageLibrary[0].url,
+        library: 'mainLibrary'
+      });
+    } else {
+      setCurrentSelectedImage({
+        id: userImageLibrary[0].id,
+        name: userImageLibrary[0].name,
+        url: userImageLibrary[0].url,
+        library: 'userLibrary'
+      });
+    }
+
+    setActiveImageBrowserTab(e.currentTarget.dataset.tabname);
+  };
 
   const handleUploadButtonClick = () => {
     if (!menuIsOpen) toggleMenu();
@@ -182,5 +201,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { setActiveImageBrowserTab, setActiveTab, toggleMenu, addFavouriteLibraryImage, deleteFavouriteLibraryImage, deleteFavouriteUserLibraryImage, addFavouriteUserLibraryImage }
+  { setActiveImageBrowserTab, setActiveTab, toggleMenu, addFavouriteLibraryImage, deleteFavouriteLibraryImage, deleteFavouriteUserLibraryImage, addFavouriteUserLibraryImage, setCurrentSelectedImage }
 )(ImageBrowser);

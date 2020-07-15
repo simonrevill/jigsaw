@@ -1,18 +1,17 @@
 import React from 'react';
-import Carousel from '../Carousel/Carousel';
+import CarouselContainer from '../CarouselContainer/CarouselContainer';
 import ImageBrowser from '../ImageBrowser/ImageBrowser';
 import '../../scss/bem/Preview.scss';
 
-const Preview = ({ currentUserInfo, imageLibrary, userImageLibrary, gridSetting, currentSelectedImage, handlePreviousClick, handleNextClick }) => {
-
-  // Todo: grab the userImageLibrary!
+const Preview = ({ currentUserInfo, activeImageBrowserTabName, imageLibrary, userImageLibrary, gridSetting, currentSelectedImage, handlePreviousClick, handleNextClick }) => {
 
   return (
     <div className="preview">
       <div className="preview__heading">
         <p className="preview__heading-text">Preview</p>
       </div>
-      <Carousel
+      <CarouselContainer
+        activeImageBrowserTabName={activeImageBrowserTabName}
         gridSetting={gridSetting}
         imageLibrary={imageLibrary}
         userImageLibrary={userImageLibrary}

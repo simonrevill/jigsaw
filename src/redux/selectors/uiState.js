@@ -74,6 +74,8 @@ const getCurrentSelectedImageWithUserAttributes = store => {
 
 export const getCurrentSelectedImage = store => getCurrentSelectedImageWithUserAttributes(store);
 
+// Main Library Selectors:
+
 const getPreviousLibraryImageIndex = (store, currentSelectedImageIndex) => {
   const imageLibrary = store.uiState.imageLibrary;
   if (currentSelectedImageIndex > 0) return currentSelectedImageIndex - 1;
@@ -103,5 +105,39 @@ export const getNextLibraryImage = store => {
   const imageLibrary = store.uiState.imageLibrary;
   const currentSelectedImageIndex = imageLibrary.findIndex(image => image.id === currentSelectedImage.id);
   const nextLibraryImageIndex = getNextLibraryImageIndex(store, currentSelectedImageIndex);
+  return nextLibraryImageIndex;
+};
+
+// User Library Selectors:
+
+const getPreviousUserLibraryImageIndex = (store, currentSelectedImageIndex) => {
+  const userImageLibrary = store.users.currentUserInfo.userImageLibrary;
+  if (currentSelectedImageIndex > 0) return currentSelectedImageIndex - 1;
+  // if currentSelectedImageIndex === 0... 
+  // find the index of the last item in the userImageLibrary array...
+  return userImageLibrary.length - 1;
+};
+
+const getNextUserLibraryImageIndex = (store, currentSelectedImageIndex) => {
+  const userImageLibrary = store.users.currentUserInfo.userImageLibrary;
+  if (currentSelectedImageIndex < (userImageLibrary.length - 1)) return currentSelectedImageIndex + 1;
+  // if currentSelectedImageIndex === userImageLibrary.length - 1 (i.e. the last item)... 
+  // return the index of the first item in the userImageLibrary array...
+  return 0;
+};
+
+export const getPreviousUserLibraryImage = store => {
+  const currentSelectedImage = store.uiState.library.currentSelectedImage;
+  const userImageLibrary = store.users.currentUserInfo.userImageLibrary;
+  const currentSelectedImageIndex = userImageLibrary.findIndex(image => image.id === currentSelectedImage.id);
+  const previousLibraryImageIndex = getPreviousUserLibraryImageIndex(store, currentSelectedImageIndex);
+  return previousLibraryImageIndex;
+};
+
+export const getNextUserLibraryImage = store => {
+  const currentSelectedImage = store.uiState.library.currentSelectedImage;
+  const userImageLibrary = store.users.currentUserInfo.userImageLibrary;
+  const currentSelectedImageIndex = userImageLibrary.findIndex(image => image.id === currentSelectedImage.id);
+  const nextLibraryImageIndex = getNextUserLibraryImageIndex(store, currentSelectedImageIndex);
   return nextLibraryImageIndex;
 };

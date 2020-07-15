@@ -21,6 +21,7 @@
   font-size: $slider-font-size;
   color: var(--white);
   margin-right: 7px;
+  user-select: none;
 }
 
 .slider__inner {
@@ -53,6 +54,7 @@
   text-transform: uppercase;
   margin-right: 12px;
   width: 31px;
+  user-select: none;
 }
 
 .slider--active {

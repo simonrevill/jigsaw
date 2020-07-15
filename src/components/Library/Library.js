@@ -2,34 +2,52 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Preview from '../Preview/Preview';
 import BoardSetup from '../BoardSetup/BoardSetup';
-import { getGridSetting, getCurrentSelectedImage, getPreviousLibraryImage, getNextLibraryImage } from '../../redux/selectors/uiState';
+import { getGridSetting, getCurrentSelectedImage, getPreviousLibraryImage, getNextLibraryImage, getPreviousUserLibraryImage, getNextUserLibraryImage } from '../../redux/selectors/uiState';
 import setGridSetting from '../../redux/actions/uiState/setGridSetting';
 import { getActiveImageBrowserTabName } from '../../redux/selectors/uiState';
 import setCurrentSelectedImage from '../../redux/actions/uiState/setCurrentSelectedImage';
 import '../../scss/bem/Library.scss';
 
-const Library = ({ currentUserInfo, isActive, imageLibrary, userImageLibrary, setGridSetting, currentSelectedImage, gridSetting, activeImageBrowserTabName, setCurrentSelectedImage, previousLibraryImageIndex, nextLibraryImageIndex }) => {
+const Library = ({ currentUserInfo, isActive, imageLibrary, userImageLibrary, setGridSetting, currentSelectedImage, gridSetting, activeImageBrowserTabName, setCurrentSelectedImage, previousLibraryImageIndex, nextLibraryImageIndex, previousUserLibraryImageIndex, nextUserLibraryImageIndex }) => {
 
-  // Library needs the currently active library tab for the carousel!
-
-  const handlePreviousClick = carousel => {
-    carousel.slideTo(previousLibraryImageIndex);
-    setCurrentSelectedImage({
-      id: imageLibrary[previousLibraryImageIndex].id,
-      name: imageLibrary[previousLibraryImageIndex].name,
-      url: imageLibrary[previousLibraryImageIndex].url,
-      library: activeImageBrowserTabName
-    });
+  const handlePreviousClick = (carousel, libraryName) => {
+    if (libraryName === 'mainLibrary') {
+      carousel.slideTo(previousLibraryImageIndex);
+      setCurrentSelectedImage({
+        id: imageLibrary[previousLibraryImageIndex].id,
+        name: imageLibrary[previousLibraryImageIndex].name,
+        url: imageLibrary[previousLibraryImageIndex].url,
+        library: libraryName
+      });
+    } else {
+      carousel.slideTo(previousUserLibraryImageIndex);
+      setCurrentSelectedImage({
+        id: userImageLibrary[previousUserLibraryImageIndex].id,
+        name: userImageLibrary[previousUserLibraryImageIndex].name,
+        url: userImageLibrary[previousUserLibraryImageIndex].url,
+        library: libraryName
+      });
+    }
   };
 
-  const handleNextClick = carousel => {
-    carousel.slideTo(nextLibraryImageIndex);
-    setCurrentSelectedImage({
-      id: imageLibrary[nextLibraryImageIndex].id,
-      name: imageLibrary[nextLibraryImageIndex].name,
-      url: imageLibrary[nextLibraryImageIndex].url,
-      library: activeImageBrowserTabName
-    });
+  const handleNextClick = (carousel, libraryName) => {
+    if (libraryName === 'mainLibrary') {
+      carousel.slideTo(nextLibraryImageIndex);
+      setCurrentSelectedImage({
+        id: imageLibrary[nextLibraryImageIndex].id,
+        name: imageLibrary[nextLibraryImageIndex].name,
+        url: imageLibrary[nextLibraryImageIndex].url,
+        library: libraryName
+      });
+    } else {
+      carousel.slideTo(nextUserLibraryImageIndex);
+      setCurrentSelectedImage({
+        id: userImageLibrary[nextUserLibraryImageIndex].id,
+        name: userImageLibrary[nextUserLibraryImageIndex].name,
+        url: userImageLibrary[nextUserLibraryImageIndex].url,
+        library: libraryName
+      });
+    }
   };
 
   const handleGridSettingClick = e => setGridSetting(parseInt(e.currentTarget.dataset.gridsetting));
@@ -38,6 +56,7 @@ const Library = ({ currentUserInfo, isActive, imageLibrary, userImageLibrary, se
     <div className={isActive ? 'library d-flex' : 'library d-none'}>
       <Preview
         currentUserInfo={currentUserInfo}
+        activeImageBrowserTabName={activeImageBrowserTabName}
         imageLibrary={imageLibrary}
         userImageLibrary={userImageLibrary}
         gridSetting={gridSetting}
@@ -61,7 +80,9 @@ const mapStateToProps = state => {
   const activeImageBrowserTabName = getActiveImageBrowserTabName(state);
   const previousLibraryImageIndex = getPreviousLibraryImage(state);
   const nextLibraryImageIndex = getNextLibraryImage(state);
-  return { gridSetting, currentSelectedImage, activeImageBrowserTabName, previousLibraryImageIndex, nextLibraryImageIndex };
+  const previousUserLibraryImageIndex = getPreviousUserLibraryImage(state);
+  const nextUserLibraryImageIndex = getNextUserLibraryImage(state);
+  return { gridSetting, currentSelectedImage, activeImageBrowserTabName, previousLibraryImageIndex, nextLibraryImageIndex, previousUserLibraryImageIndex, nextUserLibraryImageIndex };
 };
 
 export default connect(
