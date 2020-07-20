@@ -49,9 +49,12 @@
   text-align: right;
 }
 
-.file-info__rating-star-solid,
 .file-info__rating-star {
   margin-right: 5px;
+}
+
+.file-info__rating-star:last-child {
+  margin-right: 0px;
 }
 
 .file-info__favourite-indicator {
