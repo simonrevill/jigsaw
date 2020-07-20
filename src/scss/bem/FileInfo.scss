@@ -11,6 +11,7 @@
 .file-info__file-name,
 .file-info__rating {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -45,6 +46,7 @@
   height: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: right;
 }
 
 .file-info__rating-star-solid,

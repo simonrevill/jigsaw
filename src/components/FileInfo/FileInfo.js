@@ -6,7 +6,6 @@ import { ReactComponent as HeartSolid } from '../../icons/heart-solid.svg';
 import '../../scss/bem/FileInfo.scss';
 
 const FileInfo = ({ currentSelectedImage }) => {
-  console.log('fileInfo, current selected image: ', currentSelectedImage);
   return (
     <div className="file-info">
       <div className="file-info__file-name">

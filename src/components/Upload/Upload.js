@@ -18,7 +18,7 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
   // // This should be done behind the scenes as part of their first upload.
   const { userId } = currentUserInfo;
 
-  const handleImageUpload = (e, dragged = false, files) => {
+  const handleImageUpload = async (e, dragged = false, files) => {
     //   // Firstly, store the image file/files:
     if (!dragged) var files = [...e.target.files];
     // Convert imagesFiles from a FileList to an array and perform validation.
@@ -48,36 +48,67 @@ const Upload = ({ currentUserInfo, isActive, setUserImageLibrary }) => {
 
     if (!currentUserInfo.hasBucket) /* create a new bucket for the user... */ console.log('someone needs a new bucket!');
 
-    files.forEach(file => {
-      uploadFile(userId, file)
-        .then(storageDataResponse => {
-          // info to update database:
-          // to work with dynamodb's update_list function,
-          // the info object must be returned inside an array:
+    console.log('files length: ', files.length);
 
-          const newId = uuidv4();
+    console.log('before promise');
 
-          // Edit image location URL, to make sure urls match in Redux store:
-          const originalUrl = storageDataResponse.Location.slice(56);
-          const newUrl = `https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/${originalUrl}`;
 
-          const databaseInfo = [{
-            id: newId,
-            name: file.name,
-            url: newUrl
-          }];
-          return databaseInfo;
-        })
-        .then(databaseInfo => {
-          const [item] = databaseInfo;
-          updateDatabase('userImageLibrary', userId, databaseInfo);
-          setUserImageLibrary(item);
-          const progressBar = document.querySelector('.uploadProgress');
-          progressBar.setAttribute('max', '0');
-          progressBar.setAttribute('value', '0');
-        })
-        .catch(err => console.log(err));
+    const uploadFilesPromise = new Promise((resolve, reject) => {
+
+      files.forEach(file => {
+        console.log('file name: ', file.name);
+        uploadFile(userId, file)
+          .then(storageDataResponse => {
+            // info to update database:
+            // to work with dynamodb's update_list function,
+            // the info object must be returned inside an array:
+
+            const newId = uuidv4();
+
+            // Edit image location URL, to make sure urls match in Redux store:
+            const originalUrl = storageDataResponse.Location.slice(56);
+            const newUrl = `https://s3.eu-west-2.amazonaws.com/jigsaw-image-library/${originalUrl}`;
+
+            const databaseInfo = [{
+              id: newId,
+              name: file.name,
+              url: newUrl
+            }];
+            return databaseInfo;
+          })
+          .then(databaseInfo => {
+            const [item] = databaseInfo;
+            updateDatabase('userImageLibrary', userId, databaseInfo);
+            setUserImageLibrary(item);
+            const progressBar = document.querySelector('.upload-container__progress-bar');
+            progressBar.setAttribute('max', '100');
+            progressBar.setAttribute('value', '100');
+          })
+          .catch(err => reject(err));
+      });
+
+      resolve('uploads completed.')
     });
+
+    console.log('after promise');
+
+    // Show uploads modal:
+    console.log('attempt to show modal...');
+    document.querySelector('.upload-container').classList.add('d-flex');
+
+    await uploadFilesPromise.then(msg => {
+      console.log(msg);
+      console.log('attempt to show modal button...');
+      document.querySelector('.js-modal-close').classList.add('opacity-full');
+    });
+
+
+    // Show Button:
+
+    // Hide uploads modal:
+    // console.log('attempt to hide modal...');
+    // document.querySelector('.upload-container').classList.remove('d-flex');
+
   };
 
   const handleDragOver = e => {

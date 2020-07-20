@@ -3,4 +3,48 @@
 .container {
   display: flex;
   overflow: hidden;
+  position: relative;
+}
+
+.upload-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 10px;
+  width: 60%;
+  height: 20%;
+  z-index: 2;
+  background-color: var(--dark-purple);
+}
+
+.upload-container__progress-text--file-name,
+.upload-container__progress-text {
+  font-family: $primary-font-bold;
+  font-size: $primary-font-size;
+  color: var(--primary-font-color);
+  letter-spacing: 0.265rem;
+}
+
+.upload-container__progress-bar {
+  height: 20px;
+  width: 25rem;
+  -webkit-appearance: none;
+  margin: 0.5rem;
+}
+
+.upload-container__progress-bar::-webkit-progress-bar {
+  background-color: var(--lighter-purple);
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.upload-container__progress-bar::-webkit-progress-value {
+  height: 16px;
+  background: var(--neon-green);
+  border-radius: 20px; 
+  background-size: 35px 20px, 100% 100%, 100% 100%;
 }

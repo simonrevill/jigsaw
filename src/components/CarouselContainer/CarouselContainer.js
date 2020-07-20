@@ -6,15 +6,9 @@ import '../../scss/bem/Carousel.scss';
 
 const CarouselContainer = ({ gridSetting, activeImageBrowserTabName, imageLibrary, userImageLibrary, currentSelectedImage, handlePreviousClick, handleNextClick }) => {
 
-  // Carousel needs the name of the currently active library tab!
-
-  console.log('currentActiveLibrary: ', activeImageBrowserTabName);
-
   const handleOnDragStart = (e) => e.preventDefault();
 
   const startingIndex = imageLibrary.findIndex(image => image.id === currentSelectedImage.id);
-
-  console.log(startingIndex);
 
   return (
     <div className="carousel-container">

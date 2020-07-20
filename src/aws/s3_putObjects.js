@@ -17,8 +17,9 @@ export const uploadFile = (userId, file) => {
         ACL: "public-read"
       }
     }).on('httpUploadProgress', progress => {
-      // document.querySelector('.uploadProgress').textContent = `${progress.loaded} of ${progress.total} bytes.`;
-      const progressBar = document.querySelector('.uploadProgress');
+      document.querySelector('.upload-container__progress-text--file-name').innerHTML = `UPLOADING: ${file.name}`;
+      document.querySelector('.upload-container__progress-text').innerHTML = `${progress.loaded} OF ${progress.total} BYTES`;
+      const progressBar = document.querySelector('.upload-container__progress-bar');
       function showProgress() {
         progressBar.max = progress.total;
         progressBar.value = progress.loaded;

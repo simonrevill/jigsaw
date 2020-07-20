@@ -8,6 +8,7 @@ import { getUserData, getImageLibrary } from '../../aws/dynamodb_getData';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';
+import ButtonSmall from '../Button/ButtonSmall';
 import '../../scss/bem/App.scss';
 
 const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrary, imageLibrary, userImageLibrary }) => {
@@ -39,10 +40,21 @@ const App = ({ currentUserInfo, menuIsOpen, tabs, setCurrentUser, setImageLibrar
       .catch(err => console.log(err));
   }, []);
 
+  const handleModalClose = () => {
+    document.querySelector('.js-modal-close').classList.remove('opacity-full');
+    document.querySelector('.upload-container').classList.remove('d-flex');
+  };
+
   return (
     <React.Fragment>
       <Topbar currentUserInfo={currentUserInfo} />
       <div className="container">
+        <div className="upload-container d-none">
+          <p className="upload-container__progress-text--file-name"></p>
+          <progress className="upload-container__progress-bar" value='0'></progress>
+          <p className="upload-container__progress-text"></p>
+          <ButtonSmall buttonText='Okay' onClick={handleModalClose} extraClasses="js-modal-close opacity-none" />
+        </div>
         <Sidebar currentUserInfo={currentUserInfo} menuIsOpen={menuIsOpen} tabs={tabs} />
         <Main currentUserInfo={currentUserInfo} tabs={tabs} imageLibrary={imageLibrary} userImageLibrary={userImageLibrary} />
       </div>
