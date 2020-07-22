@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f15886b6ea1618eb649e971cd39242d2",
+    "revision": "df02615b63d36c2bc2cd6b35d9c5e50f",
     "url": "/jigsaw/index.html"
   },
   {
-    "revision": "80fb6e5bf29c9caa096c",
-    "url": "/jigsaw/static/css/main.aa451e4e.chunk.css"
+    "revision": "b0ce0c4a350860e74718",
+    "url": "/jigsaw/static/css/2.4f96cee5.chunk.css"
   },
   {
-    "revision": "57569a772b322ac392ed",
-    "url": "/jigsaw/static/js/2.4d8d89b8.chunk.js"
+    "revision": "2e00b26071e503a7689e",
+    "url": "/jigsaw/static/css/main.7fb85cb9.chunk.css"
+  },
+  {
+    "revision": "b0ce0c4a350860e74718",
+    "url": "/jigsaw/static/js/2.f66e89fd.chunk.js"
   },
   {
     "revision": "0ec9300b90a1964ccb21b13048e7fb5c",
-    "url": "/jigsaw/static/js/2.4d8d89b8.chunk.js.LICENSE.txt"
+    "url": "/jigsaw/static/js/2.f66e89fd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "80fb6e5bf29c9caa096c",
-    "url": "/jigsaw/static/js/main.22a4243f.chunk.js"
+    "revision": "2e00b26071e503a7689e",
+    "url": "/jigsaw/static/js/main.731ad024.chunk.js"
   },
   {
     "revision": "2e5f6a62a1cc70861a0f",
@@ -40,12 +44,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/media/board.b8e5c13c.svg"
   },
   {
-    "revision": "a8274c67121ef80cf008e913c6f9263a",
-    "url": "/jigsaw/static/media/carousel-button-next.a8274c67.svg"
+    "revision": "e00179caef9a9559dc4b6a86412e37bf",
+    "url": "/jigsaw/static/media/carousel-button-next.e00179ca.svg"
   },
   {
-    "revision": "710f4b730ad11e075760372d5502fbef",
-    "url": "/jigsaw/static/media/carousel-button-prev.710f4b73.svg"
+    "revision": "a88fae2f20363bb87b6d7e1e9b51350e",
+    "url": "/jigsaw/static/media/carousel-button-prev.a88fae2f.svg"
   },
   {
     "revision": "e010dd79bf4a265e45765bec4b513b61",
@@ -64,6 +68,26 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/media/dot.3921d590.svg"
   },
   {
+    "revision": "d0b89655cb482414e43cbfc5fe565751",
+    "url": "/jigsaw/static/media/grid-overlay-4.d0b89655.svg"
+  },
+  {
+    "revision": "ee780dd54113801dc2c5823bf8973102",
+    "url": "/jigsaw/static/media/grid-overlay-5.ee780dd5.svg"
+  },
+  {
+    "revision": "c71c2356194684d7d187c22ed56276d5",
+    "url": "/jigsaw/static/media/grid-overlay-6.c71c2356.svg"
+  },
+  {
+    "revision": "7f9cefb8053c1a871a21347e2343ce7f",
+    "url": "/jigsaw/static/media/grid-overlay-7.7f9cefb8.svg"
+  },
+  {
+    "revision": "76a1e109ba0dadc73cc2d680d6d75871",
+    "url": "/jigsaw/static/media/grid-overlay-8.76a1e109.svg"
+  },
+  {
     "revision": "f9971033a9a3a359f6a512aaf051ba03",
     "url": "/jigsaw/static/media/heart-solid.f9971033.svg"
   },
@@ -72,16 +96,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/media/heart.b79cc249.svg"
   },
   {
-    "revision": "deec01d694797e41ed846ed1812e8aed",
-    "url": "/jigsaw/static/media/jigsaw-topbar-logo.deec01d6.svg"
+    "revision": "1cf6bf33f31b68b7f9ea18b926f5d32e",
+    "url": "/jigsaw/static/media/jigsaw-topbar-logo.1cf6bf33.svg"
   },
   {
     "revision": "f04d44a8c5698cb9cf59411d5930af82",
     "url": "/jigsaw/static/media/johnSmith.f04d44a8.jpg"
   },
   {
-    "revision": "d9762e069866b1448c19dced5d102880",
-    "url": "/jigsaw/static/media/library.d9762e06.svg"
+    "revision": "8f18815f052428b4885cffc35cd2017d",
+    "url": "/jigsaw/static/media/library.8f18815f.svg"
   },
   {
     "revision": "edbf9c5f588931131dd4e7edf09a97c3",
@@ -100,8 +124,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jigsaw/static/media/settings.2191dfa2.svg"
   },
   {
-    "revision": "ef4283802648723e013f2edc545d2961",
-    "url": "/jigsaw/static/media/spinner.ef428380.svg"
+    "revision": "928271e916465b1e0fcd59efbda659c2",
+    "url": "/jigsaw/static/media/spinner.928271e9.svg"
   },
   {
     "revision": "b3f495d4c61257a9d9f93f7d2a978413",
